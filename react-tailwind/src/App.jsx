@@ -7,7 +7,6 @@ export default function HomePage() {
     <>
       <Header />
       <Hero />
-      {/* тут след. страницы */}
     </>
   );
 }
