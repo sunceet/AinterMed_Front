@@ -1,25 +1,22 @@
 "use client";
 
-// import MobileMenu from "./MobileMenu";
-// import BurgerMenuButton from "./BurgerMenuButton";
 import dynamic from "next/dynamic";
 import { useState, useRef } from "react";
 import DesktopNav from "./DesktopNav";
 import LangSwitcher from "./LangSwitcher";
 import AuthButtons from "./AuthButtons";
-const BurgerMenuButton = dynamic(() => import("./BurgerMenuButton"), {
-  ssr: false,
-});
+import AuthModal from "../AuthModal/AuthModal";
+
+const BurgerMenuButton = dynamic(() => import("./BurgerMenuButton"), { ssr: false });
 const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: false });
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState({ visible: false, mode: "login" });
   const menuRef = useRef(null);
 
-  const link =
-    "hover:underline transition-colors duration-150 даwhitespace-nowrap";
-  const btn =
-    "rounded-full text-sm font-bold tracking-tight py-3 px-7 transition-colors";
+  const link = "hover:underline transition-colors duration-150 whitespace-nowrap";
+  const btn = "rounded-full text-sm font-bold tracking-tight py-3 px-7 transition-colors";
 
   return (
     <>
@@ -38,7 +35,7 @@ export default function Header() {
 
           <div className="hidden xl:flex items-center gap-4">
             <LangSwitcher link={link} />
-            <AuthButtons btn={btn} />
+            <AuthButtons btn={btn} setShowAuthModal={setShowAuthModal} />
             <button className="p-1">
               <img
                 src="/assets/svg/Bell.svg"
@@ -73,7 +70,15 @@ export default function Header() {
         menuRef={menuRef}
         btn={btn}
         setMenuOpen={setMenuOpen}
+        setShowAuthModal={setShowAuthModal}
       />
+
+      {showAuthModal.visible && (
+        <AuthModal
+          onClose={() => setShowAuthModal({ visible: false, mode: "login" })}
+          mode={showAuthModal.mode}
+        />
+      )}
     </>
   );
 }

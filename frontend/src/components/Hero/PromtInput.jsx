@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import GlobeIcon from "../../assets/svg/fi-rr-globe.svg";
-// import BigArrow from "../../assets/svg/bigarrow.svg";
 import IconButton from "../../components/ui/IconButton";
 import GradientBorderBox from "../../components/ui/GradientBorderBox";
 

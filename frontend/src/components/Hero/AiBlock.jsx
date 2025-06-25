@@ -29,7 +29,7 @@ const AiBlock = () => (
           </h2>
 
           <p
-            className="text-[#555555] font-[Manrope] font-medium tracking-wide
+            className="text-[#555555] font-[Manrope]  tracking-wide
                         text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px]
                         leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-6"
           >

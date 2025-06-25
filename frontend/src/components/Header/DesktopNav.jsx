@@ -1,23 +1,35 @@
-"use client";
+'use client';
 
-export default function DesktopNav({ link }) {
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+export default function DesktopNav() {
+  const pathname = usePathname();
+
+  const getLinkClass = (path) =>
+    `transition ${
+      pathname === path ? 'text-[#438EFF]' : 'text-black'
+    }`;
+
   return (
     <nav className="font-[Manrope] font-bold hidden xl:flex gap-6 xl:gap-8 text-[14px]">
-      <a href="#" className={`${link} text-[#438EFF]`}>
+      <Link href="/#" className={getLinkClass('/')}>
         ГЛАВНОЕ
-      </a>
-      <a href="#" className={link}>
+      </Link>
+      <Link href="/#" className={getLinkClass('/chat')}>
         ИИ&nbsp;ЧАТ
-      </a>
-      <a href="#" className={link}>
+      </Link>
+      <Link href="/#" className={getLinkClass('/knowledge')}>
         БАЗА&nbsp;ЗНАНИЙ
-      </a>
-      <a href="#" className={link}>
+      </Link>
+      <Link href="/about" className={getLinkClass('/about')}>
         О&nbsp;НАС
-      </a>
-      <a href="#" className={link}>
+      </Link>
+      <Link href="/#" className={getLinkClass('/pricing')}>
         ТАРИФЫ
-      </a>
+      </Link>
     </nav>
   );
 }
+
+

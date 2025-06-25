@@ -1,7 +1,8 @@
 "use client";
 
-export default function MobileMenu({ menuOpen, menuRef, btn, setMenuOpen }) {
+export default function MobileMenu({ menuOpen, menuRef, btn, setMenuOpen, setShowAuthModal }) {
   const navLinks = ["ГЛАВНОЕ", "ИИ ЧАТ", "БАЗА ЗНАНИЙ", "О НАС", "ТАРИФЫ"];
+
   return (
     <div
       ref={menuRef}
@@ -31,13 +32,19 @@ export default function MobileMenu({ menuOpen, menuRef, btn, setMenuOpen }) {
         <div className="flex flex-col gap-3 pt-5 w-full px-8">
           <button
             className={`${btn} border border-[#C6C6C6] w-full font-medium`}
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              setShowAuthModal({ visible: true, mode: "login" });
+            }}
           >
             ВОЙТИ
           </button>
           <button
             className={`${btn} w-full border border-black text-white bg-black font-medium`}
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              setShowAuthModal({ visible: true, mode: "register" });
+            }}
           >
             РЕГИСТРАЦИЯ
           </button>

@@ -1,7 +1,5 @@
 "use client";
 
-// import Arrow from "../../assets/svg/Arrow.svg";
-
 const CtaButton = () => (
   <a
     href="https://aintermed.com/ai"

@@ -1,7 +1,5 @@
 "use client";
 
-// import MainVideo from "../../assets/video/main_video.mp4";
-
 const VideoBg = () => (
   <video
     className="pointer-events-none absolute top-[480px] left-1/2

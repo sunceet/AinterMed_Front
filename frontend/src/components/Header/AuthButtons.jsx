@@ -1,15 +1,17 @@
 "use client";
 
-export default function AuthButtons({ btn }) {
+export default function AuthButtons({ btn, setShowAuthModal }) {
   return (
     <>
       <button
-        className={`${btn} font-[Manrope] font-bold border border-[#C6C6C6] bg-white text-[14px]`}
+        className={`${btn} border border-[#C6C6C6]`}
+        onClick={() => setShowAuthModal({ visible: true, mode: "login" })}
       >
         ВОЙТИ
       </button>
       <button
-        className={`${btn} font-[Manrope] font-bold border border-black text-white bg-black text-[14px]`}
+        className={`${btn} bg-black text-white border border-black`}
+        onClick={() => setShowAuthModal({ visible: true, mode: "register" })}
       >
         РЕГИСТРАЦИЯ
       </button>
