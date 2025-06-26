@@ -79,7 +79,8 @@ useEffect(() => {
   ];
 
   return (
-    <div className="w-full py-10 flex flex-col items-center gap-[30px]">
+<div id="tariffs" className="scroll-mt-[70px] w-full py-10 flex flex-col items-center gap-[30px]">
+
       <h2 className="text-[36px] font-[Involve] font-semibold text-black text-center">
         Выбери свой{" "}
         <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">

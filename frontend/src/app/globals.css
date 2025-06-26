@@ -117,3 +117,39 @@ html {
     }
   }
 }
+
+
+/* Добавь в глобальные стили (например, globals.css) */
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+
+.nav-link {
+  transition: color 0.3s ease;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.nav-link--active {
+  color: #438EFF;
+}
+
+.nav-link--inactive {
+  color: black;
+}
