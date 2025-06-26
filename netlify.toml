@@ -6,8 +6,9 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirects for Next.js routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
+  conditions = { Language = ["en"] }
