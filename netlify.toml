@@ -1,16 +1,11 @@
 [build]
   base = "frontend"
-
   command = "npm run build"
-  publish = ".next"
+  publish = "out" 
   functions = "netlify/functions"
 
 [build.environment]
-NODE_VERSION = "18.18.2"
+  NODE_VERSION = "18.18.2"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-  conditions = { Language = ["en"] }
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
