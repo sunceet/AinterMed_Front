@@ -83,7 +83,7 @@ const AboutUsBlock = () => {
       >
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/assets/svg/AboutUsBlock2.png"
+            src="/assets/svg/AboutUsBlock2.svg"
             alt="Background"
             fill
             className="object-cover object-center"
