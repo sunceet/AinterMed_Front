@@ -23,8 +23,7 @@ const Footer = () => {
         <div className="w-full mt-8 md:mt-0 flex flex-col md:flex-row md:w-auto md:gap-[32px] text-[10px] sm:text-[14px] lg:text-[16px] leading-[24px] font-normal tracking-[0] items-start text-left">
           {/* Мобильная версия (только md:hidden)  */}
           <div className="md:hidden w-full">
-            <div className="flex flex-wrap justify-start items-start gap-x-[14px] gap-y-[10px] text-[10px] leading-[18px] font-normal text-black">
-              
+            <div className="flex flex-wrap justify-start items-start gap-x-[35px] gap-y-[10px] text-[10px] leading-[18px] font-normal text-black">
               <div className="flex flex-col gap-[2px] w-fit whitespace-nowrap">
                 <h3 className="mb-[4px] bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text font-semibold">
                   Условия и политика
@@ -49,7 +48,6 @@ const Footer = () => {
                 </a>
               </div>
 
-              
               <div className="flex flex-col gap-[2px] w-fit whitespace-nowrap">
                 <h3 className="mb-[4px] bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text font-semibold">
                   Соцсети
@@ -65,7 +63,6 @@ const Footer = () => {
                 </a>
               </div>
 
-              
               <div className="flex flex-col gap-[2px] w-fit whitespace-nowrap">
                 <h3 className="mb-[4px] bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text font-semibold">
                   Контакты

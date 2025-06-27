@@ -4,23 +4,23 @@ const AiBlock = () => (
   <div className="mt-38 flex flex-col items-center gap-6 px-4 sm:px-6">
     <div
       className="w-full max-w-[1255px]
-                 rounded-[32px] bg-gradient-to-r from-[#EEFBFF] to-[#D6EAFF] text-black
-                 px-4 py-10
+                 rounded-[24px] xl:rounded-[32px] bg-gradient-to-r from-[#EEFBFF] to-[#D6EAFF] text-black
+                 px-4 py-8
                  sm:px-7  sm:py-12
                  md:px-9  md:py-14
                  lg:px-12 lg:py-16
                  xl:px-[72px] xl:py-[72px]
                  min-h-[380px]
-                 sm:min-h-[410px]
-                 md:min-h-[435px]
-                 lg:min-h-[460px]
-                 xl:min-h-[485px]"
+                sm:min-h-[400px]
+                 md:min-h-[400px]
+                 lg:min-h-[420px]
+                 xl:min-h-[440px]"
     >
-      <div className="flex flex-col xl:flex-row items-center justify-between gap-8">
+      <div className="flex flex-col xl:flex-row items-center justify-between gap-4">
         <div className="text-center xl:text-left max-w-[550px]">
           <h2
             className=" font-[Involve] leading-[1.1]
-                         text-[25px] sm:text-[30px] md:text-[33px] lg:text-[36px] xl:text-[40px] pb-3"
+                         text-[25px] sm:text-[30px] md:text-[33px] lg:text-[36px] xl:text-[40px] pb-0"
           >
             <span className="font-[Involve] font-semibold">Искусственный</span>
             <span className="font-[Involve] font-semibold max-[393px]:block">
@@ -31,7 +31,7 @@ const AiBlock = () => (
           <p
             className="text-[#555555] font-[Manrope]  tracking-wide
                         text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px]
-                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-6"
+                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-3"
           >
             Персональный клинический ассистент для студента и врача. Анализирует
             клинические случаи, решает учебные задачи и готовиться к экзаменам.
@@ -61,7 +61,7 @@ const AiBlock = () => (
         </div>
 
         {/* Кнопка <1279 */}
-        <div className="mt-6 xl:hidden">
+        <div className="xl:hidden">
           <a
             href="https://aintermed.com/ai"
             target="_blank"
@@ -83,16 +83,16 @@ const AiBlock = () => (
                  lg:px-12 lg:py-16
                  xl:px-[72px] xl:py-[72px]
                  min-h-[380px]
-                 sm:min-h-[410px]
-                 md:min-h-[435px]
-                 lg:min-h-[460px]
-                 xl:min-h-[485px]"
+                 sm:min-h-[400px]
+                 md:min-h-[400px]
+                 lg:min-h-[420px]
+                 xl:min-h-[440px]"
     >
       <div className="flex flex-col xl:flex-row-reverse items-center justify-between gap-8">
         <div className="text-center xl:text-right max-w-[550px]">
           <h2
             className="font-[Involve] font-semibold leading-[1.1]
-                         text-[25px] sm:text-[30px] md:text-[33px] lg:text-[36px] xl:text-[40px] pb-3"
+                         text-[25px] sm:text-[30px] md:text-[33px] lg:text-[36px] xl:text-[40px] pb-0"
           >
             <span>База</span>
             <span className="max-[300px]:block">&nbsp;знаний</span>
@@ -101,13 +101,13 @@ const AiBlock = () => (
           <p
             className="text-[#555555] font-[Manrope] tracking-wide
                         text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px]
-                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-6"
+                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-3"
           >
             Хранилище структурированной информации для быстрого доступа. База
-            знаний содержит статьи про искусственный интеллект и всё необходимое
-            для современного медицинского обучения. Все материалы
-            структурированы для удобного и быстрого поиска, позволяя легко
-            находить нужную информацию
+            знаний содержит статьи про искусственный интеллект и всё для
+            современного медицинского обучения. Все материалы структурированы
+            для удобного и быстрого поиска, позволяя легко находить нужную
+            информацию
           </p>
 
           {/* Кнопка >1280 */}

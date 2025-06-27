@@ -5,29 +5,32 @@ import { useEffect, useRef } from "react";
 const PricingCards = () => {
   const scrollContainerRef = useRef(null);
 
-useEffect(() => {
-  const container = scrollContainerRef.current;
-  if (!container) return;
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
 
-  const secondCard = container.children[1];
-  if (!secondCard) return;
+    const secondCard = container.children[1];
+    if (!secondCard) return;
 
-  const containerRect = container.getBoundingClientRect();
-  const cardRect = secondCard.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    const cardRect = secondCard.getBoundingClientRect();
 
-  const scrollLeft = secondCard.offsetLeft - container.offsetLeft
-    - (containerRect.width / 2 - cardRect.width / 2);
+    const scrollLeft =
+      secondCard.offsetLeft -
+      container.offsetLeft -
+      (containerRect.width / 2 - cardRect.width / 2);
 
-  container.scrollTo({
-    left: scrollLeft,
-    behavior: "smooth",
-  });
-}, []);
+    container.scrollTo({
+      left: scrollLeft,
+      behavior: "smooth",
+    });
+  }, []);
 
   const plans = [
     {
       title: "Бесплатный",
-      description: "Вариант для знакомства с интеллектуальным помощником AInterMed",
+      description:
+        "Вариант для знакомства с интеллектуальным помощником AInterMed",
       priceSymbol: "₽",
       price: "0",
       period: "/ месяц",
@@ -42,7 +45,8 @@ useEffect(() => {
     },
     {
       title: "Продвинутый",
-      description: "Выбор для интенсивной подготовки и глубокого погружения в учебный материал",
+      description:
+        "Выбор для интенсивной подготовки и глубокого погружения в учебный материал",
       priceSymbol: "₽",
       price: "499",
       period: "/ месяц",
@@ -59,7 +63,8 @@ useEffect(() => {
     },
     {
       title: "Премиум",
-      description: "Всё, что есть — без ограничений. Для тех, кто ищет максимум от интеллектуальной поддержки",
+      description:
+        "Всё, что есть — без ограничений. Для тех, кто ищет максимум от интеллектуальной поддержки",
       priceSymbol: "₽",
       price: "899",
       period: "/ месяц",
@@ -70,17 +75,15 @@ useEffect(() => {
         "Полный доступ к интеллектуальной поддержке",
         "Всё из продвинутой версии AinterMed",
         "Расширенная аналитика и разбор ответов",
-        "Детальные обьяснения сложных случаев",
-        "Приоритетный доступ к новым возможностям",
-        "Ранний доступ к новым функциям",
-        "Неограниченный Web-поиск",
       ],
     },
   ];
 
   return (
-<div id="tariffs" className="scroll-mt-[70px] w-full py-10 flex flex-col items-center gap-[30px]">
-
+    <div
+      id="tariffs"
+      className="scroll-mt-[70px] w-full py-10 flex flex-col items-center gap-[30px]"
+    >
       <h2 className="text-[36px] font-[Involve] font-semibold text-black text-center">
         Выбери свой{" "}
         <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
@@ -93,7 +96,7 @@ useEffect(() => {
 
       <div
         ref={scrollContainerRef}
-        className="w-full max-w-[1255px] overflow-x-auto snap-x snap-mandatory flex gap-[24px] px-4 lg:px-0 scrollbar-hidden"
+        className="w-full max-w-[1255px] overflow-x-auto snap-x snap-mandatory flex gap-[40px] px-4 lg:px-0 scrollbar-hidden"
         style={{ overflowY: "hidden" }}
       >
         {plans.map((plan, idx) => (

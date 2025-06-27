@@ -96,7 +96,7 @@ const ChatPreviewCarousel = () => {
           className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[1000px] h-[100px] z-0 pointer-events-none opacity-30"
           style={{
             background: "linear-gradient(180deg, #437CFF 0%, #65EDFF 100%)",
-            borderRadius: "50%",
+            borderRadius: "100%",
             filter: "blur(130px)",
           }}
         />
@@ -105,7 +105,7 @@ const ChatPreviewCarousel = () => {
           className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[1000px] h-[120px] z-0 pointer-events-none opacity-30"
           style={{
             background: "linear-gradient(0deg, #437CFF 0%, #65EDFF 100%)",
-            borderRadius: "50%",
+            borderRadius: "100%",
             filter: "blur(130px)",
           }}
         />
@@ -116,7 +116,11 @@ const ChatPreviewCarousel = () => {
             onClick={handlePrev}
             className="absolute xl:-left-85 md:left-5 lg:-left-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
           >
-            <img src="/assets/svg/arrow_left.svg" alt="Left" className="w-6 h-6" />
+            <img
+              src="/assets/svg/arrow_left.svg"
+              alt="Left"
+              className="w-6 h-6"
+            />
           </button>
         )}
 
@@ -135,16 +139,17 @@ const ChatPreviewCarousel = () => {
               position === 0
                 ? "blur-none"
                 : Math.abs(position) === 1
-                ? "blur-[2px]"
-                : "blur-[5px]"; // Эффект размытия
+                  ? "blur-[5px]"
+                  : "blur-[10px]"; // Эффект размытия
             const zIndex = 30 - Math.abs(position) * 10; // Слои (центральная сверху)
-            const opacity = Math.abs(position) <= 2 ? (position === 0 ? 1 : 0.85) : 0; // Прозрачность
+            const opacity =
+              Math.abs(position) <= 2 ? (position === 0 ? 1 : 0.85) : 0; // Прозрачность
             const pointerEvents = Math.abs(position) <= 2 ? "auto" : "none"; // Отключение кликов
 
             return (
               <div
                 key={i}
-                className={`absolute rounded-[28px] ${isMobile ? 'border-[1px]' : 'border'} border-gray-200 bg-white px-4 pt-4 pb-3 shadow-sm flex flex-col justify-between transition-all duration-300 ease-in-out ${blur}`}
+                className={`absolute rounded-[28px] ${isMobile ? "border-[1px]" : "border"} border-gray-200 bg-white px-4 pt-4 pb-3 flex flex-col justify-between transition-all duration-300 ease-in-out ${blur}`}
                 style={{
                   width: baseWidth,
                   height: baseHeight,
@@ -166,7 +171,11 @@ const ChatPreviewCarousel = () => {
             onClick={handleNext}
             className="absolute xl:-right-85 md:right-5 lg:-right-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
           >
-            <img src="/assets/svg/arrow_right.svg" alt="Right" className="w-6 h-6" />
+            <img
+              src="/assets/svg/arrow_right.svg"
+              alt="Right"
+              className="w-6 h-6"
+            />
           </button>
         )}
       </div>
@@ -190,7 +199,11 @@ const CardContent = ({ chat, position = 0 }) => (
     {/* Сообщение ассистента */}
     <div className="flex items-start gap-2">
       <div className="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center shrink-0 mt-[2px]">
-        <img src="/assets/svg/mini_logo.svg" alt="Logo" className="w-3.5 h-3.5 object-contain" />
+        <img
+          src="/assets/svg/mini_logo.svg"
+          alt="Logo"
+          className="w-3.5 h-3.5 object-contain"
+        />
       </div>
       <div className="text-[12px] leading-tight font-[Manrope] text-gray-800 text-left overflow-hidden">
         {chat.assistant}
@@ -198,14 +211,16 @@ const CardContent = ({ chat, position = 0 }) => (
     </div>
 
     {/* Сообщение пользователя и действия */}
-    <div className="w-full mt-4 sm:mt-2 px-3 py-2 border border-gray-200 rounded-[20px] bg-white shadow-inner flex flex-col justify-between text-left min-h-[88px] relative group">
+    <div className="w-full mt-4 sm:mt-2 px-2 py-2 border border-gray-200 rounded-[20px] bg-white flex flex-col justify-between text-left min-h-[88px] relative group">
       <div className="text-[12px] text-[#555555] font-[Manrope] leading-tight mb-2 sm:mb-2">
         {chat.user}
       </div>
 
       <div className="flex items-end justify-between transition-opacity duration-200 group-hover:opacity-100 gap-2">
         {/* Кнопки ссылок */}
-        <div className={`flex gap-1.5 flex-wrap ${position !== 0 ? "pointer-events-none opacity-50" : ""}`}>
+        <div
+          className={`flex gap-1.5 flex-wrap ${position !== 0 ? "pointer-events-none opacity-50" : ""}`}
+        >
           <a
             href="https://aintermed.com/ai"
             target="_blank"
@@ -220,7 +235,11 @@ const CardContent = ({ chat, position = 0 }) => (
             rel="noopener noreferrer"
             className="flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-white border border-gray-200 rounded-full text-[11px] sm:text-[12px] text-gray-800 hover:bg-gray-100"
           >
-            <img src="/assets/svg/fi-rr-globe.svg" alt="Globe" className="w-4 h-4" />
+            <img
+              src="/assets/svg/fi-rr-globe.svg"
+              alt="Globe"
+              className="w-4 h-4"
+            />
             Поиск
           </a>
         </div>
@@ -231,7 +250,11 @@ const CardContent = ({ chat, position = 0 }) => (
             onClick={() => window.open("https://aintermed.com/ai", "_blank")}
             className="w-8 h-8 flex items-center justify-center"
           >
-            <img src="/assets/svg/bigarrow.svg" alt="Arrow" className="w-7 h-7" />
+            <img
+              src="/assets/svg/bigarrow.svg"
+              alt="Arrow"
+              className="w-7 h-7"
+            />
           </button>
         </div>
       </div>

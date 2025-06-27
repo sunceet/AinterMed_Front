@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
 const BLOCK_H =
-  "min-h-[380px] sm:min-h-[410px] md:min-h-[435px] lg:min-h-[460px] xl:min-h-[485px]";
+  "min-h-[320px] sm:min-h-[400px] md:min-h-[400px] lg:min-h-[420px] xl:min-h-[440px]";
 const BLOCK_P =
   "px-4 py-10 sm:px-7 sm:py-12 md:px-9 md:py-14 lg:px-12 lg:py-16 xl:px-[72px] xl:py-[72px]";
 
@@ -34,22 +33,34 @@ const AboutUsBlock = () => {
 
         <div className="flex flex-col xl:flex-row items-center justify-between gap-8">
           <div className="text-center xl:text-left max-w-[550px]">
-            <h2 className="text-white font-[involve] font-semibold leading-[1.1] text-[25px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] pb-3">
+            <h2 className="text-white font-[involve] py-15 xl:py-1 text-left font-semibold leading-[1.1] text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] pb-3">
               Наша миссия
             </h2>
 
-            <p className="text-white font-[Manrope] tracking-wide text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[18px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-6">
+            <p className="text-white font-[Manrope] font-normal text-left tracking-wide text-[18px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[24px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
               Наша миссия — вырастить новое поколение уверенных в себе врачей,
               вооружённых актуальными знаниями и готовых к реальной практике.
               Потому что хороший врач — это не тот, кто много знает, а тот, кто
               умеет правильно применять свои знания.
             </p>
 
-            {/* Кнопка >1280 */}
+            {/* Мобильная кнопка (только до xl) */}
+            <div className="mt-6 xl:hidden flex justify-center sm:justify-start">
+              <Link href="/about">
+                <button
+                  className="inline-block px-8 py-3 backdrop-blur-sm bg-[#FFFFFF33] text-white
+                    font-[Involve] font-semibold tracking-wide rounded-full uppercase transition"
+                >
+                  О&nbsp;нас
+                </button>
+              </Link>
+            </div>
+
+            {/* Десктоп-кнопка (>1280px) */}
             <div className="mt-6 hidden xl:block">
               <Link href="/about">
                 <button
-                  className="inline-block rounded-full px-12 py-5 backdrop-blur-sm bg-[#FFFFFF33] 
+                  className="inline-block rounded-full px-24 py-5 backdrop-blur-sm bg-[#FFFFFF33] 
                     text-white font-[Involve] font-medium leading-[16px] 
                     tracking-[0.02em] uppercase text-center align-middle"
                 >
@@ -62,18 +73,6 @@ const AboutUsBlock = () => {
           <div className="w-full xl:w-auto flex justify-center">
             <div className="w-[300px] h-[150px]" />
           </div>
-        </div>
-
-        {/* Кнопка <1280 */}
-        <div className="mt-6 xl:hidden flex justify-center">
-          <Link href="/about">
-            <button
-              className="inline-block px-10 py-4 backdrop-blur-sm  bg-[#FFFFFF33] text-white
-                font-[Involve] font-semibold tracking-wide rounded-full uppercase transition"
-            >
-              О&nbsp;нас
-            </button>
-          </Link>
         </div>
       </div>
 
@@ -90,6 +89,7 @@ const AboutUsBlock = () => {
             priority
           />
         </div>
+
         <img
           src="/assets/svg/Vector2.svg"
           alt=""
@@ -97,12 +97,12 @@ const AboutUsBlock = () => {
         />
 
         <div className="flex flex-col xl:flex-row-reverse items-center justify-between gap-8">
-          <div className="text-center xl:text-right max-w-[550px]">
+          <div className="text-center xl:text-right max-w-[720px]">
             <h2 className="text-white font-[involve] font-semibold leading-[1.1] text-[25px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[38px] pb-3">
-              Нам доверяют 3&nbsp;200&nbsp;врачей ежедневно
+              Нам доверяют 3&nbsp;200&nbsp;врачей
             </h2>
 
-            <p className="text-white font-[Manrope]  tracking-wide text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[18px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-6">
+            <p className="text-white font-[Manrope] tracking-wide text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[18px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
               Разработано медиками для медиков: Наш продукт создан медицинскими
               и IT-специалистами, что гарантирует его соответствие высоким
               стандартам медицинской практики и реальным потребностям медиков
