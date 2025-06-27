@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 const BLOCK_H =
-  'min-h-[380px] sm:min-h-[410px] md:min-h-[435px] lg:min-h-[460px] xl:min-h-[485px]';
+  "min-h-[380px] sm:min-h-[410px] md:min-h-[435px] lg:min-h-[460px] xl:min-h-[485px]";
 const BLOCK_P =
-  'px-4 py-10 sm:px-7 sm:py-12 md:px-9 md:py-14 lg:px-12 lg:py-16 xl:px-[72px] xl:py-[72px]';
+  "px-4 py-10 sm:px-7 sm:py-12 md:px-9 md:py-14 lg:px-12 lg:py-16 xl:px-[72px] xl:py-[72px]";
 
 const AboutUsBlock = () => {
   return (
@@ -15,7 +15,7 @@ const AboutUsBlock = () => {
         className={`relative w-full max-w-[1255px] rounded-[32px] overflow-hidden
                     ${BLOCK_P} ${BLOCK_H}`}
       >
-        <div className="absolute inset-0 -z-10 bg-[url('/assets/svg/AboutUsBlock1.svg')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10 bg-[url('/assets/svg/AboutUsBlock1.png')] bg-cover bg-center" />
 
         <img
           src="/assets/svg/Vector1.svg"
@@ -72,7 +72,7 @@ const AboutUsBlock = () => {
       <div
         className={`relative w-full max-w-[1255px] rounded-[32px] overflow-hidden ${BLOCK_P} ${BLOCK_H}`}
       >
-        <div className="absolute inset-0 -z-10 bg-[url('/assets/svg/AboutUsBlock2.svg')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10 bg-[url('/assets/svg/AboutUsBlock2.png')] bg-cover bg-center" />
 
         <img
           src="/assets/svg/Vector2.svg"
