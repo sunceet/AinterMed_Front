@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const BLOCK_H =
   "min-h-[380px] sm:min-h-[410px] md:min-h-[435px] lg:min-h-[460px] xl:min-h-[485px]";
@@ -15,7 +16,15 @@ const AboutUsBlock = () => {
         className={`relative w-full max-w-[1255px] rounded-[32px] overflow-hidden
                     ${BLOCK_P} ${BLOCK_H}`}
       >
-        <div className="absolute inset-0 -z-10 bg-[url('/assets/svg/AboutUsBlock1.png')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/assets/svg/AboutUsBlock1.svg"
+            alt="Background"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
 
         <img
           src="/assets/svg/Vector1.svg"
@@ -72,8 +81,15 @@ const AboutUsBlock = () => {
       <div
         className={`relative w-full max-w-[1255px] rounded-[32px] overflow-hidden ${BLOCK_P} ${BLOCK_H}`}
       >
-        <div className="absolute inset-0 -z-10 bg-[url('/assets/svg/AboutUsBlock2.png')] bg-cover bg-center" />
-
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/assets/svg/AboutUsBlock2.png"
+            alt="Background"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
         <img
           src="/assets/svg/Vector2.svg"
           alt=""
