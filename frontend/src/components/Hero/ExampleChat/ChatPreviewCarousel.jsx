@@ -63,10 +63,10 @@ const ChatPreviewCarousel = () => {
   return (
     <div className="relative w-full mt-15 flex flex-col items-center justify-center">
       <div className="w-full flex flex-col items-center justify-center text-center">
-        <div className="text-[24px] leading-[1] font-medium font-[Involve] text-[#555555] max-w-[750px]">
+        <div className="text-[15px] xl:text-[24px] leading-[1] font-medium font-[Involve] text-[#555555] max-w-[750px]">
           Чем точнее запрос — тем лучше помощь
         </div>
-        <div className="text-[40px] leading-[1] font-semibold font-[Involve] text-gray-900 max-w-[827px] mt-2">
+        <div className="text-[28px] xl:text-[40px] leading-[1] font-semibold font-[Involve] text-gray-900 max-w-[827px] mt-2">
           <span className="bg-gradient-to-r from-[#437CFF] to-[#437CFF] text-transparent bg-clip-text">
             Развивай
           </span>{" "}
@@ -98,7 +98,7 @@ const ChatPreviewCarousel = () => {
         {!isMobile && (
           <button
             onClick={handlePrev}
-            className="absolute xl:-left-85 md:left-5 lg:-left-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
+            className="absolute xl:-left-75 md:left-5 lg:-left-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
           >
             <img
               src="/assets/svg/arrow_left.svg"
@@ -108,7 +108,7 @@ const ChatPreviewCarousel = () => {
           </button>
         )}
 
-        <div className="relative w-full h-full flex items-center justify-center overflow-visible z-10">
+        <div className="select-none relative w-full h-full flex items-center justify-center overflow-visible z-10">
           {chatSamples.map((chat, i) => {
             let diff = i - activeIndex;
             if (diff > total / 2) diff -= total;
@@ -153,7 +153,7 @@ const ChatPreviewCarousel = () => {
         {!isMobile && (
           <button
             onClick={handleNext}
-            className="absolute xl:-right-85 md:right-5 lg:-right-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
+            className="absolute xl:-right-75 md:right-5 lg:-right-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
           >
             <img
               src="/assets/svg/arrow_right.svg"
@@ -164,9 +164,9 @@ const ChatPreviewCarousel = () => {
         )}
       </div>
 
-      <div className="w-full flex justify-center mb-6 mt-4">
+      <div className="w-[187px] xl:w-full flex justify-center mb-6 mt-[-20px]">
         <button
-          className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] font-[Involve] text-white text-[16px] font-medium tracking-[0.02em] uppercase rounded-full w-[282px] h-[64px] hover:brightness-110 transition z-[2]"
+          className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] font-[Involve] text-white leading-[16px] text-[12px] xl:text-[16px] font-medium tracking-[0.02em] uppercase rounded-full w-[187px] h-[44px] xl:w-[282px] xl:h-[64px] hover:brightness-110 transition z-[2]"
           onClick={() => window.open("https://aintermed.com/ai", "_blank")}
         >
           Войти и попробовать
@@ -192,7 +192,7 @@ const CardContent = ({ chat, position = 0 }) => (
     </div>
 
     <div className="w-full mt-4 sm:mt-2 px-2 py-2 border border-gray-200 rounded-[20px] bg-white flex flex-col justify-between text-left min-h-[88px] relative group">
-      <div className="text-[12px] text-[#555555] font-[Manrope] leading-tight mb-2 sm:mb-2">
+      <div className="text-[12px] text-[#555555] font-[Manrope] leading-tight mb-2 sm:mb-2 pl-2">
         {chat.user}
       </div>
 
@@ -200,20 +200,11 @@ const CardContent = ({ chat, position = 0 }) => (
         <div
           className={`flex gap-1.5 flex-wrap ${position !== 0 ? "pointer-events-none opacity-50" : ""}`}
         >
-          <a
-            href="https://aintermed.com/ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-white border border-gray-200 rounded-full text-[11px] sm:text-[12px] text-gray-800 hover:bg-gray-100"
+          <a className="flex select-none items-center px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-white border border-gray-200 rounded-full text-[11px] sm:text-[12px] text-gray-800"
           >
             AInterMed&nbsp;<span className="text-[#437CFF]">PRO</span>
           </a>
-          <a
-            href="https://aintermed.com/ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-white border border-gray-200 rounded-full text-[11px] sm:text-[12px] text-gray-800 hover:bg-gray-100"
-          >
+          <a className="flex select-none items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-white border border-gray-200 rounded-full text-[11px] sm:text-[12px] text-gray-800 ">
             <img
               src="/assets/svg/fi-rr-globe.svg"
               alt="Globe"
@@ -231,7 +222,7 @@ const CardContent = ({ chat, position = 0 }) => (
             <img
               src="/assets/svg/bigarrow.svg"
               alt="Arrow"
-              className="w-7 h-7"
+              className="w-7 h-7 select-none"
             />
           </button>
         </div>

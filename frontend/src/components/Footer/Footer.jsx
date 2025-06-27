@@ -3,8 +3,8 @@
 const Footer = () => {
   return (
     <footer className="mt-[40px] w-full min-h-[250px] border-t bg-white border-t-[#C6C6C6] md:py-[50px] xl:py-[50px] py-[30px]">
-      <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between text-[#00000070] font-[Manrope] px-4 sm:px-6 lg:px-12 2xl:px-20">
-        {/* Логотип и инфо (слева) */}
+<div className="mx-auto px-4 sm:px-6 lg:px-8 font-[Manrope]">
+  <div className="flex flex-col md:flex-row justify-between max-w-[1255px] mx-auto text-[#00000070] gap-[-30px]">        {/* Логотип и инфо (слева) */}
         <div className="flex flex-col justify-between h-full">
           <img
             src="/assets/svg/Logo_AInterMed.svg"
@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="w-full mt-8 md:mt-0 flex flex-col md:flex-row md:w-auto md:gap-[32px] text-[10px] sm:text-[14px] lg:text-[16px] leading-[24px] font-normal tracking-[0] items-start text-left">
           {/* Мобильная версия (только md:hidden)  */}
           <div className="md:hidden w-full">
-            <div className="flex flex-wrap justify-start items-start gap-x-[35px] gap-y-[10px] text-[10px] leading-[18px] font-normal text-black">
+            <div className="flex flex-wrap justify-start items-start gap-x-[51px] gap-y-[10px] text-[10px] leading-[18px] font-normal text-black">
               <div className="flex flex-col gap-[2px] w-fit whitespace-nowrap">
                 <h3 className="mb-[4px] bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text font-semibold">
                   Условия и политика
@@ -55,10 +55,7 @@ const Footer = () => {
                 <a href="https://vk.com/aintermed" className="hover:underline">
                   Вконтакте
                 </a>
-                <a href="#" className="hover:underline">
-                  Whatsapp
-                </a>
-                <a href="https://t.me/dr_tymnyida" className="hover:underline">
+                <a href="https://t.me/+eQE0tyYBEk9iNzly" className="hover:underline">
                   Telegram
                 </a>
               </div>
@@ -119,11 +116,9 @@ const Footer = () => {
             >
               Вконтакте
             </a>
-            <a href="#" className="text-black hover:underline">
-              Whatsapp
-            </a>
+
             <a
-              href="https://t.me/dr_tymnyida"
+              href="https://t.me/+eQE0tyYBEk9iNzly"
               className="text-black hover:underline"
             >
               Telegram
@@ -142,6 +137,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

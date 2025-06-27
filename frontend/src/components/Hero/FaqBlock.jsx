@@ -56,7 +56,7 @@ const FaqBlock = () => {
   return (
     <div className="w-full pt-16 pb-12 px-4 flex justify-center">
       <div className="flex flex-col gap-6 items-center max-w-[1080px] w-full">
-        <h2 className="mb-6 w-full text-center text-black text-[28px] md:text-[42px] leading-tight font-semibold font-[Involve]">
+        <h2 className="mb-6 w-full text-center text-black text-[28px] md:text-[40px] leading-tight font-semibold font-[Involve]">
           Вопросы и&nbsp;
           <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
             ответы

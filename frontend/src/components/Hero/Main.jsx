@@ -11,8 +11,9 @@ import PromptInput from "./PromtInput";
 // Lazy-load
 const AiBlock = dynamic(() => import("./AiBlock"), { ssr: false });
 const AbouteUsBlock = dynamic(() => import("./AboutUsBlock"), { ssr: false });
-const Footer = dynamic(() => import("../Footer/Footer"), { ssr: false });
+// const Footer = dynamic(() => import("../Footer/Footer"), { ssr: false });
 const FaqBlock = dynamic(() => import("./FaqBlock"), { ssr: false });
+// const ReviewsGrid = dynamic (() => import("./ReviewsGrid"), {ssr:false});
 const PricingCards = dynamic(() => import("./PricingCards"), { ssr: false });
 const ChatPreviewCarousel = dynamic(
   () => import("./ExampleChat/ChatPreviewCarousel"),
@@ -41,6 +42,7 @@ const Main = () => (
       </div>
 
       <ChatPreviewCarousel />
+      {/* <ReviewsGrid/> */}
 
       <AbouteUsBlock />
 
