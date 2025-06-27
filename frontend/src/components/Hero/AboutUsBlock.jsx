@@ -17,7 +17,7 @@ const AboutUsBlock = () => {
       >
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/assets/svg/AboutUsBlock1.svg"
+            src="/assets/svg/AboutUsBlock1.png"
             alt="Background"
             fill
             className="object-cover object-center"
@@ -79,7 +79,7 @@ const AboutUsBlock = () => {
       >
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/assets/svg/AboutUsBlock2.svg"
+            src="/assets/svg/AboutUsBlock2.png"
             alt="Background"
             fill
             className="object-cover object-center"
