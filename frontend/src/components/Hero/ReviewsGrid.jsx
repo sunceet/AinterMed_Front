@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import reviews from "./Reviews";
+import reviews from "./reviews";
 
 const StarRating = ({ rating }) => (
   <div className="flex gap-[1px] w-[113.71px] h-[20px]">
