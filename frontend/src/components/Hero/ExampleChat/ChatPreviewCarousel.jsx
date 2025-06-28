@@ -103,7 +103,7 @@ const ChatPreviewCarousel = () => {
             <img
               src="/assets/svg/arrow_left.svg"
               alt="Left"
-              className="w-6 h-6"
+              className="w-6 h-6 hover:scale-110 transition z-20"
             />
           </button>
         )}
@@ -158,7 +158,7 @@ const ChatPreviewCarousel = () => {
             <img
               src="/assets/svg/arrow_right.svg"
               alt="Right"
-              className="w-6 h-6"
+              className="w-6 h-6 hover:scale-110 transition z-20"
             />
           </button>
         )}
