@@ -11,8 +11,8 @@ import PromptInput from "./PromtInput";
 // Lazy-load
 const AiBlock = dynamic(() => import("./AiBlock"), { ssr: false });
 const AbouteUsBlock = dynamic(() => import("./AboutUsBlock"), { ssr: false });
-const Footer = dynamic(() => import("../Footer/Footer"), { ssr: false });
 const FaqBlock = dynamic(() => import("./FaqBlock"), { ssr: false });
+const ReviewsGrid = dynamic(() => import("./ReviewsGrid"), { ssr: false });
 const PricingCards = dynamic(() => import("./PricingCards"), { ssr: false });
 const ChatPreviewCarousel = dynamic(
   () => import("./ExampleChat/ChatPreviewCarousel"),
@@ -32,7 +32,7 @@ const Main = () => (
         <CtaButton />
       </div>
 
-      <div className="mt-[480px] mb-[60px] flex justify-center">
+      <div className="mt-[300px] xl:mt-[480px] mb-[60px] flex justify-center">
         <PromptInput />
       </div>
 
@@ -43,6 +43,7 @@ const Main = () => (
       <ChatPreviewCarousel />
 
       <AbouteUsBlock />
+      <ReviewsGrid />
 
       <div className="w-full mt-20 bg-[#F2F2F2]">
         <PricingCards />

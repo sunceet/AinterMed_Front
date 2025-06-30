@@ -34,7 +34,7 @@ const PricingCards = () => {
       priceSymbol: "₽",
       price: "0",
       period: "/ месяц",
-      buttonColor: "bg-gradient-to-r from-[#437CFF20] to-[#659DFF20]",
+      buttonColor: "bg-gradient-to-r from-[#447CFF50] to-[#659DFF50]",
       features: [
         "Доступ к основной модели AlnterMed",
         "Базовые инструменты понимания вопросов",
@@ -82,21 +82,21 @@ const PricingCards = () => {
   return (
     <div
       id="tariffs"
-      className="scroll-mt-[70px] w-full py-10 flex flex-col items-center gap-[30px]"
+      className="scroll-mt-[70px] w-full py-8 flex flex-col items-center gap-[20px]"
     >
-      <h2 className="text-[36px] font-[Involve] font-semibold text-black text-center">
+      <h2 className="text-[28px] xl:text-[40px] font-[Involve] font-semibold text-black text-center">
         Выбери свой{" "}
         <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
           тариф
         </span>
       </h2>
-      <p className="text-[22px] font-[Involve] font-medium text-[#555555] text-center">
+      <p className="mt-[-8px] text-[15px] xl:text-[22px] font-[Involve] font-medium text-[#555555] text-center">
         Дешевле чем репетитор, лучше чем ChatGPT
       </p>
 
       <div
         ref={scrollContainerRef}
-        className="w-full max-w-[1255px] overflow-x-auto snap-x snap-mandatory flex gap-[40px] px-4 lg:px-0 scrollbar-hidden"
+        className="w-full max-w-[1255px] overflow-x-auto snap-x snap-mandatory flex gap-[10px] xl:gap-[40px] px-4 lg:px-0 scrollbar-hidden"
         style={{ overflowY: "hidden" }}
       >
         {plans.map((plan, idx) => (
@@ -106,35 +106,35 @@ const PricingCards = () => {
           >
             <div className="text-center mb-4">
               <div className="min-h-[100px] flex flex-col justify-start items-center">
-                <h3 className="text-[28px] font-[600] leading-[36px] font-involve">
+                <h3 className="text-[28px] font-[600] leading-[36px] font-[Involve]">
                   {plan.title}
                 </h3>
-                <p className="text-[15px] text-[#555555] font-manrope mt-[12px]">
+                <p className="text-[15px] text-[#555555] font-[Manrope] mt-[12px]">
                   {plan.description}
                 </p>
               </div>
 
               <div className="flex items-end justify-center gap-[4px] mt-[1px]">
-                <span className="text-[30px] font-involve text-[#555555] font-medium relative -top-[11px]">
+                <span className="text-[30px] font-[Involve] text-[#555555] font-medium relative -top-[11px]">
                   {plan.priceSymbol}
                 </span>
-                <span className="text-[48px] font-involve font-medium leading-[56px]">
+                <span className="text-[48px] font-[Involve] font-medium leading-[56px]">
                   {plan.price}
                 </span>
-                <span className="text-[20px] font-involve font-[500] text-[#555] mb-[4px]">
+                <span className="text-[20px] font-[Involve] font-[500] text-[#555] mb-[4px]">
                   {plan.period}
                 </span>
               </div>
             </div>
 
-            <ul className="flex-grow text-[15px] font-manrope text-[#555555] leading-[26px] list-disc pl-[15px] text-left mb-[24px]">
+            <ul className="flex-grow text-[15px] font-[Manrope] text-[#555555] leading-[26px] list-disc pl-[15px] text-left mb-[24px]">
               {plan.features.map((feature, i) => (
                 <li key={i}>{feature}</li>
               ))}
             </ul>
 
             <button
-              className={`w-full h-[56px] rounded-full text-white font-involve text-[15px] font-medium uppercase tracking-wide transition ${plan.buttonColor}`}
+              className={`w-full h-[56px] cursor-pointer rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition ${plan.buttonColor}`}
             >
               Оформить подписку
             </button>

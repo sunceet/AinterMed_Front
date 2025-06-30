@@ -44,8 +44,8 @@ const AiBlock = () => (
             <a
               href="https://aintermed.com/ai"
               target="_blank"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-[#437CFF] to-[#65b5ff]
-                         text-white font-medium tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
+              className="inline-block font-[Involve] text-[16px]  font-medium px-8 py-4 bg-gradient-to-r from-[#437CFF] to-[#65b5ff]
+                         text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
             >
               Перейти в&nbsp;ИИ
             </a>
@@ -65,8 +65,8 @@ const AiBlock = () => (
           <a
             href="https://aintermed.com/ai"
             target="_blank"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-[#437CFF] to-[#65b5ff]
-                       text-white font-medium tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
+            className="inline-block font-[Involve] text-[14px] font-medium px-8 py-4 bg-gradient-to-r from-[#437CFF] to-[#65b5ff]
+                       text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
           >
             Перейти в&nbsp;ИИ
           </a>
@@ -77,7 +77,7 @@ const AiBlock = () => (
     <div
       className="w-full max-w-[1255px]
                  rounded-[32px] bg-gradient-to-r from-[#D6EAFF] to-[#EEFBFF] text-black
-                 px-4 py-10
+                 px-4 py-8
                  sm:px-7  sm:py-12
                  md:px-9  md:py-14
                  lg:px-12 lg:py-16
@@ -88,7 +88,7 @@ const AiBlock = () => (
                  lg:min-h-[420px]
                  xl:min-h-[440px]"
     >
-      <div className="flex flex-col xl:flex-row-reverse items-center justify-between gap-8">
+      <div className="flex flex-col xl:flex-row-reverse items-center justify-between gap-4">
         <div className="text-center xl:text-right max-w-[550px]">
           <h2
             className="font-[Involve] font-semibold leading-[1.1]
@@ -115,8 +115,8 @@ const AiBlock = () => (
             <a
               href="https://aintermed.com/ai"
               target="_blank"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-[#65b5ff] to-[#437CFF]
-                         text-white font-medium tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
+              className="inline-block px-8 py-4 font-[Involve] text-[16px] font-medium bg-gradient-to-r from-[#65b5ff] to-[#437CFF]
+                         text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
             >
               Перейти в&nbsp;базу
             </a>
@@ -132,12 +132,12 @@ const AiBlock = () => (
           />
         </div>
 
-        <div className="mt-6 xl:hidden">
+        <div className=" xl:hidden">
           <a
             href="https://aintermed.com/ai"
             target="_blank"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-[#65b5ff] to-[#437CFF]
-                       text-white font-medium tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
+            className="inline-block font-[Involve] text-[14px] font-medium px-8 py-4 bg-gradient-to-r from-[#65b5ff] to-[#437CFF]
+                       text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
           >
             Перейти в&nbsp;базу
           </a>

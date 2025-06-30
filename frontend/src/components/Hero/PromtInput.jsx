@@ -14,23 +14,23 @@ const PromptInput = () => {
   };
 
   return (
-    <GradientBorderBox className="w-[600px] h-[120px] px-4 py-4">
+    <GradientBorderBox className="w-full max-w-[600px] h-[120px] px-4 py-4 xl:h-[120px] xl:px-4 sm:py-4 flex flex-col justify-between">
       <input
         placeholder="Спросите что-нибудь..."
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={handleEnter}
         className="pt-[6px] pl-3 bg-transparent text-gray-700 placeholder-gray-500
-                   focus:outline-none text-[18px] leading-[22px] w-full"
+                   focus:outline-none text-[16px] sm:text-[18px] leading-[22px] w-full"
       />
 
-      <div className="flex items-end justify-between mt-2  pb-3">
-        <div className="flex gap-2">
+      <div className="flex flex-wrap xl:flex-nowrap items-end justify-between mt-2 gap-2 xl:gap-50">
+        <div className="flex gap-2 flex-wrap">
           <a
             href="https://aintermed.com/ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center pl-4 px-5 py-2  pt-2 bg-white rounded-full
+            className="flex items-center pl-4 px-5 py-2 bg-white rounded-full
                        text-sm font-medium text-gray-800 hover:bg-gray-100"
           >
             <span className="text-black">AInterMed&nbsp;</span>
@@ -47,7 +47,7 @@ const PromptInput = () => {
             <img
               src="/assets/svg/fi-rr-globe.svg"
               alt="Globe"
-              className="w-6 h-6"
+              className="w-5 h-5 xl:w-6 xl:h-6"
             />
             <span>Поиск</span>
           </a>
@@ -59,7 +59,7 @@ const PromptInput = () => {
           <img
             src="/assets/svg/bigarrow.svg"
             alt="Arrow"
-            className="w-12 h-12"
+            className="w-10 h-10 xl:w-12 x;:h-12"
           />
         </IconButton>
       </div>
