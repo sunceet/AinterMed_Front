@@ -81,8 +81,8 @@ export default function AuthModal({ onClose, mode = "register" }) {
             </h2>
 
             {!isLogin && (
-              <div className="mb-4">
-                <label className="block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
+              <div className="mb-1">
+                <label className="mb-[-10px] block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
                   Имя
                 </label>
                 <input
@@ -96,7 +96,7 @@ export default function AuthModal({ onClose, mode = "register" }) {
             )}
 
             <div className="mb-1">
-              <label className="block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
+              <label className="mb-[-10px] block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
                 Email
               </label>
               <input
@@ -109,7 +109,7 @@ export default function AuthModal({ onClose, mode = "register" }) {
             </div>
 
             <div className="mb-6">
-              <label className="block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
+              <label className="mb-[-10px] block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
                 Пароль
               </label>
               <div className="relative">
@@ -136,20 +136,21 @@ export default function AuthModal({ onClose, mode = "register" }) {
             </div>
 
             {!isLogin && (
-              <div className="flex items-center mb-5 gap-2 xl:gap-3 xl:mb-6">
+              <div className="flex items-center mb-5 gap-3">
                 <div
-                  className="w-[41.98px] h-[28px] xl:w-[48px] xl:h-[48px] rounded-full border border-[#BABABA] flex items-center justify-center cursor-pointer"
+                  className="w-[36px] h-[36px] min-w-[36px] min-h-[36px] rounded-full border border-[#BABABA] flex items-center justify-center cursor-pointer"
                   onClick={() => setAgreed(!agreed)}
                 >
                   {agreed && (
                     <img
                       src="/assets/svg/checkbox.svg"
                       alt="Чекбокс"
-                      className="select-none w-[38px] h-[38px]"
+                      className="w-[24px] h-[24px] select-none"
                     />
                   )}
                 </div>
-                <p className=" text-[10px] xl:text-[16px] text-[#5B5B5B] font-[Manrope] leading-tight max-w-[400px]">
+
+                <p className="text-[14px] text-[#5B5B5B] font-[Manrope] leading-tight max-w-[400px]">
                   Согласен с действующей{" "}
                   <a
                     href="https://aintermed.com/legal/privacy"
@@ -172,7 +173,7 @@ export default function AuthModal({ onClose, mode = "register" }) {
 
             <button
               disabled={!isFormValid()}
-              className={`w-full max-w-[351px] h-[50px] sm:h-[58px] md:h-[64px] mx-auto rounded-[100px] font-[Involve] text-[13px] xl:text-[16px] md:text-[18px] tracking-[0.02em] uppercase flex items-center justify-center transition ${
+              className={`mt-10 w-full max-w-[351px] h-[50px] sm:h-[58px] md:h-[64px] mx-auto rounded-[100px] font-[Involve] text-[13px] xl:text-[16px] md:text-[18px] tracking-[0.02em] uppercase flex items-center justify-center transition ${
                 !isFormValid()
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                   : "bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white cursor-pointer"

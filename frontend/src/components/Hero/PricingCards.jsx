@@ -52,19 +52,18 @@ const PricingCards = () => {
       period: "/ месяц",
       buttonColor: "bg-gradient-to-r from-[#0066FF] to-[#009DFF]",
       features: [
+        "24/7 техническая поддержка",
         "Расширенный доступ к модели General",
-        "Без ограничений по числу запросов",
         "История запросов и повтор запросов",
         "Web-поиск: до 5 запросов в неделю",
         "Улучшенные ответы с пояснениями",
-        "Ранний доступ к новым функциям",
         "Приоритет в обработке",
       ],
     },
     {
       title: "Премиум",
       description:
-        "Всё, что есть — без ограничений. Для тех, кто ищет максимум от интеллектуальной поддержки",
+        "Всё без ограничений. Для тех, кто ищет максимум от интеллектуальной поддержки",
       priceSymbol: "₽",
       price: "899",
       period: "/ месяц",
@@ -84,13 +83,13 @@ const PricingCards = () => {
       id="tariffs"
       className="scroll-mt-[70px] w-full py-8 flex flex-col items-center gap-[20px]"
     >
-      <h2 className="text-[28px] xl:text-[40px] font-[Involve] font-semibold text-black text-center">
+      <h2 className="pt-4 text-[28px] xl:text-[40px] font-[Involve] font-semibold text-black text-center">
         Выбери свой{" "}
         <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
           тариф
         </span>
       </h2>
-      <p className="mt-[-8px] text-[15px] xl:text-[22px] font-[Involve] font-medium text-[#555555] text-center">
+      <p className="mt-[-8px] mb-[12px] text-[15px] xl:text-[22px] font-[Involve] font-medium text-[#555555] text-center">
         Дешевле чем репетитор, лучше чем ChatGPT
       </p>
 

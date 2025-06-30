@@ -44,17 +44,16 @@ const AboutUsBlock = () => {
             </h2>
 
             <p className="text-white font-[Manrope] font-normal text-left tracking-wide text-[18px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[24px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
-              Наша миссия — вырастить новое поколение уверенных в себе врачей,
-              вооружённых актуальными знаниями и готовых к реальной практике.
-              Потому что хороший врач — это не тот, кто много знает, а тот, кто
-              умеет правильно применять свои знания.
+              Сформировать сообщество врачей будущего - тex, кто использует
+              современные технологии, чтобы быть компетентными и готовыми к
+              реальной работе.
             </p>
 
             {/* Кнопка на мобильных */}
             <div className="mt-6 xl:hidden flex justify-center sm:justify-start">
               <Link href="/about">
                 <button
-                  className="inline-block px-15 py-3 backdrop-blur-sm bg-[#FFFFFF33] text-white                 
+                  className="inline-block px-15 py-3 backdrop-blur-sm bg-[#00000033] text-white                 
                   font-[Involve]  font-normal tracking-wide rounded-full uppercase transition"
                 >
                   О&nbsp;нас
@@ -68,7 +67,7 @@ const AboutUsBlock = () => {
                 <button
                   className="inline-block rounded-full px-18 py-5 backdrop-blur-sm bg-[#FFFFFF33] 
                     text-white font-[Involve] font-medium leading-[16px] 
-                    tracking-[0.02em] cursor-pointer  uppercase text-center align-middle"
+                    tracking-[0.02em] cursor-pointer  uppercase text-center align-middle transition-transform duration-100 hover:scale-105"
                 >
                   О&nbsp;нас
                 </button>
@@ -107,13 +106,14 @@ const AboutUsBlock = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between w-full">
           <div className="text-left xl:text-right max-w-[650px] ml-auto">
             <h2 className="text-white font-[involve] py-15 xl:py-1 text-left xl:text-right font-semibold leading-[1.1] text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] pb-3">
-              Нам доверяют 3&nbsp;200&nbsp;врачей
+              Нам доверяют 3&nbsp;200&nbsp;пользователей
             </h2>
 
             <p className="text-white font-[Manrope] font-normal text-left xl:text-right tracking-wide text-[18px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[24px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
-              Разработано медиками для медиков: Наш продукт создан медицинскими
-              и IT-специалистами, что гарантирует его соответствие высоким
-              стандартам медицинской практики и реальным потребностям медиков
+              Команда AInterMed – это сообщество врачей, которые сами прошли
+              сложный путь обучения в медицинских университетах и знают его
+              изнутри. Продукт разработан врачами и IT-специалистами с учётом
+              реальных нужд и стандартов медицинской практики.
             </p>
           </div>
         </div>

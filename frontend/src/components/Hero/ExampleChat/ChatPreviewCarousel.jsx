@@ -166,7 +166,7 @@ const ChatPreviewCarousel = () => {
 
       <div className="w-[187px] xl:w-full flex justify-center mb-6 mt-[-20px]">
         <button
-          className="bg-gradient-to-r cursor-pointer from-[#437CFF] to-[#65EDFF] font-[Involve] text-white leading-[16px] text-[12px] xl:text-[16px] font-medium tracking-[0.02em] uppercase rounded-full w-[187px] h-[44px] xl:w-[282px] xl:h-[64px] hover:brightness-110 transition z-[2]"
+          className="bg-gradient-to-r cursor-pointer from-[#437CFF] to-[#65EDFF] font-[Involve] text-white leading-[16px] text-[12px] xl:text-[16px] font-medium tracking-[0.02em] uppercase rounded-full w-[187px] h-[44px] xl:w-[282px] xl:h-[64px] hover:brightness-110 transition z-[2] duration-100 hover:scale-105"
           onClick={() => window.open("https://aintermed.com/ai", "_blank")}
         >
           Войти и попробовать
@@ -186,13 +186,13 @@ const CardContent = ({ chat, position = 0 }) => (
           className="w-3.5 h-3.5 object-contain"
         />
       </div>
-      <div className="text-[12px] leading-tight font-[Manrope] text-gray-800 text-left overflow-hidden">
+      <div className="text-[12px] xl:text-[14px] leading-tight xl:leading-normal font-[Manrope] text-gray-800 text-left overflow-hidden">
         {chat.assistant}
       </div>
     </div>
 
     <div className="w-full mt-4 sm:mt-2 px-2 py-2 border border-gray-200 rounded-[20px] bg-white flex flex-col justify-between text-left min-h-[88px] relative group">
-      <div className="text-[12px] text-[#555555] font-[Manrope] leading-tight mb-2 sm:mb-2 pl-2">
+      <div className="xl:pt-2 text-[12px] xl:text-[13px] text-[#000000] font-[Manrope] leading-tight mb-2 sm:mb-2 pl-2">
         {chat.user}
       </div>
 

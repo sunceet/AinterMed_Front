@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-[#C6C6C6]">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-[#C6C6C6]">
         <div className="mx-auto flex h-18 items-center justify-center max-w-screen-xl px-4 sm:px-4 lg:px-8 font-[Manrope]">
           <div className="flex w-full max-w-[1255px] items-center justify-between gap-6 relative xl:left-[20px]">
             <div className="flex items-center gap-6 relative xl:-left-[40px]">

@@ -24,7 +24,7 @@ const PromptInput = () => {
                    focus:outline-none text-[16px] sm:text-[18px] leading-[22px] w-full"
       />
 
-      <div className="flex flex-wrap xl:flex-nowrap items-end justify-between mt-2 gap-2 xl:gap-50">
+      <div className="flex flex-wrap xl:flex-nowrap items-end justify-between mt-2 gap-12 xl:gap-50">
         <div className="flex gap-2 flex-wrap">
           <a
             href="https://aintermed.com/ai"
@@ -59,7 +59,7 @@ const PromptInput = () => {
           <img
             src="/assets/svg/bigarrow.svg"
             alt="Arrow"
-            className="w-10 h-10 xl:w-12 x;:h-12"
+            className="w-10 h-10 xl:w-12 xl:h-12"
           />
         </IconButton>
       </div>

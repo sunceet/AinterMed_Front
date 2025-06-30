@@ -45,7 +45,7 @@ const Main = () => (
       <AbouteUsBlock />
       <ReviewsGrid />
 
-      <div className="w-full mt-20 bg-[#F2F2F2]">
+      <div className="w-full rounded-t-4xl mt-20 bg-[#F2F2F2]">
         <PricingCards />
         <FaqBlock />
       </div>

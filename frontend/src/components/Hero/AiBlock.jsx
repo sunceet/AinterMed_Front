@@ -30,13 +30,14 @@ const AiBlock = () => (
 
           <p
             className="text-[#555555] font-[Manrope]  tracking-wide
-                        text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px]
-                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-3"
+                        text-[14px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px]
+                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-3 text-left"
           >
-            Персональный клинический ассистент для студента и врача. Анализирует
-            клинические случаи, решает учебные задачи и готовиться к экзаменам.
-            Обучен на миллионах медицинских данных, что позволяет ему предлагать
-            обоснованные решения, основанные на доказательной медицине
+            Персональный клинический ассистент для студентов медицинских
+            специальностей и врачей. Помогает структурировать знания, разбирать
+            клинические случаи, готовиться к экзаменам и аккредитации. Обучен на
+            миллионе проверенных медицинских данных в соответствии с принципами
+            доказательной медицины.
           </p>
 
           {/* Кнопка >1280 */}
@@ -45,7 +46,7 @@ const AiBlock = () => (
               href="https://aintermed.com/ai"
               target="_blank"
               className="inline-block font-[Involve] text-[16px]  font-medium px-8 py-4 bg-gradient-to-r from-[#437CFF] to-[#65b5ff]
-                         text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
+                         text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase hover:brightness-110 z-[2] duration-100 hover:scale-105"
             >
               Перейти в&nbsp;ИИ
             </a>
@@ -100,14 +101,14 @@ const AiBlock = () => (
 
           <p
             className="text-[#555555] font-[Manrope] tracking-wide
-                        text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px]
-                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-3"
+                        text-[14px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px]
+                        leading-[19px] sm:leading-[21px] md:leading-[23px] lg:leading-[25px] xl:leading-[27px] mt-3 xl:text-right  text-left"
           >
             Хранилище структурированной информации для быстрого доступа. База
             знаний содержит статьи про искусственный интеллект и всё для
-            современного медицинского обучения. Все материалы структурированы
-            для удобного и быстрого поиска, позволяя легко находить нужную
-            информацию
+            современного медицинского обучения. Данные упорядочены по темам, что
+            позволяет легко находить нужную информацию и использовать её в учёбе
+            и практике.
           </p>
 
           {/* Кнопка >1280 */}
@@ -116,7 +117,7 @@ const AiBlock = () => (
               href="https://aintermed.com/ai"
               target="_blank"
               className="inline-block px-8 py-4 font-[Involve] text-[16px] font-medium bg-gradient-to-r from-[#65b5ff] to-[#437CFF]
-                         text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
+                         text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase hover:brightness-110 z-[2] duration-100 hover:scale-105"
             >
               Перейти в&nbsp;базу
             </a>
