@@ -104,13 +104,13 @@ const AboutUsBlock = () => {
           className="block sm:hidden absolute top-1/2 left-[36%] -translate-x-[50%] -translate-y-1/2 h-[101%] w-auto object-cover object-center max-w-none pointer-events-none -z-[1]"
         />
 
-        <div className="flex flex-col xl:flex-row items-center justify-between gap-8">
-          <div className="text-left max-w-[550px]">
-            <h2 className="text-white font-[involve] py-15 xl:py-1 text-left font-semibold leading-[1.1] text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] pb-3">
+        <div className="flex flex-col xl:flex-row items-center justify-between w-full">
+          <div className="text-left xl:text-right max-w-[650px] ml-auto">
+            <h2 className="text-white font-[involve] py-15 xl:py-1 text-left xl:text-right font-semibold leading-[1.1] text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] pb-3">
               Нам доверяют 3&nbsp;200&nbsp;врачей
             </h2>
 
-            <p className="text-white font-[Manrope] font-normal text-left tracking-wide text-[18px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[24px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
+            <p className="text-white font-[Manrope] font-normal text-left xl:text-right tracking-wide text-[18px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[24px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
               Разработано медиками для медиков: Наш продукт создан медицинскими
               и IT-специалистами, что гарантирует его соответствие высоким
               стандартам медицинской практики и реальным потребностям медиков

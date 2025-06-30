@@ -115,14 +115,14 @@ const FaqBlock = () => {
               <div
                 ref={(el) => (contentRefs.current[index] = el)}
                 className={`px-4 sm:px-6 overflow-hidden transition-all duration-500 ease-in-out ${
-                  isOpen ? " sm:pb-8" : "pb-0"
+                  isOpen ? " pb-8" : ""
                 }`}
                 style={{
                   maxHeight: "0px",
                   opacity: 0,
                 }}
               >
-                <div className="pt-[-10px] pb-4">
+                <div className="pt-[-10px] pb-1">
                   <p className="text-left text-[12px] sm:text-[14px] md:text-[18px] leading-[20px] sm:leading-[24px] md:leading-[26px] font-normal text-[#555555] font-[Manrope]">
                     {faq.answer}
                   </p>
