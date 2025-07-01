@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function AuthModal({ onClose, mode = "register" }) {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [agreed, setAgreed] = useState(false);
   const [currentMode, setCurrentMode] = useState(mode);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const isLogin = currentMode === "login";
 
-  const title = isLogin ? "ВОЙТИ В АККАУНТ" : "РЕГИСТРАЦИЯ";
+  const isLogin = currentMode === "login";
+  const title = isLogin ? t("auth2.title_login") : t("auth2.title_register");
   const imageSrc = isLogin
     ? "/assets/svg/auth.svg"
     : "/assets/svg/register.svg";
@@ -55,7 +57,6 @@ export default function AuthModal({ onClose, mode = "register" }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="relative flex flex-col md:flex-row bg-white rounded-[32px] shadow-xl w-full max-w-[1260px] h-auto md:h-[800px] animate-fade-in">
-        {/* Левая часть */}
         <div className="hidden md:block w-full md:w-[630px] h-full rounded-l-[32px] overflow-hidden">
           <Image
             src={imageSrc}
@@ -66,13 +67,18 @@ export default function AuthModal({ onClose, mode = "register" }) {
           />
         </div>
 
-        {/* Правая часть */}
         <div className="w-full md:w-[630px] h-full px-4 sm:px-6 md:px-[70px] pb-8 pt-6 flex flex-col relative">
           <button
             onClick={onClose}
-            className="cursor-pointer absolute top-4 right-4 text-3xl font-bold text-black"
+            className="cursor-pointer absolute top-5 right-5 w-4 h-4 sm:w-7 sm:h-7 md:w-5 md:h-5 flex items-center justify-center"
           >
-            ×
+            <Image
+              src="/assets/svg/close.svg"
+              alt="Close"
+              width={24}
+              height={24}
+              className="w-full h-full"
+            />
           </button>
 
           <div className={`${isLogin ? "pt-5 md:pt-40" : "pt-10 md:pt-20"}`}>
@@ -83,34 +89,34 @@ export default function AuthModal({ onClose, mode = "register" }) {
             {!isLogin && (
               <div className="mb-1">
                 <label className="mb-[-10px] block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
-                  Имя
+                  {t("auth2.name")}
                 </label>
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full h-[48px] sm:h-[52px] md:h-[58px] bg-[#F6F6F6] px-4 border border-[#BABABA] rounded-[14px] text-base outline-none"
-                  placeholder="Введите имя"
+                  placeholder={t("auth2.placeholder_name")}
                 />
               </div>
             )}
 
             <div className="mb-1">
               <label className="mb-[-10px] block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
-                Email
+                {t("auth2.email")}
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full h-[48px] sm:h-[52px] md:h-[58px] bg-[#F6F6F6] px-4 border border-[#BABABA] rounded-[14px] text-base outline-none"
-                placeholder="Введите email"
+                placeholder={t("auth2.placeholder_email")}
               />
             </div>
 
             <div className="mb-6">
               <label className="mb-[-10px] block text-[#5B5B5B] text-[16px] xl:text-[18px] font-semibold font-[Manrope] leading-[58px]">
-                Пароль
+                {t("auth2.password")}
               </label>
               <div className="relative">
                 <input
@@ -118,7 +124,7 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full h-[48px] sm:h-[52px] md:h-[58px] px-4 pr-12 bg-[#F6F6F6] border border-[#BABABA] rounded-[14px] text-base outline-none"
-                  placeholder="Введите пароль"
+                  placeholder={t("auth2.placeholder_password")}
                 />
                 <button
                   type="button"
@@ -126,8 +132,12 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   className="absolute right-4 top-1/2 transform -translate-y-1/2"
                 >
                   <Image
-                    src="/assets/svg/hide.svg"
-                    alt="Скрыть/Показать"
+                    src={
+                      showPassword
+                        ? "/assets/svg/eye-open.svg"
+                        : "/assets/svg/eye-close.svg"
+                    }
+                    alt={showPassword ? "Hide password" : "Show password"}
                     width={24}
                     height={24}
                   />
@@ -144,28 +154,28 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   {agreed && (
                     <img
                       src="/assets/svg/checkbox.svg"
-                      alt="Чекбокс"
+                      alt="Checkbox"
                       className="w-[24px] h-[24px] select-none"
                     />
                   )}
                 </div>
 
                 <p className="text-[14px] text-[#5B5B5B] font-[Manrope] leading-tight max-w-[400px]">
-                  Согласен с действующей{" "}
+                  {t("auth2.agree_text")}&nbsp;
                   <a
                     href="https://aintermed.com/legal/privacy"
                     target="_blank"
                     className="text-[#438EFF] underline"
                   >
-                    политикой конфиденциальности
+                    {t("auth2.privacy")}
                   </a>{" "}
-                  и{" "}
+                  {t("auth2.and")}&nbsp;
                   <a
                     href="https://aintermed.com/legal/terms"
                     target="_blank"
                     className="text-[#438EFF] underline"
                   >
-                    пользовательским соглашением
+                    {t("auth2.terms")}
                   </a>
                 </p>
               </div>
@@ -179,16 +189,16 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   : "bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white cursor-pointer"
               }`}
             >
-              {isLogin ? "Войти" : "Зарегистрироваться"}
+              {isLogin ? t("auth2.submit_login") : t("auth2.submit_register")}
             </button>
 
             <p className="text-center mt-4 text-[13px] xl:text-[16px] md:text-[18px] text-[#5B5B5B] font-[Manrope]">
-              {isLogin ? "Нет аккаунта?" : "Уже есть аккаунт?"}{" "}
+              {isLogin ? t("auth2.no_account") : t("auth2.have_account")}{" "}
               <button
                 onClick={() => setCurrentMode(isLogin ? "register" : "login")}
                 className="text-[#438EFF] cursor-pointer select-none outline-none underline"
               >
-                {isLogin ? "Зарегистрироваться" : "Войти"}
+                {isLogin ? t("auth2.register") : t("auth2.login")}
               </button>
             </p>
           </div>

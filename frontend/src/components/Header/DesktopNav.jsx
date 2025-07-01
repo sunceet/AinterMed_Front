@@ -1,41 +1,40 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function DesktopNav() {
+  const { t } = useTranslation();
   const pathname = usePathname();
   const router = useRouter();
   const [isTariffActive, setIsTariffActive] = useState(false);
 
-  // Прокрутка наверх (если на главной — плавный скролл, иначе переход)
   const scrollToTop = () => {
-    if (pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      router.push('/');
+      router.push("/");
     }
   };
 
-  // Прокрутка к секции тарифов (если не на главной — переход с якорем)
   const scrollToTariffs = () => {
-    if (pathname !== '/') {
-      router.push('/#tariffs');
+    if (pathname !== "/") {
+      router.push("/#tariffs");
     } else {
-      const el = document.getElementById('tariffs');
+      const el = document.getElementById("tariffs");
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        el.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
 
-  // При скролле на главной проверяем — активна ли секция "ТАРИФЫ"
   useEffect(() => {
-    if (pathname !== '/') return;
+    if (pathname !== "/") return;
 
     const handleScroll = () => {
-      const section = document.getElementById('tariffs');
+      const section = document.getElementById("tariffs");
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
@@ -46,49 +45,41 @@ export default function DesktopNav() {
       setIsTariffActive(isVisible);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Сразу проверяем
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  // Класс ссылки: активная — голубая, иначе — чёрная
   const getLinkClass = (active) =>
-    `transition ${active ? 'text-[#438EFF]' : 'text-black'}`;
+    `transition ${active ? "text-[#438EFF]" : "text-black"}`;
 
   return (
-    // Контейнер навигации (скрыт на мобилках, виден на xl)
     <nav className="font-[Manrope] font-bold hidden xl:flex gap-6 xl:gap-8 text-[14px]">
-      
-      {/* Кнопка "ГЛАВНОЕ": активна если на главной и не в тарифах */}
       <button
         onClick={scrollToTop}
-        className={`${getLinkClass(pathname === '/' && !isTariffActive)} bg-transparent border-none outline-none cursor-pointer`}
+        className={`${getLinkClass(pathname === "/" && !isTariffActive)} bg-transparent border-none outline-none cursor-pointer`}
       >
-        ГЛАВНОЕ
+        {t("nav.main")}
       </button>
 
-      {/* Якорная ссылка "ИИ ЧАТ" — всегда неактивная */}
       <a href="#chat" className={getLinkClass(false)}>
-        ИИ&nbsp;ЧАТ
+        {t("nav.chat")}
       </a>
 
-      {/* Якорная ссылка "БАЗА ЗНАНИЙ" — всегда неактивная */}
       <a href="#knowledge" className={getLinkClass(false)}>
-        БАЗА&nbsp;ЗНАНИЙ
+        {t("nav.knowledge")}
       </a>
 
-      {/* Ссылка "О НАС" — активна, если мы на /about */}
-      <Link href="/about" className={getLinkClass(pathname === '/about')}>
-        О&nbsp;НАС
+      <Link href="/about" className={getLinkClass(pathname === "/about")}>
+        {t("nav.about")}
       </Link>
 
-      {/* Кнопка "ТАРИФЫ": активна, если в зоне видимости секция tariffs */}
       <button
         onClick={scrollToTariffs}
-        className={`${getLinkClass(pathname === '/' && isTariffActive)} bg-transparent border-none outline-none cursor-pointer`}
+        className={`${getLinkClass(pathname === "/" && isTariffActive)} bg-transparent border-none outline-none cursor-pointer`}
       >
-        ТАРИФЫ
+        {t("nav.tariffs")}
       </button>
     </nav>
   );

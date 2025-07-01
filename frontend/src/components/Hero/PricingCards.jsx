@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const PricingCards = () => {
+  const { t } = useTranslation();
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
@@ -28,53 +30,33 @@ const PricingCards = () => {
 
   const plans = [
     {
-      title: "Бесплатный",
-      description:
-        "Вариант для знакомства с интеллектуальным помощником AInterMed",
-      priceSymbol: "₽",
+      title: t("plans.free.title"),
+      description: t("plans.free.description"),
+      priceSymbol: t("plans.symbol"),
       price: "0",
-      period: "/ месяц",
+      period: t("plans.period"),
       buttonColor: "bg-gradient-to-r from-[#447CFF50] to-[#659DFF50]",
-      features: [
-        "Доступ к основной модели AlnterMed",
-        "Базовые инструменты понимания вопросов",
-        "Ответы без расширенной аналитики",
-        "Нет доступа к Web-поиску",
-        "До 4 запросов в день",
-      ],
+      features: t("plans.free.features", { returnObjects: true }),
     },
     {
-      title: "Продвинутый",
-      description:
-        "Выбор для интенсивной подготовки и глубокого погружения в учебный материал",
-      priceSymbol: "₽",
-      price: "499",
-      period: "/ месяц",
-      buttonColor: "bg-gradient-to-r from-[#0066FF] to-[#009DFF]",
-      features: [
-        "24/7 техническая поддержка",
-        "Расширенный доступ к модели General",
-        "История запросов и повтор запросов",
-        "Web-поиск: до 5 запросов в неделю",
-        "Улучшенные ответы с пояснениями",
-        "Приоритет в обработке",
-      ],
+      title: t("plans.advanced.title"),
+      description: t("plans.advanced.description"),
+      priceSymbol: t("plans.symbol"),
+      price: t("plans.advanced.price"),
+      period: t("plans.period"),
+      buttonColor:
+        "transition-transform duration-100 hover:scale-105 bg-gradient-to-r from-[#0066FF] to-[#009DFF]",
+      features: t("plans.advanced.features", { returnObjects: true }),
     },
     {
-      title: "Премиум",
-      description:
-        "Всё без ограничений. Для тех, кто ищет максимум от интеллектуальной поддержки",
-      priceSymbol: "₽",
-      price: "899",
-      period: "/ месяц",
-      buttonColor: "bg-gradient-to-r from-[#00A6FF] to-[#00F2FF]",
-      features: [
-        "Доступ ко всем моделям AinterMed (General + Pro)",
-        "Создан для студентов, врачей и исследователей",
-        "Полный доступ к интеллектуальной поддержке",
-        "Всё из продвинутой версии AinterMed",
-        "Расширенная аналитика и разбор ответов",
-      ],
+      title: t("plans.premium.title"),
+      description: t("plans.premium.description"),
+      priceSymbol: t("plans.symbol"),
+      price: t("plans.premium.price"),
+      period: t("plans.period"),
+      buttonColor:
+        "transition-transform duration-100 hover:scale-105 bg-gradient-to-r from-[#00A6FF] to-[#00F2FF]",
+      features: t("plans.premium.features", { returnObjects: true }),
     },
   ];
 
@@ -84,13 +66,13 @@ const PricingCards = () => {
       className="scroll-mt-[70px] w-full py-8 flex flex-col items-center gap-[20px]"
     >
       <h2 className="pt-4 text-[28px] xl:text-[40px] font-[Involve] font-semibold text-black text-center">
-        Выбери свой{" "}
+        {t("pricing.heading1")}{" "}
         <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
-          тариф
+          {t("pricing.heading2")}{" "}
         </span>
       </h2>
       <p className="mt-[-8px] mb-[12px] text-[15px] xl:text-[22px] font-[Involve] font-medium text-[#555555] text-center">
-        Дешевле чем репетитор, лучше чем ChatGPT
+        {t("pricing.subheading")}{" "}
       </p>
 
       <div
@@ -135,7 +117,7 @@ const PricingCards = () => {
             <button
               className={`w-full h-[56px] cursor-pointer rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition ${plan.buttonColor}`}
             >
-              Оформить подписку
+              {t("pricing.button")}{" "}
             </button>
           </div>
         ))}

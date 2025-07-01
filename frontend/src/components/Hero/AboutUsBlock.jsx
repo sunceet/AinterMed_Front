@@ -1,5 +1,5 @@
 "use client";
-
+import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,6 +9,8 @@ const BLOCK_P =
   "px-4 py-10 sm:px-7 sm:py-12 md:px-9 md:py-14 lg:px-12 lg:py-16 xl:px-[72px] xl:py-[72px]";
 
 const AboutUsBlock = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="mt-15 flex flex-col items-center gap-6 px-4 sm:px-6">
       {/* Первый блок */}
@@ -40,13 +42,11 @@ const AboutUsBlock = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between gap-8">
           <div className="text-left max-w-[550px]">
             <h2 className="text-white font-[involve] py-15 xl:py-1 text-left font-semibold leading-[1.1] text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] pb-3">
-              Наша миссия
+              {t("aboutUs.title1")}
             </h2>
 
             <p className="text-white font-[Manrope] font-normal text-left tracking-wide text-[18px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[24px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
-              Сформировать сообщество врачей будущего - тex, кто использует
-              современные технологии, чтобы быть компетентными и готовыми к
-              реальной работе.
+              {t("aboutUs.info1")}
             </p>
 
             {/* Кнопка на мобильных */}
@@ -56,7 +56,7 @@ const AboutUsBlock = () => {
                   className="inline-block px-15 py-3 backdrop-blur-sm bg-[#00000033] text-white                 
                   font-[Involve]  font-normal tracking-wide rounded-full uppercase transition"
                 >
-                  О&nbsp;нас
+                  {t("aboutUs.button")}
                 </button>
               </Link>
             </div>
@@ -69,7 +69,7 @@ const AboutUsBlock = () => {
                     text-white font-[Involve] font-medium leading-[16px] 
                     tracking-[0.02em] cursor-pointer  uppercase text-center align-middle transition-transform duration-100 hover:scale-105"
                 >
-                  О&nbsp;нас
+                  {t("aboutUs.button")}
                 </button>
               </Link>
             </div>
@@ -106,14 +106,11 @@ const AboutUsBlock = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between w-full">
           <div className="text-left xl:text-right max-w-[650px] ml-auto">
             <h2 className="text-white font-[involve] py-15 xl:py-1 text-left xl:text-right font-semibold leading-[1.1] text-[32px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] pb-3">
-              Нам доверяют 3&nbsp;200&nbsp;пользователей
+              {t("aboutUs.title2")}
             </h2>
 
             <p className="text-white font-[Manrope] font-normal text-left xl:text-right tracking-wide text-[18px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[24px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] mt-2">
-              Команда AInterMed – это сообщество врачей, которые сами прошли
-              сложный путь обучения в медицинских университетах и знают его
-              изнутри. Продукт разработан врачами и IT-специалистами с учётом
-              реальных нужд и стандартов медицинской практики.
+              {t("aboutUs.info2")}
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import "@/i18n.client"; // правильно
 import dynamic from "next/dynamic";
 import { useState, useRef } from "react";
 import DesktopNav from "./DesktopNav";

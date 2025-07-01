@@ -3,8 +3,10 @@
 import { useState } from "react";
 import IconButton from "../../components/ui/IconButton";
 import GradientBorderBox from "../../components/ui/GradientBorderBox";
+import { useTranslation } from "react-i18next";
 
 const PromptInput = () => {
+  const { t } = useTranslation();
   const [message, setMessage] = useState("");
 
   const handleEnter = (e) => {
@@ -16,7 +18,7 @@ const PromptInput = () => {
   return (
     <GradientBorderBox className="w-full max-w-[600px] h-[120px] px-4 py-4 xl:h-[120px] xl:px-4 sm:py-4 flex flex-col justify-between">
       <input
-        placeholder="Спросите что-нибудь..."
+        placeholder={t("promt.placeholder")}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={handleEnter}
@@ -49,7 +51,7 @@ const PromptInput = () => {
               alt="Globe"
               className="w-5 h-5 xl:w-6 xl:h-6"
             />
-            <span>Поиск</span>
+            <span> {t("promt.search")}</span>
           </a>
         </div>
 

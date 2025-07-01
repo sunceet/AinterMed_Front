@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import reviews from "./reviews";
+import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const StarRating = ({ rating }) => (
   <div className="flex gap-[1px] w-[113.71px] h-[20px]">
@@ -14,26 +16,38 @@ const StarRating = ({ rating }) => (
   </div>
 );
 
-const ReviewCard = ({ review }) => (
-  <div className="w-full max-w-[350px] h-[380px] rounded-[24px] border border-white p-5 bg-white flex-shrink-0">
-    <div className="flex items-start gap-4">
-      <div className="w-12 h-12 rounded-full border " />
-      <div>
-        <h4 className="text-[18px] font-semibold font-[Involve] text-gray-900 leading-[24px]">
-          {review.name}
-        </h4>
-        <StarRating rating={review.rating} />
+const ReviewCard = ({ review }) => {
+  const { t } = useTranslation();
+
+  return (
+    <div className="w-full max-w-[350px] h-[500px] rounded-[24px] border border-white p-5 bg-white flex-shrink-0 flex flex-col gap-2">
+      <div className="flex items-start gap-4">
+        <div className="w-12 h-12 rounded-full overflow-hidden">
+          <Image
+            src="/assets/svg/anonym.svg"
+            alt="Avatar"
+            width={48}
+            height={48}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <h4 className="text-[18px] font-semibold font-[Involve] text-gray-900 leading-[24px]">
+            {t(review.nameKey)}
+          </h4>
+          <StarRating rating={review.rating} />
+        </div>
+      </div>
+      <div className="text-[14px] font-[Manrope] text-gray-500 text-right -mt-3 mb-2">
+        {t(review.dateKey)}
+      </div>
+      <hr className="border-t border-gray-200" />
+      <div className="text-[16px] font-[Manrope] text-left text-gray-700 leading-[120%]">
+        {t(review.textKey)}
       </div>
     </div>
-    <div className="text-[14px] font-[Manrope] text-gray-500 text-right -mt-3 mb-4">
-      {review.date}
-    </div>
-    <hr className="border-t border-gray-200 mb-4" />
-    <div className="text-[16px] font-[Manrope] text-left text-gray-700 leading-[110%] max-w-[300px] h-[225px] overflow-hidden">
-      {review.text}
-    </div>
-  </div>
-);
+  );
+};
 
 const getPaginationButtons = (totalPages, currentPage) => {
   const pages = [];
@@ -135,16 +149,17 @@ const ReviewsGrid = () => {
 
   const startIndex = (currentPage - 1) * reviewsPerPage;
   const currentReviews = reviews.slice(startIndex, startIndex + reviewsPerPage);
+  const { t } = useTranslation();
 
   return (
     <div className="relative flex flex-col items-center  md:px-1 mt-[100px] max-w-screen-xl mx-auto">
-      <div className="absolute rounded-[32px] bg-[#F5F6F6] -z-10 w-full xl:w-[1255px] h-[670px] md:h-[620px] left-1/2 -translate-x-1/2 top-0" />
+      <div className="absolute rounded-[32px] bg-[#F5F6F6] -z-10 w-full xl:w-[1255px] min-h-[770px] md:min-h-[720px] left-1/2 -translate-x-1/2 top-0" />
 
       <h2 className="text-[32px] md:text-[40px] leading-[36px] font-[Involve] font-semibold text-gray-900 text-center max-w-[737px] mx-auto mt-[40px] mb-10 z-10">
         <span className="bg-gradient-to-r from-[#437CFF] to-[#437CFF] text-transparent bg-clip-text">
-          Отзывы
+          {t("reviewsTitle.gradient")}
         </span>{" "}
-        наших пользователей
+        {t("reviewsTitle.rest")}
       </h2>
 
       {/* Desktop */}

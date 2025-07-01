@@ -1,23 +1,16 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
 import VideoBg from "./VideoDesktop";
 import Heading from "./Heading";
 import SubHeading from "./SubHeading";
 import CtaButton from "./ButtonTry";
 import PromptInput from "./PromtInput";
-
-// Lazy-load
-const AiBlock = dynamic(() => import("./AiBlock"), { ssr: false });
-const AbouteUsBlock = dynamic(() => import("./AboutUsBlock"), { ssr: false });
-const FaqBlock = dynamic(() => import("./FaqBlock"), { ssr: false });
-const ReviewsGrid = dynamic(() => import("./ReviewsGrid"), { ssr: false });
-const PricingCards = dynamic(() => import("./PricingCards"), { ssr: false });
-const ChatPreviewCarousel = dynamic(
-  () => import("./ExampleChat/ChatPreviewCarousel"),
-  { ssr: false }
-);
+import AiBlock from "./AiBlock";
+import AboutUsBlock from "./AboutUsBlock";
+import FaqBlock from "./FaqBlock";
+import ReviewsGrid from "./ReviewsGrid";
+import PricingCards from "./PricingCards";
+import ChatPreviewCarousel from "./ExampleChat/ChatPreviewCarousel";
 
 const Main = () => (
   <section className="relative w-full bg-white text-center overflow-hidden">
@@ -25,7 +18,6 @@ const Main = () => (
 
     <div className="relative z-10 pt-[40px]">
       <Heading />
-
       <SubHeading />
 
       <div className="mt-5 mb-12 flex justify-center">
@@ -41,8 +33,7 @@ const Main = () => (
       </div>
 
       <ChatPreviewCarousel />
-
-      <AbouteUsBlock />
+      <AboutUsBlock />
       <ReviewsGrid />
 
       <div className="w-full rounded-t-4xl mt-20 bg-[#F2F2F2]">

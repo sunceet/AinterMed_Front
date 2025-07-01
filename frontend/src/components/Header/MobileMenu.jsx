@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function MobileMenu({
   menuOpen,
@@ -13,9 +14,9 @@ export default function MobileMenu({
 }) {
   const pathname = usePathname();
   const router = useRouter();
+  const { t, i18n } = useTranslation();
   const [isTariffActive, setIsTariffActive] = useState(false);
 
-  // Прокрутка вверх (если на главной — плавно, иначе переход)
   const handleMainClick = () => {
     setMenuOpen(false);
     if (pathname === "/") {
@@ -25,7 +26,6 @@ export default function MobileMenu({
     }
   };
 
-  // Прокрутка к тарифам
   const handleTariffClick = () => {
     setMenuOpen(false);
     if (pathname !== "/") {
@@ -38,7 +38,6 @@ export default function MobileMenu({
     }
   };
 
-  // Отслеживаем — активны ли тарифы
   useEffect(() => {
     if (pathname !== "/") return;
 
@@ -60,9 +59,15 @@ export default function MobileMenu({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  // Класс активной ссылки
   const getLinkClass = (active) =>
     `transition ${active ? "text-[#438EFF]" : "text-black"}`;
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setMenuOpen(false);
+  };
+
+  const currentLang = i18n.language;
 
   return (
     <div
@@ -72,55 +77,58 @@ export default function MobileMenu({
         ${menuOpen ? "max-h-[999px]" : "max-h-0"}`}
     >
       <nav className="flex flex-col items-center gap-4 bg-white/80 backdrop-blur-xl border-b border-[#C6C6C6] pb-6 pt-4 text-base font-medium">
-        {/* ГЛАВНОЕ */}
         <button
           onClick={handleMainClick}
           className={getLinkClass(pathname === "/" && !isTariffActive)}
         >
-          ГЛАВНОЕ
+          {t("nav.main")}
         </button>
 
-        {/* ИИ ЧАТ */}
         <a
           href="#chat"
           onClick={() => setMenuOpen(false)}
           className={getLinkClass(false)}
         >
-          ИИ&nbsp;ЧАТ
+          {t("nav.chat")}
         </a>
 
-        {/* БАЗА ЗНАНИЙ */}
         <a
           href="#knowledge"
           onClick={() => setMenuOpen(false)}
           className={getLinkClass(false)}
         >
-          БАЗА&nbsp;ЗНАНИЙ
+          {t("nav.knowledge")}
         </a>
 
-        {/* О НАС */}
         <Link
           href="/about"
           onClick={() => setMenuOpen(false)}
           className={getLinkClass(pathname === "/about")}
         >
-          О&nbsp;НАС
+          {t("nav.about")}
         </Link>
 
-        {/* ТАРИФЫ */}
         <button
           onClick={handleTariffClick}
           className={getLinkClass(pathname === "/" && isTariffActive)}
         >
-          ТАРИФЫ
+          {t("nav.tariffs")}
         </button>
 
-        {/* Переключение языков */}
+        {/* Языки */}
         <div className="flex gap-4">
-          <button className="text-[#438EFF]" onClick={() => setMenuOpen(false)}>
+          <button
+            className={`${currentLang === "ru" ? "text-[#438EFF]" : ""}`}
+            onClick={() => changeLanguage("ru")}
+          >
             RU
           </button>
-          <button onClick={() => setMenuOpen(false)}>ENG</button>
+          <button
+            className={`${currentLang === "en" ? "text-[#438EFF]" : ""}`}
+            onClick={() => changeLanguage("en")}
+          >
+            ENG
+          </button>
         </div>
 
         {/* Кнопки входа и регистрации */}
@@ -132,7 +140,7 @@ export default function MobileMenu({
               setShowAuthModal({ visible: true, mode: "login" });
             }}
           >
-            ВОЙТИ
+            {t("auth.login")}
           </button>
           <button
             className={`${btn} w-full border border-black text-white bg-black font-medium`}
@@ -141,7 +149,7 @@ export default function MobileMenu({
               setShowAuthModal({ visible: true, mode: "register" });
             }}
           >
-            РЕГИСТРАЦИЯ
+            {t("auth.register")}
           </button>
         </div>
       </nav>
