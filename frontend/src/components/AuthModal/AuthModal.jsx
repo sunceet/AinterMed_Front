@@ -94,14 +94,22 @@ export default function AuthModal({ onClose, mode = "register" }) {
           <button
             onClick={onClose}
             className="cursor-pointer absolute top-5 right-5 w-4 h-4 sm:w-7 sm:h-7 md:w-5 md:h-5 flex items-center justify-center"
+            aria-label="Закрыть"
           >
-            <Image
-              src="/assets/svg/close.svg"
-              alt="Close"
-              width={24}
-              height={24}
-              className="w-full h-full"
-            />
+            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+              <path
+                d="M6 6L18 18"
+                stroke="#2D2D2D"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M6 18L18 6"
+                stroke="#2D2D2D"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
           </button>
 
           <div className={`${isLogin ? "pt-5 md:pt-40" : "pt-10 md:pt-20"}`}>
