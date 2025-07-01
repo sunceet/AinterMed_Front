@@ -79,15 +79,27 @@ const ReviewsGrid = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const scrollContainerRef = useRef(null);
   const isManualScroll = useRef(false);
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" ? window.innerWidth < 768 : false
-  );
+  const [isMobile, setIsMobile] = useState(false);
+
+  // ширина карточки для отступа
+  const CARD_WIDTH = 300; // px
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  // Добавляем padding-left для центрирования первого отзыва на мобилке
+  useEffect(() => {
+    if (isMobile && scrollContainerRef.current) {
+      // gap-3 = 12px gap между карточками
+      scrollContainerRef.current.style.paddingLeft = `${CARD_WIDTH / 2 + 12}px`;
+    } else if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.paddingLeft = "";
+    }
+  }, [isMobile]);
 
   const reviewsPerPage = isMobile ? 1 : 3;
   const totalPages = Math.ceil(reviews.length / reviewsPerPage);
@@ -100,7 +112,7 @@ const ReviewsGrid = () => {
   const scrollToPage = (page) => {
     const container = scrollContainerRef.current;
     if (!container) return;
-    const cardWidth = container.children[0]?.offsetWidth || 350;
+    const cardWidth = container.children[0]?.offsetWidth || CARD_WIDTH;
     container.scrollTo({
       left: (page - 1) * (cardWidth + 16),
       behavior: "smooth",
@@ -128,7 +140,7 @@ const ReviewsGrid = () => {
     if (!isManualScroll.current) return;
 
     const scrollLeft = container.scrollLeft;
-    const cardWidth = container.children[0]?.offsetWidth || 350;
+    const cardWidth = container.children[0]?.offsetWidth || CARD_WIDTH;
     const newPage =
       Math.round(scrollLeft / ((cardWidth + 16) * reviewsPerPage)) + 1;
 
@@ -152,7 +164,7 @@ const ReviewsGrid = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative flex flex-col items-center  md:px-1 mt-[100px] max-w-screen-xl mx-auto">
+    <div className="relative flex flex-col items-center md:px-1 mt-[100px] max-w-screen-xl mx-auto">
       <div className="absolute rounded-[32px] bg-[#F5F6F6] -z-10 w-full xl:w-[1255px] min-h-[770px] md:min-h-[720px] left-1/2 -translate-x-1/2 top-0" />
 
       <h2 className="text-[32px] md:text-[40px] leading-[36px] font-[Involve] font-semibold text-gray-900 text-center max-w-[737px] mx-auto mt-[40px] mb-10 z-10">
@@ -162,40 +174,38 @@ const ReviewsGrid = () => {
         {t("reviewsTitle.rest")}
       </h2>
 
-      {/* Desktop */}
-      {!isMobile && (
-        <div className="relative w-full items-center justify-center z-10 hidden md:flex">
-          <button
-            onClick={goToPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition z-20"
-          >
-            <img
-              src="/assets/svg/arrow_reviews.svg"
-              alt="Left"
-              className="w-7 h-7 cursor-pointer select-none"
-            />
-          </button>
+      {/* Desktop arrows, скрываются автоматически через hidden md:flex */}
+      <div className="relative w-full items-center justify-center z-10 hidden md:flex">
+        <button
+          onClick={goToPrev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition z-20"
+        >
+          <img
+            src="/assets/svg/arrow_reviews.svg"
+            alt="Left"
+            className="w-7 h-7 cursor-pointer select-none"
+          />
+        </button>
 
-          <div className="flex gap-6 justify-center items-start  xl:min-h-[380px]">
-            {currentReviews.map((review, index) => (
-              <ReviewCard key={index} review={review} />
-            ))}
-          </div>
-
-          <button
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition z-20"
-          >
-            <img
-              src="/assets/svg/arrow_reviews.svg"
-              alt="Right"
-              className="w-7 h-7 select-none cursor-pointer rotate-180"
-            />
-          </button>
+        <div className="flex gap-6 justify-center items-start xl:min-h-[380px]">
+          {currentReviews.map((review, index) => (
+            <ReviewCard key={index} review={review} />
+          ))}
         </div>
-      )}
 
-      {/* Mobile */}
+        <button
+          onClick={goToNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition z-20"
+        >
+          <img
+            src="/assets/svg/arrow_reviews.svg"
+            alt="Right"
+            className="w-7 h-7 select-none cursor-pointer rotate-180"
+          />
+        </button>
+      </div>
+
+      {/* Mobile horizontal scroll */}
       {isMobile && (
         <div
           ref={scrollContainerRef}
@@ -209,8 +219,8 @@ const ReviewsGrid = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className=" flex-shrink-0 items-center gap-3"
-              style={{ scrollSnapAlign: "center" }}
+              className="flex-shrink-0 items-center gap-3"
+              style={{ scrollSnapAlign: "center", minWidth: CARD_WIDTH }}
             >
               <div className="mx-auto max-w-[300px]">
                 <ReviewCard review={review} />

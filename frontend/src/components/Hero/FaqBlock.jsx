@@ -80,7 +80,7 @@ const FaqBlock = () => {
 
               <div
                 ref={(el) => (contentRefs.current[index] = el)}
-                className={`px-4 sm:px-6 overflow-hidden transition-all duration-500 ease-in-out ${
+                className={`px-4 sm:px-6 pb-4 xl:pb-6 transition-all duration-500 ease-in-out ${
                   isOpen ? " pb-14" : ""
                 }`}
                 style={{
@@ -88,7 +88,7 @@ const FaqBlock = () => {
                   opacity: 0,
                 }}
               >
-                <div className="pt-[-10px] pb-[16px] xl:pb-6 ">
+                <div className="-mt-4 xl:-mt-6 pb-[16px] xl:pb-6">
                   <p className="max-w-[970px] text-left text-[12px] sm:text-[14px] md:text-[18px] leading-[20px] sm:leading-[24px] md:leading-[26px] font-normal text-[#555555] font-[Manrope]">
                     {t(`faq.a${key}`)}
                   </p>

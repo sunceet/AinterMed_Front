@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
@@ -18,6 +18,19 @@ export default function AuthModal({ onClose, mode = "register" }) {
   const imageSrc = isLogin
     ? "/assets/svg/auth.svg"
     : "/assets/svg/register.svg";
+
+  useEffect(() => {
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+    const originalBodyOverflow = document.body.style.overflow;
+
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    // скроллинг и выход по клику
+    return () => {
+      document.documentElement.style.overflow = originalHtmlOverflow;
+      document.body.style.overflow = originalBodyOverflow;
+    };
+  }, []);
 
   const allowedDomains = [
     "gmail.com",
@@ -55,8 +68,18 @@ export default function AuthModal({ onClose, mode = "register" }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="relative flex flex-col md:flex-row bg-white rounded-[32px] shadow-xl w-full max-w-[1260px] h-auto md:h-[800px] animate-fade-in">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+      onClick={(e) => {
+        if (window.innerWidth <= 768 && e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+    >
+      <div
+        className="relative flex flex-col md:flex-row bg-white rounded-[32px] shadow-xl w-full max-w-[1260px] h-auto md:h-[800px] animate-fade-in"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="hidden md:block w-full md:w-[630px] h-full rounded-l-[32px] overflow-hidden">
           <Image
             src={imageSrc}
