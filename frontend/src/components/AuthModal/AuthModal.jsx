@@ -93,20 +93,20 @@ export default function AuthModal({ onClose, mode = "register" }) {
         <div className="w-full md:w-[630px] h-full px-4 sm:px-6 md:px-[70px] pb-8 pt-6 flex flex-col relative">
           <button
             onClick={onClose}
-            className="cursor-pointer absolute top-5 right-5 w-4 h-4 sm:w-7 sm:h-7 md:w-5 md:h-5 flex items-center justify-center"
+            className="cursor-pointer absolute top-5 right-5 w-7 h-7  sm:w-9 sm:h-9 md:w-9 md:h-9 flex items-center justify-center"
             aria-label="Закрыть"
           >
             <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
               <path
                 d="M6 6L18 18"
                 stroke="#2D2D2D"
-                strokeWidth="2"
+                strokeWidth="1"
                 strokeLinecap="round"
               />
               <path
                 d="M6 18L18 6"
                 stroke="#2D2D2D"
-                strokeWidth="2"
+                strokeWidth="1"
                 strokeLinecap="round"
               />
             </svg>
