@@ -80,7 +80,7 @@ const FaqBlock = () => {
 
               <div
                 ref={(el) => (contentRefs.current[index] = el)}
-                className={`px-4 sm:px-6 p xl:pb-6 transition-all duration-500 ease-in-out ${
+                className={`px-4 sm:px-6 pb-4 xl:pb-6 transition-all duration-500 ease-in-out ${
                   isOpen ? " pb-14" : ""
                 }`}
                 style={{

@@ -8,7 +8,6 @@ const LangSwitcher = ({ link }) => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    localStorage.setItem("lang", lng); // сохранить язык
   };
 
   return (
