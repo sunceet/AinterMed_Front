@@ -55,7 +55,7 @@ export default function DesktopNav() {
     `transition ${active ? "text-[#438EFF]" : "text-black"}`;
 
   return (
-    <nav className="font-[Manrope] font-bold hidden xl:flex gap-6 xl:gap-8 text-[14px]">
+    <nav className="font-[Manrope] font-bold hidden xl:flex pl-4 gap-6 xl:gap-8 text-[14px]">
       <button
         onClick={scrollToTop}
         className={`${getLinkClass(pathname === "/" && !isTariffActive)} bg-transparent border-none outline-none cursor-pointer`}

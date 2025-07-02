@@ -27,7 +27,7 @@ const FaqBlock = () => {
   const faqKeys = [1, 2, 3, 4, 5, 6, 7];
 
   return (
-    <div className="w-full pt-16 pb-12 px-4 flex justify-center">
+    <div className="w-full pt-16 pb-5 px-4 flex justify-center">
       <div className="flex flex-col gap-2 xl:gap-6 items-center max-w-[1080px] w-full">
         <h2 className="mb-6 w-full text-center text-black text-[28px] md:text-[40px] leading-tight font-semibold font-[Involve]">
           {t("faq.title.before")}{" "}

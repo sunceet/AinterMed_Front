@@ -1,12 +1,20 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const CtaButton = () => {
   const { t } = useTranslation();
 
   return (
-    <a
+    <motion.a
+      initial={{ opacity: 0, y: 0, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{
+        opacity: { duration: 1, delay: 0.2 },
+        y: { duration: 0.8, ease: "easeOut" },
+        filter: { duration: 1, delay: 0.2 },
+      }}
       href="https://aintermed.com/ai"
       target="_blank"
       rel="noopener noreferrer"
@@ -29,7 +37,7 @@ const CtaButton = () => {
         alt="Arrow"
         className="relative z-10 w-5 h-[14px] md:w-6 md:h-[16px]"
       />
-    </a>
+    </motion.a>
   );
 };
 

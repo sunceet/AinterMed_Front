@@ -5,7 +5,6 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import i18n from "../i18n.client";
 import { useTranslation } from "react-i18next";
 
 export default function RootLayout({ children }) {
@@ -20,7 +19,7 @@ export default function RootLayout({ children }) {
   }, [i18n.language]);
 
   return (
-    <html lang={lang}>
+    <html>
       <body>
         <Header />
         {children}

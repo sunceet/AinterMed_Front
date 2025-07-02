@@ -3,12 +3,12 @@
     "main": "MAIN",
     "chat": "AI CHAT",
     "knowledge": "KNOWLEDGE BASE",
-    "about": "ABOUT",
+    "about": "ABOUT US",
     "tariffs": "TARIFFS"
   },
   "auth": {
-    "login": "LOGIN",
-    "register": "REGISTER"
+    "login": "LOG IN",
+    "register": "REGISTRATION"
   },
   "heading": {
     "line1": "DIGITAL",
@@ -21,212 +21,238 @@
   },
   "promt": {
     "search": "Search",
-    "placeholder": "Ask me something..."
+    "placeholder": "Ask something..."
   },
   "aiblock": {
     "title1": "Artificial intelligence",
-    "block1": "Personal clinical assistant for medical students and doctors. It helps to structure knowledge, analyze clinical cases, prepare for exams and accreditation. Trained on millions of verified medical data in accordance with the principles of evidence-based medicine.",
-    "block1button": "SWITCH TO AI",
+    "block1": "Personal clinical assistant for medical students and doctors. Helps structure knowledge, analyze clinical cases, prepare for exams and accreditation. Trained on a million verified medical data in accordance with the principles of medicine.",
+    "block1button": "GO TO AI",
     "title2": "Knowledge base",
-    "block2": "A repository of structured information for quick access. The knowledge base contains articles about artificial intelligence and everything for modern medical education. The data is organized by topic, which makes it easy to find the information you need and use it in your studies and practice.",
-    "block2button": "Go to the database"
+    "block2": "A repository of structured information for quick access. The knowledge base contains articles about AI and everything you need for modern medical education. The data is organized by topic, making it easy to find the information you need and use it in your studies and practice.",
+    "block2button": "GO TO THE DATABASE"
   },
   "carousel": {
-    "line1": "The more accurate the request, the better the help.",
+    "line1": "The more precise the query, the better the help",
     "line21": "Develop",
     "line22": "clinical thinking",
-    "mainbutton": "Log in and try it"
+    "mainbutton": "Log in and try it out"
   },
   "aboutUs": {
     "title1": "Our mission",
-    "info1": "To form a community of doctors of the future - those who use modern technologies to be competent and ready for real work.",
+    "info1": "To form a community of doctors of the future — those who use modern technologies to be competent and ready for real work.",
     "button": "ABOUT US",
     "title2": "We are trusted by 3,200 users",
-    "info2": "The AInterMed team is a community of doctors who have themselves gone through a difficult path of study at medical universities and know it from the inside. The product was developed by doctors and IT specialists, taking into account the real needs and standards of medical practice."
+    "info2": "The AInterMed team is a community of doctors who have gone through the difficult path of medical university education themselves and know it from the inside. The product was developed by doctors and IT specialists, taking into account the real needs and standards of medical practice."
   },
   "auth2": {
-    "title_login": "LOGIN TO ACCOUNT",
-    "title_register": "REGISTER",
+    "title_login": "LOG IN TO YOUR ACCOUNT",
+    "title_register": "REGISTRATION",
     "name": "Name",
     "email": "Email",
     "password": "Password",
-    "placeholder_name": "Enter your name",
-    "placeholder_email": "Enter your email",
-    "placeholder_password": "Enter your password",
-    "agree_text": "I agree to the current",
+    "placeholder_name": "Enter name",
+    "placeholder_email": "Enter email",
+    "placeholder_password": "Enter password",
+    "agree_text": "I agree with the current",
     "privacy": "privacy policy",
-    "terms": "terms of service",
-    "submit_login": "Login",
+    "terms": "user agreement",
+    "submit_login": "Log in",
     "submit_register": "Register",
-    "no_account": "Don't have an account?",
+    "no_account": "No account?",
     "have_account": "Already have an account?",
-    "login": "Login",
-    "register": " Register",
+    "login": "Log in",
+    "register": "Register",
     "and": "and"
   },
   "reviewsTitle": {
     "gradient": "Reviews",
     "rest": "from our users"
   },
+
   "reviews": {
     "0": {
       "name": "Alexey Smirnov",
       "date": "May 12, 2025",
-      "text": "I usually use a neural network when we go through complex topics in pairs. This makes it faster to fix the material. A handy tool for finding verified medical articles."
+      "text": "I usually use the neural network when we cover complex topics in class. It helps me retain the material faster. It's a handy tool for finding verified medical articles."
     },
     "1": {
       "name": "Elena Ivanova",
       "date": "June 3, 2025",
-      "text": "I am very cautious about AI, but I have never had any problems with this service. I didn't notice any errors in the answers. I get detailed answers for training queries, the main thing is to set the prompt correctly."
+      "text": "I am very cautious about AI, but I have had no problems with this service. I have not noticed any errors in the answers. I receive detailed answers to my educational queries; the main thing is to ask the right questions."
     },
     "2": {
       "name": "Igor Petrov",
       "date": "April 22, 2025",
-      "text": "This service saved me during my exams. In winter, I had a tough pharmacology test, and thanks to AI, I didn’t waste time searching for information. The result? I got an A."
+      "text": "This service saved me during exam season. I had a difficult exam in pharmacy in the winter, and thanks to AI, I didn't have to waste time searching for information. The result was a 5."
     },
     "3": {
       "name": "Maria Kozlova",
       "date": "June 5, 2025",
-      "text": "I have been looking for a reliable and fast source of medical information for a long time, and Intermed has exceeded all my expectations. The site doesn't just provide information, it calculates indicators, whether it's body mass index (BMI), risk assessment, interpretation of analyses (for example, calculation of GFR, assessment of ratios) or something else - you enter your data and get a ready result with clear explanations."
+      "text": "I had been looking for a reliable and fast source of medical information for a long time, and AinterMed exceeded all my expectations. The site doesn't just provide information, it calculates indicators, whether it's body mass index (BMI), risk assessment, interpretation of tests (e.g., GFR calculation, ratio assessment), or something else — you enter your data and get a ready-made result with clear explanations."
     },
     "4": {
       "name": "Chisenga Lungu",
       "date": "May 18, 2025",
-      "text": "I'm an international medical student. I use the platform to prepare for state exams. The AI helps me translate medical terms from English to Russian."
+      "text": "I am studying medicine as a foreign student. I use the service to prepare for my exams. AI helps me translate medical terms from English into Russian."
     },
     "5": {
       "name": "Svetlana Orlova",
       "date": "June 9, 2025",
-      "text": "I use your service regularly — it is really useful and intelligibly explains various aspects, and does an excellent job with differential diagnosis. The only wish is to add the ability to upload images. As for the rest of the features, I really like it. The answers are clear and structured."
+      "text": "I use your service regularly — it is really useful and clearly explains various aspects, and it does an excellent job with differential diagnosis. My only suggestion is to add the ability to upload images. As for the other features, I really like them. The answers are clear and structured."
     },
     "6": {
-      "name": "Nyurgun Slyugrov",
+      "name": "Slyugrov Nyurgun",
       "date": "May 1, 2025",
-      "text": "a very convenient and useful platform for medical students and doctors. It makes clear diagrams, tables for differential diagnosis, and helps you quickly understand complex topics. It will be useful for medical students not only to prepare for university exams, but also for international certified exams. I use the official ChatGPT subscription for $ 21, and this platform costs 299 rubles — for this money it is incredibly profitable. He works smartly, stably, and answers medical questions much better than many other resources."
+      "text": "A very convenient and useful platform for medical students and doctors. It creates clear diagrams and tables for differential diagnosis and helps you quickly understand complex topics. For medical students, it will be useful not only for preparing for university exams, but also for international certification exams. I use the official ChatGPT subscription for $21, and this platform costs 299 rubles — for this price, it is incredibly profitable. It works quickly, stably, and answers medical questions much better than many other resources."
     },
     "7": {
       "name": "Anna Zhamina",
       "date": "May 25, 2025",
-      "text": "I use your service regularly — it is really useful and intelligibly explains various aspects, and does an excellent job with differential diagnosis. This is the optimal solution for studying in order to save time. The only wish is to add the ability to upload images. As for the rest of the features, I really like it. The answers are clear and structured."
+      "text": "I use your service regularly — it is really useful and clearly explains various aspects, and it does an excellent job with differential diagnosis. It's the best solution for saving time when studying. My only wish is to add the ability to upload images. As for the rest of the features, I really like them. The answers are clear and structured."
     },
     "8": {
-      "name": "Viktoria Volkova",
+      "name": "Victoria Volkova",
       "date": "June 15, 2025",
-      "text": "I have been looking for a reliable and fast source of medical information for a long time — AinterMed has exceeded all expectations. You ask a question and get a clear, structured answer based on up-to-date data. You don't need to reread dozens of pages — the service understands even complex queries. Plus, you can calculate BMI, GFR, tests and other indicators with explanations. Intermed saves time and really helps."
+      "text": "I have been looking for a reliable and fast source of medical information for a long time — AinterMed exceeded all expectations. You ask a question and get a clear, structured answer based on current data. No need to read through dozens of pages — the service understands even complex queries. Plus, you can calculate BMI, GFR, test results, and other indicators with explanations. AinterMed saves time and really helps."
     }
   },
-  "pricing.heading1": "Choose your",
-  "pricing.heading2": "plan",
+  "pricing.heading1": "Choose yours",
+  "pricing.heading2": "tariff",
   "pricing.subheading": "Cheaper than a tutor, better than ChatGPT",
   "pricing.button": "Subscribe",
 
   "plans.price": "0",
-  "plans.period": "/ month",
+  "plans.period": "/month",
   "plans.symbol": "$",
   "plans.free.title": "Free",
-  "plans.free.description": "Get to know the AInterMed assistant",
+  "plans.free.description": "Option to get acquainted with the AInterMed intelligent assistant",
   "plans.free.features": [
-    "Access to AInterMed's basic model",
-    "Basic understanding tools",
-    "Responses without extended analysis",
+    "Access to the basic AlnterMed model",
+    "Basic question comprehension tools",
+    "Answers without advanced analytics",
     "No access to web search",
-    "Up to 4 queries per day"
-  ],
-  "plans.advanced.price": "7",
-  "plans.advanced.title": "Advanced",
-  "plans.advanced.description": "For intensive learning and deep dive into material",
-  "plans.advanced.features": [
-    "24/7 tech support",
-    "Extended access to the General model",
-    "Query history and repeat option",
-    "Web search: up to 5 queries/week",
-    "Improved answers with explanations",
-    "Priority response handling"
+    "Up to 4 requests per day"
   ],
 
-  "plans.premium.price": "12",
-  "plans.premium.title": "Premium",
-  "plans.premium.description": "Unlimited access to everything AInterMed offers",
-  "plans.premium.features": [
-    "Access to all AInterMed models (General + Pro)",
-    "Designed for students, doctors, and researchers",
-    "Full access to AI support",
-    "All from the advanced version",
-    "Expanded analytics and detailed responses"
+  "plans.advanced.price": "10",
+  "plans.advanced.title": "Advanced",
+  "plans.advanced.description": "The choice for intensive training and deep immersion in the learning material",
+  "plans.advanced.features": [
+    "24/7 technical support",
+    "Extended access to the General model",
+    "Request history and repeat requests",
+    "Web search: up to 5 requests per week",
+    "Improved answers with explanations",
+    "Priority processing"
   ],
+
+  "plans.premium.price": "15",
+  "plans.premium.title": "Premium",
+  "plans.premium.description": "Everything without restrictions. For those looking for maximum intellectual support",
+  "plans.premium.features": [
+    "Access to all AinterMed models (General + Pro)",
+    "Designed for students, doctors, and researchers",
+    "Full access to intellectual support",
+    "Everything from the advanced version of AinterMed",
+    "Advanced analytics and answer analysis"
+  ],
+
   "faq": {
     "title": {
       "before": "Questions and",
       "highlight": "answers"
     },
     "q1": "What is AInterMed?",
-    "a1": "This is a platform created for medical students, residents and young doctors. Through the use of artificial intelligence technologies, we help users not just learn, but memorize and put knowledge into practice.",
+    "a1": "It is a platform created for medical students, interns, and young doctors. Using artificial intelligence technologies, we help users not only learn, but also remember and apply knowledge in practice.",
     "q2": "How do I register on the platform?",
-    "a2": "In order to use the platform, you must specify your email address and full name. The entire registration process takes 2 minutes.",
-    "q3": "Which payment methods are supported?",
-    "a3": "The platform supports payment using bank cards, as well as various online payment systems. In addition, it is possible to pay through the Fast Payment System, which provides convenience and speed of transactions for all users.",
-    "q4": "What is the difference between free access and subscription?",
-    "a4": "Free access provides a limited number of daily AI requests, while a subscription provides unlimited access and additional features.",
+    "a2": "To use the platform, you need to provide your email address and full name. The entire registration process takes 2 minutes.",
+    "q3": "What payment methods are supported?",
+    "a3": "The platform supports payment by bank card and various online payment systems. In addition, payment via the Fast Payment System is available, which ensures convenience and speed of transactions for all users.",
+    "q4": "What is the difference between free access and a subscription?",
+    "a4": "Free access provides a limited number of daily requests to AI, while a subscription opens up unlimited access and additional features.",
     "q5": "How many questions can I ask?",
-    "a5": "As part of the free version, the user is given the opportunity to ask no more than 4 questions in one day, and exclusively using the General model. To remove this restriction and gain access to other models, we recommend that you purchase a paid subscription.",
-    "q6": "How do I get unlimited access to the service?",
-    "a6": "Unlimited access to all functions and materials of the service becomes available after signing up for a paid subscription. Subscribe to get full access without restrictions.",
+    "a5": "The free version allows users to ask up to 4 questions per day, using only the General model. To remove this restriction and gain access to other models, we recommend purchasing a paid subscription.",
+    "q6": "How can I get unlimited access to the service?",
+    "a6": "Unlimited access to all features and materials of the service becomes available after purchasing a paid subscription. Subscribe to get full access without restrictions.",
     "q7": "What sources does AI use for answers?",
-    "a7": "The recommendations and protocols of leading organizations are integrated into AI: the World Health Organization (WHO), the British Institute NICE, the Association of Clinical Centers and Laboratories of the USA (ACLS), as well as with official sources of the Ministry of Health of the Russian Federation. In addition, the platform uses peer—reviewed publications from the PubMed and Cochrane databases, as well as international classifiers - ICD-10, ATC, etc. reference books."
+    "a7": "AI integrates recommendations and protocols from leading organizations: the World Health Organization (WHO), the British NICE Institute, the Association of Clinical Centers and Laboratories of the United States (ACLS), as well as official sources from the Ministry of Health of the Russian Federation. In addition, the platform uses peer-reviewed publications from the PubMed and Cochrane databases, as well as international classifiers such as ICD-10, ATC, and other reference books."
   },
   "chatSamples": {
     "q1": {
-      "question": "How to distinguish bacterial from viral pneumonia?",
-      "answer": "<p><strong>Bacterial pneumonia</strong> usually presents abruptly: high fever (&gt;38.5°C), severe intoxication, wet cough with sputum. CT scan shows unilateral segmental infiltrates.</p><p><strong>Viral pneumonia</strong> typically develops gradually: low-grade fever, dry cough, shortness of breath. CT shows bilateral ground-glass opacities.</p>"
+      "question": "How to distinguish between bacterial and viral pneumonia?",
+      "answer": "<p><strong>Bacterial pneumonia</strong> more likely to be sudden: high fever (&gt;38.5°C), pronounced intoxication, moist cough with sputum. CT scan shows unilateral segmental infiltrates.</p><p><strong>Viral pneumonia</strong> usually develops gradually: subfebrile fever, dry cough, dyspnoea. CT scan shows bilateral frosted glass areas.</p>"
     },
     "q2": {
-      "question": "What to do if a diabetic experiences a sudden drop in blood sugar?",
-      "answer": "<p><strong>If the person is conscious</strong> — immediately give 15–20 g of simple carbohydrates: juice, sugar, glucose paste. Recheck blood glucose after 15 minutes and repeat if necessary.</p><p class='mt-0.5'><strong>If unconscious</strong> — administer 40% glucose intravenously or 1 mg glucagon intramuscularly.</p><p class='mt-0.5'><strong>After stabilization</strong> — ensure a meal and review insulin/therapy regimen to prevent recurrence.</p>"
+      "question": "What to do when a diabetic has a sudden drop in sugar?",
+      "answer": "<p><strong>If a person is conscious</strong> - urgently give 15-20 g of simple carbohydrates: juice, sugar, glucose paste. Check glucose levels after 15 minutes and repeat if necessary.</p><p class='mt-0.5'><strong>If the loss of consciousness</strong> - 40% glucose intravenously or 1 mg of glucagon intramuscularly.</p><p class='mt-0.5'><strong>After normalisation.</strong> - eating and reviewing insulin/therapy regimen to avoid recurrent episodes.</p>"
     },
     "q3": {
-      "question": "What are the echocardiographic signs of infective endocarditis?",
-      "answer": "<p>Main findings on echocardiography (especially transesophageal):</p><ul class='list-disc list-inside space-y-0.5'><li>Mobile masses on valves — vegetations.</li><li>Abscesses, leaflet perforations, valve deformations.</li><li>New regurgitation not explained by other causes.</li></ul><p class='mt-0.5'>Diagnosis requires imaging correlation.</p>"
+      "question": "What signs of infective endocarditis are seen on cardiac ultrasound?",
+      "answer": "<p>Major findings on ultrasound (especially through the oesophagus):</p><ul class='list-disc list-inside space-y-0.5'><li>Movable formations on the valves are vegetations.</li><li>Abscesses, flail perforations, valve deformities.</li><li>New regurgitation not explained by other causes.</li></ul><p class='mt-0.5'>Diagnosis requires a combination of imaging.</p>"
     },
     "q4": {
       "question": "Why can troponin be elevated without a heart attack?",
-      "answer": "<p>Elevated troponin is not always due to myocardial infarction. Possible causes:</p><ul class='list-disc list-inside space-y-0.5'><li>Acute and chronic heart failure.</li><li>Myocarditis, tachyarrhythmias, pulmonary embolism.</li><li>Sepsis, severe inflammation, chronic kidney disease.</li></ul>"
+      "answer": "<p>Troponin elevation is not always associated with myocardial infarction. Possible causes:</p><ul class='list-disc list-inside space-y-0.5'><li>Acute and chronic heart failure.</li><li>Myocarditis, tachyarrhythmias, pulmonary embolism.</li><li>Sepsis, severe inflammation, chronic kidney disease.</li></ul>"
     },
     "q5": {
-      "question": "When can antibiotics be discontinued in pneumonia?",
-      "answer": "<p>Antibiotics can be stopped when:</p><ul class='list-disc list-inside space-y-0.5'><li>Temperature remains below 37.5°C for more than 48 hours.</li><li>General condition and breathing improve.</li><li>CRP and white blood cell count decrease.</li></ul><p class='mt-0.5'>The course usually lasts 5–7 days, but clinical response is more important than CT findings.</p>"
+      "question": "When can antibiotics for pneumonia be discontinued?",
+      "answer": "<p>Antibiotics can be discontinued when:</p><ul class='list-disc list-inside space-y-0.5'><li>Normalization of temperature (&lt;37.5°C) for 48+ hours.</li><li>Improved well-being and breathing.</li><li>Decrease in SRB/leukocyte levels.</li></ul><p class='mt-0.5'>The course usually lasts 5-7 days, but it is important to be guided by clinical response, not just CT scans.</p>"
     },
     "q6": {
-      "question": "How to differentiate COVID-19 from flu and common cold by symptoms?",
-      "answer": "<p><strong>COVID-19</strong> often includes loss of smell, prolonged low-grade fever, headache, and shortness of breath with mild cough.</p><p><strong>Flu</strong> begins suddenly with high fever, body aches, and severe fatigue.</p><p><strong>Common cold</strong> has milder symptoms: runny nose, slight fever, and quick recovery.</p>"
+      "question": "How to distinguish COVID from flu and cold by symptoms?",
+      "answer": "<p><strong>COVID-19</strong> Often manifested by loss of smell, prolonged subfebrile fever, headache and dyspnea with an unexpressed cough.</p><p><strong>Influenza</strong> begins abruptly, with fever, body aches and severe weakness.</p><p><strong>Colds</strong> - milder course: runny nose, low fever, rapid recovery.</p>"
     },
     "q7": {
-      "question": "What to do if blood pressure drops to 90/60 and there's dizziness?",
-      "answer": "<p>Low blood pressure can be normal or indicate a problem.</p><ul class='list-disc list-inside space-y-0.5'><li>Lie down and elevate your legs.</li><li>Drink water or a sweet beverage.</li><li>Ventilate the room and rest.</li></ul><p class='mt-0.5'>If dizziness persists, see a doctor. Anemia evaluation may be necessary.</p>"
+      "question": "What to do if your blood pressure drops to 90 over 60 and you feel dizzy?",
+      "answer": "<p>Low blood pressure can be a variant of normal or a signal of problems.</p><ul class='list-disc list-inside space-y-0.5'><li>Lie down, lift your legs..</li><li>Drink water or a sweet drink.</li><li>Ventilate the room, keep it quiet.</li></ul><p class='mt-0.5'>If the dizziness does not go away, see your doctor. You may need to be tested for anemia.</p>"
     },
     "q8": {
-      "question": "What tests are needed for a prolonged cough?",
-      "answer": "<p>If a cough lasts more than 3 weeks, infections, allergies, and chronic lung diseases should be ruled out.</p><ul class='list-disc list-inside'><li>Complete blood count with differential.</li><li>Chest X-ray or CT scan.</li><li>PCR/ELISA for Mycoplasma, Chlamydia, COVID, tuberculosis.</li><li>If suspected — sputum analysis, spirometry, or allergy panel.</li></ul>"
+      "question": "What tests are needed for a lingering cough?",
+      "answer": "<p>If the cough lasts &gt;3 weeks, infections, allergies and chronic lung disease should be ruled out.</p><ul class='list-disc list-inside'><li>General blood test with leukoformula.</li><li>Fluoroscopy or chest CT scan.</li><li>cPCR/ ELISA for mycoplasma, chlamydia, COVID, tuberculosis.</li><li>If suspected, a sputum test, FWD or allergy panel.</li></ul>"
     }
   },
   "footer": {
-    "company": "LLC ITINTERPRETATION",
-    "inn": "TIN: 1400024720",
+    "company": "ITINTERPRETATION LTD",
+    "inn": "INN: 1400024720",
     "copyright": "©2025 AInterMed",
 
     "section": {
-      "legal": "Terms & Policies",
-      "social": "Social Media",
+      "legal": "Terms and Conditions and Policies",
+      "social": "Social networks",
       "contacts": "Contacts"
     },
 
     "links": {
       "privacy": "Privacy Policy",
       "terms": "User Agreement",
-      "public": "Public Offer",
-      "vk": "VKontakte",
+      "public": "Public offer",
+      "vk": "Vk",
       "tg": "Telegram",
       "support": "Support",
-      "email": "Email"
+      "email": "Mail"
     }
+  },
+  "about": {
+    "CTA": "Join thousands of students from leading medical schools who have already made the choice to innovate!",
+    "Features1": "The platform combines advanced artificial intelligence capabilities with medical expertise",
+    "Features2": ", to simplify learning and accelerate professional growth.",
+    "Features3": "What AIntermed offers:",
+    "Features4": "Personalized learning - intelligent analysis of requests and preferences to create customized itineraries.",
+    "Features5": "AI assistants - specialized models AIntermed General and AIntermed Pro, based on current clinical guidelines and databases.",
+    "Features6": "Interactive practice - virtual patients, clinical cases, tests and medical calculators.",
+    "Features7": "Time saving - access to accurate, structured information and complex topics in a convenient format.",
+    "Features8": "We have more than",
+    "Features9": "3,000 students",
+    "Features10": "from",
+    "Features11": "50+ medical universities in Russia, Belarus, Kazakhstan and Kyrgyzstan.",
+    "Features12": "Join a community of young medics choosing to innovate!",
+    "Intro1": "About our company",
+    "Intro2": "AIntermed - new generation educational platform",
+    "Intro3": "for medical students, resident physicians and young specialists.",
+    "Intro4": "We are a Far Eastern startup, residents of Technopark Yakutia and OREH Center for Technological Entrepreneurship.",
+    "Stats1": "3000+",
+    "Stats2": "students",
+    "Stats3": "30+",
+    "Stats4": "universities"
   }
 }

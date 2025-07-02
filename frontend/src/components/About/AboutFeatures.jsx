@@ -1,51 +1,44 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 export default function AboutFeatures() {
+  const { t } = useTranslation();
+
   return (
-    <section className="max-w-[700px] mx-auto px-4 text-left font-sans text-base leading-relaxed">
+    <motion.section
+      initial={{ opacity: 0, y: 60, filter: "blur(0px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="pt-[50px] max-w-[840px] text-[18px] sm:text-[20px] mx-auto px-4 text-left font-medium font-[manrope] leading-relaxed"
+    >
       <p className="mb-6">
-        <span className="text-black font-[Manrope] font-normal">
-          Платформа сочетает передовые возможности искусственного интеллекта и
-          медицинскую экспертизу
+        <span className="text-black font-[Manrope]">
+          {t("about.Features1")}
         </span>
-        <span className="text-gray-500 font-[Manrope] font-normal">
-          , чтобы упростить обучение и ускорить профессиональный рост.
+        <span className="text-gray-500 font-[Manrope]">
+          {t("about.Features2")}
         </span>
       </p>
 
-      <p className="mb-4 font-[Manrope] font-normal text-black">
-        Что предлагает AIntermed:
-      </p>
+      <p className="mb-4 font-[Manrope] text-black">{t("about.Features3")}</p>
 
-      <ul className="list-disc list-inside mb-6 font-[Manrope] font-normal text-gray-700 space-y-3">
-        <li>
-          Персонализированное обучение — интеллектуальный анализ запросов и
-          предпочтений для создания индивидуальных маршрутов.
-        </li>
-        <li>
-          AI-ассистенты — специализированные модели AIntermed General и
-          AIntermed Pro, основанные на актуальных клинических рекомендациях и
-          базах данных.
-        </li>
-        <li>
-          Интерактивная практика — виртуальные пациенты, клинические кейсы,
-          тесты и медицинские калькуляторы.
-        </li>
-        <li>
-          Экономия времени — доступ к точной, структурированной информации и
-          разбору сложных тем в удобном формате.
-        </li>
+      <ul className="list-disc list-inside mb-6 font-[Manrope] text-gray-700 space-y-3">
+        <li>{t("about.Features4")}</li>
+        <li>{t("about.Features5")}</li>
+        <li>{t("about.Features6")} </li>
+        <li>{t("about.Features7")}</li>
       </ul>
 
-      <p className="mb-6 text-black font-[Manrope] font-normal">
-        Сегодня с нами более{" "}
-        <span className="font-[Manrope] font-normal">3000 студентов</span> из{" "}
-        <span className="font-[Manrope] font-normal">
-          50+ медицинских вузов России, Беларуси, Казахстана и Кыргызстана.
-        </span>
+      <p className="mb-6 text-black font-[Manrope]">
+        {t("about.Features8")}{" "}
+        <span className="font-[Manrope]">{t("about.Features9")}</span>{" "}
+        {t("about.Features10")}{" "}
+        <span className="font-[Manrope]">{t("about.Features11")}</span>
       </p>
 
-      <p className="text-gray-500 font-[Manrope] font-normal">
-        Присоединяйтесь к сообществу молодых медиков, выбирающих инновации!
-      </p>
-    </section>
+      <p className="text-gray-500 font-[Manrope]">{t("about.Features12")}</p>
+    </motion.section>
   );
 }
