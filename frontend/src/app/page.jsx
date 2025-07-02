@@ -9,10 +9,10 @@ export default function Home() {
 
   useEffect(() => {
     const handleLoad = () => {
-      setFadeOut(true); // запускаем плавное исчезновение
+      setFadeOut(true);
       setTimeout(() => {
-        setLoading(false); // удаляем прелоадер из DOM
-      }, 500); // совпадает с duration-500
+        setLoading(false);
+      }, 500);
     };
 
     if (document.readyState === "complete") {

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 export default function AuthModal({ onClose, mode = "register" }) {
@@ -86,11 +85,13 @@ export default function AuthModal({ onClose, mode = "register" }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="hidden md:block w-full md:w-[630px] h-full rounded-l-[32px] overflow-hidden">
-          <Image
+          <img
             src={imageSrc}
             alt="Auth"
             width={630}
             height={800}
+            loading="eager"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
@@ -167,7 +168,7 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2"
                 >
-                  <Image
+                  <img
                     src={
                       showPassword
                         ? "/assets/svg/eye-open.svg"
@@ -176,6 +177,8 @@ export default function AuthModal({ onClose, mode = "register" }) {
                     alt={showPassword ? "Hide password" : "Show password"}
                     width={24}
                     height={24}
+                    loading="eager"
+                    decoding="async"
                   />
                 </button>
               </div>
@@ -192,6 +195,8 @@ export default function AuthModal({ onClose, mode = "register" }) {
                       src="/assets/svg/checkbox.svg"
                       alt="Checkbox"
                       className="w-[24px] h-[24px] select-none"
+                      loading="eager"
+                      decoding="async"
                     />
                   )}
                 </div>
