@@ -115,7 +115,6 @@ export default function MobileMenu({
           {t("nav.tariffs")}
         </button>
 
-        {/* Языки */}
         <div className="flex gap-4">
           <button
             className={`${currentLang === "ru" ? "text-[#438EFF]" : ""}`}
@@ -131,7 +130,6 @@ export default function MobileMenu({
           </button>
         </div>
 
-        {/* Кнопки входа и регистрации */}
         <div className="flex flex-col gap-3 w-full px-8">
           <button
             className={`${btn} border border-[#C6C6C6] w-full font-medium`}

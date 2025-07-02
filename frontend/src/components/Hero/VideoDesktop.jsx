@@ -52,7 +52,7 @@ const VideoDesktop = ({ onLoaded, isMobile }) => {
       />
       <video
         ref={mobileRef}
-        className="block lg:hidden pointer-events-none absolute top-[360px] sm:top-[240px]  md:top-[440px] left-1/2
+        className="block lg:hidden pointer-events-none absolute top-[360px] sm:top-[420px]  md:top-[440px] left-1/2
                    -translate-x-1/2 -translate-y-1/2 pt-2 w-[420px] h-[800px]
                    object-contain rounded-lg z-0 scale-[1.05]"
         src="/assets/video/mobile_video.mp4"

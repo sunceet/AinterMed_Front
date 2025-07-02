@@ -15,19 +15,17 @@ export default function AuthModal({ onClose, mode = "register" }) {
   const isLogin = currentMode === "login";
   const title = isLogin ? t("auth2.title_login") : t("auth2.title_register");
   const imageSrc = isLogin
-    ? "/assets/svg/auth.svg"
-    : "/assets/svg/register.svg";
+    ? "/assets/svg/login.png"
+    : "/assets/svg/register.png";
 
   useEffect(() => {
     const originalHtmlOverflow = document.documentElement.style.overflow;
     const originalBodyOverflow = document.body.style.overflow;
 
-    // Добавляем класс на <body>, чтобы скрыть Header через глобальный стиль
     document.body.classList.add("modal-open");
 
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
-    window.scrollTo(0, 0);
 
     return () => {
       document.body.classList.remove("modal-open");
@@ -87,7 +85,7 @@ export default function AuthModal({ onClose, mode = "register" }) {
         <div className="hidden md:block w-full md:w-[630px] h-full rounded-l-[32px] overflow-hidden">
           <img
             src={imageSrc}
-            alt="Auth"
+            alt="Login"
             width={630}
             height={800}
             loading="eager"

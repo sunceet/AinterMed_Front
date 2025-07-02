@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     if (!isHome) {
-      setLoading(false); // прелоадер нужен только на главной
+      setLoading(false);
       return;
     }
 

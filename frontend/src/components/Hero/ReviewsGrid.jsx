@@ -81,8 +81,7 @@ const ReviewsGrid = () => {
   const isManualScroll = useRef(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ширина карточки для отступа
-  const CARD_WIDTH = 300; // px
+  const CARD_WIDTH = 300;
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);

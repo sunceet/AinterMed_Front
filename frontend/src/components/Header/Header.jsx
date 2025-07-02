@@ -58,7 +58,7 @@ export default function Header() {
                 <img
                   src="/assets/svg/Bell.svg"
                   alt="Уведомления"
-                  className="h-8 w-auto"
+                  className="h-auto w-auto"
                 />
               </button>
               <BurgerMenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
