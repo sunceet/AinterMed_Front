@@ -23,10 +23,15 @@ export default function AuthModal({ onClose, mode = "register" }) {
     const originalHtmlOverflow = document.documentElement.style.overflow;
     const originalBodyOverflow = document.body.style.overflow;
 
+    // Добавляем класс на <body>, чтобы скрыть Header через глобальный стиль
+    document.body.classList.add("modal-open");
+
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
-    // скроллинг и выход по клику
+    window.scrollTo(0, 0);
+
     return () => {
+      document.body.classList.remove("modal-open");
       document.documentElement.style.overflow = originalHtmlOverflow;
       document.body.style.overflow = originalBodyOverflow;
     };

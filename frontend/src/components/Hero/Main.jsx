@@ -1,6 +1,6 @@
 "use client";
 
-import VideoBg from "./VideoDesktop";
+import VideoDesktop from "./VideoDesktop";
 import Heading from "./Heading";
 import SubHeading from "./SubHeading";
 import CtaButton from "./ButtonTry";
@@ -14,7 +14,7 @@ import ChatPreviewCarousel from "./ExampleChat/ChatPreviewCarousel";
 
 const Main = () => (
   <section className="relative w-full bg-white text-center overflow-hidden">
-    <VideoBg />
+    <VideoDesktop />
 
     <div className="relative z-10 pt-[40px]">
       <Heading />
