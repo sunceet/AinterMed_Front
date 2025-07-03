@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function DesktopNav() {
   const { t } = useTranslation();
   const pathname = usePathname();
   const router = useRouter();
-  const [isTariffActive, setIsTariffActive] = useState(false);
 
   const scrollToTop = () => {
     if (pathname === "/") {
@@ -20,36 +18,10 @@ export default function DesktopNav() {
   };
 
   const scrollToTariffs = () => {
-    if (pathname !== "/") {
-      router.push("/#tariffs");
-    } else {
-      const el = document.getElementById("tariffs");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+    router.push("/subscribe");
   };
 
-  useEffect(() => {
-    if (pathname !== "/") return;
-
-    const handleScroll = () => {
-      const section = document.getElementById("tariffs");
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const isVisible =
-        rect.top <= window.innerHeight / 2 &&
-        rect.bottom >= window.innerHeight / 2;
-
-      setIsTariffActive(isVisible);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+  const isTariffsLinkActive = pathname === "/subscribe";
 
   const getLinkClass = (active) =>
     `transition ${active ? "text-[#438EFF]" : "text-black"}`;
@@ -58,7 +30,7 @@ export default function DesktopNav() {
     <nav className="font-[Manrope] font-bold hidden xl:flex pl-4 gap-6 xl:gap-8 text-[14px]">
       <button
         onClick={scrollToTop}
-        className={`${getLinkClass(pathname === "/" && !isTariffActive)} bg-transparent border-none outline-none cursor-pointer`}
+        className={`${getLinkClass(pathname === "/")} bg-transparent border-none outline-none cursor-pointer`}
       >
         {t("nav.main")}
       </button>
@@ -77,7 +49,7 @@ export default function DesktopNav() {
 
       <button
         onClick={scrollToTariffs}
-        className={`${getLinkClass(pathname === "/" && isTariffActive)} bg-transparent border-none outline-none cursor-pointer`}
+        className={`${getLinkClass(isTariffsLinkActive)} bg-transparent border-none outline-none cursor-pointer`}
       >
         {t("nav.tariffs")}
       </button>

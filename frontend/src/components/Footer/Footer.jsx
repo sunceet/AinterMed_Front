@@ -5,7 +5,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="mt-[40px] w-full min-h-[250px] border-t bg-white border-t-[#C6C6C6] md:py-[50px] xl:py-[50px] py-[30px]">
+    <footer className=" w-full min-h-[250px] border-t bg-white border-t-[#C6C6C6] md:py-[50px] xl:py-[50px] py-[30px]">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 font-[Manrope]">
         <div className="flex flex-col md:flex-row justify-between max-w-[1255px] mx-auto text-[#00000070] gap-[-30px]">
           {/* Логотип и инфо (слева) */}

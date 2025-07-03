@@ -254,5 +254,29 @@
     "Stats2": "студентов",
     "Stats3": "30+",
     "Stats4": "университетов"
-  }
+  },
+  "pricing": {
+    "heading1": "Простые и удобные",
+    "heading2": "тарифы",
+    "subheading": "Выберите наиболее подходящий тариф для ваших задач",
+    "month": "Месяц",
+    "3months": "3 месяца -5%",
+    "6months": "Полгода -10%",
+    "12months": "Год -20%",
+    "promo_placeholder": "Введите промокод",
+    "activate": "Активировать",
+    "button": "Оформить подписку"
+  },
+  "pricing.total_for": "за {{count}} {{monthWord}}",
+  "pricing.month_1": "месяц",
+  "pricing.month_234": "месяца",
+  "pricing.month_other": "месяцев",
+
+  "pricing.terms1": "Согласен с",
+  "pricing.terms_link1": "пользовательским соглашением",
+  "pricing.and": "и",
+  "pricing.terms_link2": "политикой конфиденциальности",
+
+  "pricing.terms2": "Согласен на",
+  "pricing.terms_link3": "условия оферты рекуррентных платежей"
 }

@@ -15,7 +15,12 @@ export default function MobileMenu({
   const pathname = usePathname();
   const router = useRouter();
   const { t, i18n } = useTranslation();
-  const [isTariffActive, setIsTariffActive] = useState(false);
+
+  // Убрали логику скролла и isTariffActive, теперь подсветка зависит только от пути
+  const isTariffsLinkActive = pathname === "/subscribe";
+
+  const getLinkClass = (active) =>
+    `transition ${active ? "text-[#438EFF]" : "text-black"}`;
 
   const handleMainClick = () => {
     setMenuOpen(false);
@@ -28,39 +33,8 @@ export default function MobileMenu({
 
   const handleTariffClick = () => {
     setMenuOpen(false);
-    if (pathname !== "/") {
-      router.push("/#tariffs");
-    } else {
-      const el = document.getElementById("tariffs");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+    router.push("/subscribe"); // Переходим напрямую на страницу подписки без якоря
   };
-
-  useEffect(() => {
-    if (pathname !== "/") return;
-
-    const handleScroll = () => {
-      const section = document.getElementById("tariffs");
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const isVisible =
-        rect.top <= window.innerHeight / 2 &&
-        rect.bottom >= window.innerHeight / 2;
-
-      setIsTariffActive(isVisible);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
-
-  const getLinkClass = (active) =>
-    `transition ${active ? "text-[#438EFF]" : "text-black"}`;
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -79,7 +53,7 @@ export default function MobileMenu({
       <nav className="flex flex-col items-center gap-4 bg-white/80 backdrop-blur-xl border-b border-[#C6C6C6] pb-6 pt-4 text-base font-medium">
         <button
           onClick={handleMainClick}
-          className={getLinkClass(pathname === "/" && !isTariffActive)}
+          className={getLinkClass(pathname === "/")}
         >
           {t("nav.main")}
         </button>
@@ -110,7 +84,7 @@ export default function MobileMenu({
 
         <button
           onClick={handleTariffClick}
-          className={getLinkClass(pathname === "/" && isTariffActive)}
+          className={getLinkClass(isTariffsLinkActive)}
         >
           {t("nav.tariffs")}
         </button>

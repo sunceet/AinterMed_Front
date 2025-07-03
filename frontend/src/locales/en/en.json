@@ -254,5 +254,18 @@
     "Stats2": "students",
     "Stats3": "30+",
     "Stats4": "universities"
-  }
+  },
+
+  "pricing.total_for": "for {{count}} {{monthWord}}",
+  "pricing.month_1": "month",
+  "pricing.month_234": "months",
+  "pricing.month_other": "months",
+
+  "pricing.terms1": "I agree to the",
+  "pricing.terms_link1": "User Agreement",
+  "pricing.and": "and",
+  "pricing.terms_link2": "Privacy Policy",
+
+  "pricing.terms2": "I accept the",
+  "pricing.terms_link3": "recurring payment offer terms"
 }

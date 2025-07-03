@@ -11,6 +11,7 @@ import FaqBlock from "./FaqBlock";
 import ReviewsGrid from "./ReviewsGrid";
 import PricingCards from "./PricingCards";
 import ChatPreviewCarousel from "./ExampleChat/ChatPreviewCarousel";
+import ModelFeaturesBlock from "./ModelFeaturesBlock";
 
 const Main = () => (
   <section className="relative w-full bg-white text-center overflow-hidden">
@@ -34,6 +35,8 @@ const Main = () => (
 
       <ChatPreviewCarousel />
       <AboutUsBlock />
+      <ModelFeaturesBlock />
+
       <ReviewsGrid />
 
       <div className="w-full rounded-t-4xl mt-20 bg-[#F2F2F2]">
