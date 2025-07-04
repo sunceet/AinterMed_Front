@@ -93,7 +93,11 @@ export default function AuthModal({ onClose, mode = "register" }) {
             className="absolute top-5 right-5 w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center"
             aria-label="Закрыть"
           >
-            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="w-full cursor-pointer h-full"
+            >
               <path
                 d="M6 6L18 18"
                 stroke="#2D2D2D"
@@ -151,13 +155,13 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full h-[48px] sm:h-[52px] md:h-[58px] px-4 pr-12 bg-[#F6F6F6] border border-[#BABABA] rounded-[14px] text-base outline-none"
+                  className="w-full h-[48px]  sm:h-[52px] md:h-[58px] px-4 pr-12 bg-[#F6F6F6] border border-[#BABABA] rounded-[14px] text-base outline-none"
                   placeholder={t("auth2.placeholder_password")}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2"
+                  className="absolute cursor-pointer right-4 top-1/2 transform -translate-y-1/2"
                 >
                   <img
                     src={showPassword ? EyeOpenIcon : EyeCloseIcon}
