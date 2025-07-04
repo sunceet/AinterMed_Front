@@ -5,7 +5,7 @@ import PlanCard from "./PlanCard";
 import { useSubscribeContext } from "./SubscribeContext";
 import { useTranslation } from "react-i18next";
 
-export default function PlanCards() {
+export default function PlanCards({ openModal }) {
   const scrollContainerRef = useRef(null);
   const { t } = useTranslation();
   const {
@@ -80,6 +80,7 @@ export default function PlanCards() {
           agreements={agreements}
           setAgreements={setAgreements}
           getMonthWord={getMonthWord}
+          openModal={openModal}
         />
       ))}
     </div>

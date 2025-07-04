@@ -61,10 +61,7 @@ const PricingCards = () => {
   ];
 
   return (
-    <div
-      id="tariffs"
-      className="scroll-mt-[70px] w-full py-8 flex flex-col items-center gap-[20px]"
-    >
+    <div className="scroll-mt-[70px] w-full py-8 flex flex-col items-center gap-[20px]">
       <h2 className="pt-4 text-[28px] xl:text-[40px] font-[Involve] font-semibold text-black text-center">
         {t("pricing.heading1")}{" "}
         <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">

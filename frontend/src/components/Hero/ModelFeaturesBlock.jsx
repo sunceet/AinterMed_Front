@@ -8,6 +8,7 @@ const models = [
     id: "AltmedFree",
     name: "Aintermed Free",
     title: "Ограниченный функционал для базовых задач",
+    video: "/assets/video/first_orb.mp4",
     features: [
       "Отвечает на простые медицинские вопросы общего характера.",
       "Поддерживает базовые справочные функции (например, симптомы, заболевания, препараты).",
@@ -19,6 +20,7 @@ const models = [
     id: "AltmedGeneral",
     name: "Aintermed General",
     title: "Мощный помощник врача общей практики",
+    video: "/assets/video/second_orb.mp4",
     features: [
       "Анализирует анамнез и жалобы, формируя предварительные гипотезы.",
       "Выдаёт рекомендации по обследованиям на основе жалоб.",
@@ -26,11 +28,11 @@ const models = [
       "Поддерживает общение на медицинские темы с учётом клинических рекомендаций.",
     ],
   },
-
   {
     id: "AltmedPro",
     name: "Aintermed Pro",
     title: "Инструмент для клиницистов и экспертов",
+    video: "/assets/video/third_orb.mp4",
     features: [
       "Проводит продвинутый клинико-диагностический анализ с учётом лабораторных, визуальных и анамнестических данных.",
       "Поддерживает мультидисциплинарный подход и сценарии с несколькими патологиями.",
@@ -42,6 +44,7 @@ const models = [
     id: "ComingSoon",
     name: "Скоро",
     title: "Новая модель в разработке",
+    video: "/assets/video/fourth_orb.mp4",
     features: [
       "Информация о функциональности будет опубликована позже.",
       "Ожидается расширение возможностей платформы для узких специалистов.",
@@ -84,7 +87,7 @@ export default function ModelFeaturesBlock() {
             </ol>
           </div>
 
-          {/* Центр — изображение со стрелками */}
+          {/* Центр — видео со стрелками */}
           <div className="relative w-[250px] h-[250px] shrink-0 flex items-center justify-center">
             <button
               onClick={prev}
@@ -99,13 +102,14 @@ export default function ModelFeaturesBlock() {
               />
             </button>
 
-            {model.image && (
-              <Image
-                src={model.image}
-                alt={model.name}
-                fill
-                className="object-contain"
-                priority
+            {model.video && (
+              <video
+                src={model.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-contain rounded-[20px]"
               />
             )}
 
@@ -143,7 +147,7 @@ export default function ModelFeaturesBlock() {
       </div>
 
       {/* === Mobile Version === */}
-      <div className=" xl:hidden px-4 pt-10 pb-16 flex flex-col items-center gap-6">
+      <div className="xl:hidden px-4 pt-10 pb-16 flex flex-col items-center gap-6">
         <div className="relative w-[260px] h-[260px] flex items-center justify-center">
           <button
             onClick={prev}
@@ -158,13 +162,14 @@ export default function ModelFeaturesBlock() {
             />
           </button>
 
-          {model.image && (
-            <Image
-              src={model.image}
-              alt={model.name}
-              fill
-              className="object-contain"
-              priority
+          {model.video && (
+            <video
+              src={model.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain rounded-[20px]"
             />
           )}
 

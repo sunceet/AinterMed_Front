@@ -9,6 +9,7 @@ export default function PlanCard({
   durationCounts,
   discounts,
   getMonthWord,
+  openModal, // добавлен пропс
 }) {
   const { t } = useTranslation();
   const { agreements, setAgreements } = useSubscribeContext();
@@ -43,7 +44,7 @@ export default function PlanCard({
           <span className="text-[48px] font-[Involve] font-medium leading-[56px]">
             {finalPrice}
           </span>
-          <span className="text-[20px] font-[Involve] font-[500] text-[#555] mb-[4px]">
+          <span className="text-[17px] xl:text-[20px] font-[Involve] font-[500] text-[#555] mb-[4px]">
             {t("pricing.total_for", {
               count: months,
               monthWord: getMonthWord(months, t),
@@ -60,6 +61,7 @@ export default function PlanCard({
 
       {isPaid && (
         <button
+          onClick={openModal}
           disabled={!canSubmit}
           className={`w-full h-[56px] rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition-transform duration-100 ${
             canSubmit
