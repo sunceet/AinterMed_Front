@@ -34,10 +34,9 @@ const Main = () => (
 
       <ChatPreviewCarousel />
       <AboutUsBlock />
+
       <ModelFeaturesBlock />
-
       <ReviewsGrid />
-
       <div className="w-full rounded-t-4xl mt-20 bg-[#F2F2F2]">
         <PricingCards />
         <FaqBlock />

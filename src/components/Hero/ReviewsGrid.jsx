@@ -162,7 +162,7 @@ const ReviewsGrid = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative flex flex-col items-center md:px-1 mt-[100px] max-w-screen-xl mx-auto">
+    <div className="relative flex flex-col items-center md:px-1 mt-[10px] max-w-screen-xl mx-auto">
       <div className="absolute rounded-[32px] bg-[#F5F6F6] -z-10 w-full xl:w-[1255px] min-h-[770px] md:min-h-[720px] left-1/2 -translate-x-1/2 top-0" />
 
       <h2 className="text-[32px] md:text-[40px] leading-[36px] font-[Involve] font-semibold text-gray-900 text-center max-w-[737px] mx-auto mt-[40px] mb-10 z-10">

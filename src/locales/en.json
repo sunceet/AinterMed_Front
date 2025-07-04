@@ -256,6 +256,42 @@
     "Stats4": "universities"
   },
 
+  "models": {
+    "titleStart": "Opportunities",
+    "titleGradient": "models",
+
+    "altmedFree": {
+      "name": "Aintermed Free",
+      "title": "For those who want to familiarize themselves",
+      "f1": "In the free version, you can ask up to 4 questions per day in the General model only"
+    },
+
+    "altmedGeneral": {
+      "name": "Aintermed General",
+      "title": "For students and aspiring physicians:",
+      "f1": "Answers to medical questions: easy-to-understand answers to the basic disciplines.",
+      "f2": "Exam preparation help: tests and explanations.",
+      "f3": "Solving clinical cases: a step-by-step breakdown.",
+      "f4": "Explaining complex topics: simple and straightforward."
+    },
+
+    "altmedPro": {
+      "name": "Aintermed Pro",
+      "title": "For professionals, faculty and residents",
+      "f1": "Flagship model with in-depth analytics.",
+      "f2": "Case studies and case scenarios.",
+      "f3": "Identifying logic, key connections.",
+      "f4": "Professional Development Support."
+    },
+
+    "coming": {
+      "name": "Coming soon",
+      "title": "New model in development",
+      "f1": "Information will be released at a later date.",
+      "f2": "There will be an expansion for subspecialists.",
+      "f3": "Sign up for updates."
+    }
+  },
   "pricing.total_for": "for {{count}} {{monthWord}}",
   "pricing.month_1": "month",
   "pricing.month_234": "months",

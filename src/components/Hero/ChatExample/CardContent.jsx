@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import globe from "../../../assets/svg/fi-rr-globe.svg";
 import mini_logo from "../../../assets/svg/mini_logo.svg";
+import bigarrow from "../../../assets/svg/bigarrow.svg";
 
 const CardContent = ({ chat, position = 0 }) => {
   const { t } = useTranslation();
@@ -47,11 +48,7 @@ const CardContent = ({ chat, position = 0 }) => {
               onClick={() => window.open("https://aintermed.com/ai", "_blank")}
               className="w-8 h-8 flex items-center justify-center"
             >
-              <img
-                src="/assets/svg/bigarrow.svg"
-                alt="Arrow"
-                className="w-7 h-7 select-none"
-              />
+              <img src={bigarrow} alt="Arrow" className="w-7 h-7 select-none" />
             </button>
           </div>
         </div>
