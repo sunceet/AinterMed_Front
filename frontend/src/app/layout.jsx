@@ -1,35 +1,18 @@
-"use client";
-
 import "./globals.css";
+import { cookies } from "next/headers";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 
-export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-  const { i18n } = useTranslation();
-
-  const [lang, setLang] = useState("ru");
-
-  useEffect(() => {
-    setLang(i18n.language || "ru");
-  }, [i18n.language]);
+export default async function RootLayout({ children }) {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE")?.value || "ru"; // если не нашли, пусть будет ru
 
   return (
-    <html>
+    <html lang={lang}>
       <body>
         <Header />
         {children}
-        {isHome ? (
-          <div className="bg-[#F2F2F2] pt-5">
-            <Footer />
-          </div>
-        ) : (
-          <Footer />
-        )}
+        <Footer />
       </body>
     </html>
   );

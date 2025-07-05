@@ -1,13 +1,25 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n.client";
+
+function setCookie(name, value, days = 365) {
+  if (typeof document === "undefined") return;
+  let expires = "";
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 
 const LangSwitcher = ({ link }) => {
-  const { i18n: i18nextInstance } = useTranslation();
-  const currentLang = i18nextInstance.language;
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setCookie("NEXT_LOCALE", lng);
+    window.location.reload();
   };
 
   return (
