@@ -255,7 +255,19 @@
     "Stats3": "30+",
     "Stats4": "universities"
   },
+  "pricing": {
+    "heading1": "Simple and convenient",
+    "heading2": "tariffs",
+    "subheading": "Choose the most suitable tariff for your tasks",
 
+    "month": "Month",
+    "3months": "3 months",
+    "6months": "Six months",
+    "12months": "Year",
+    "promo_placeholder": "Enter promo code",
+    "activate": "Activate",
+    "button": "Subscribe"
+  },
   "models": {
     "titleStart": "Opportunities",
     "titleGradient": "models",

@@ -16,7 +16,7 @@ export default function DurationSelector() {
       value: "3m",
       label: (active) => (
         <>
-          3 месяца{" "}
+          {t("pricing.3months")}{" "}
           <span
             className={`font-semibold transition-colors duration-150 ${
               active ? "text-white" : "text-[#437CFF]"
@@ -31,7 +31,7 @@ export default function DurationSelector() {
       value: "6m",
       label: (active) => (
         <>
-          Полгода{" "}
+          {t("pricing.6months")}{" "}
           <span
             className={`font-semibold transition-colors duration-150 ${
               active ? "text-white" : "text-[#437CFF]"
@@ -46,7 +46,7 @@ export default function DurationSelector() {
       value: "12m",
       label: (active) => (
         <>
-          Год{" "}
+          {t("pricing.12months")}{" "}
           <span
             className={`font-semibold transition-colors duration-150 ${
               active ? "text-white" : "text-[#437CFF]"
@@ -69,7 +69,7 @@ export default function DurationSelector() {
           <button
             key={value}
             onClick={() => setDuration(value)}
-            className={`px-6 py-[6px]  rounded-full text-sm font-[Manrope] font-medium transition border ${
+            className={`px-6 py-[6px] rounded-full text-sm font-[Manrope] font-medium transition border ${
               isActive
                 ? "bg-[#5AB6FF] text-white border-[#5AB6FF]"
                 : "bg-[#f3f3f3] text-[#555555] border-[#555555]"

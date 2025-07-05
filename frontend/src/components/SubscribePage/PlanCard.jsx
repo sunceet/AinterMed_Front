@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useSubscribeContext } from "./SubscribeContext";
 
@@ -9,10 +10,70 @@ export default function PlanCard({
   durationCounts,
   discounts,
   getMonthWord,
-  openModal, // добавлен пропс
+  openModal,
 }) {
   const { t } = useTranslation();
   const { agreements, setAgreements } = useSubscribeContext();
+
+  // Ссылки и состояния
+  const cardRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const interactionOccurred = useRef(false);
+
+  const [isVisible, setIsVisible] = useState(false);
+  const [showHint, setShowHint] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
+
+  // 1) Следим за тем, видна ли карточка (IntersectionObserver)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.6 }
+    );
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // 2) Когда карточка становится видимой — запускаем таймер подсказки
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile || !isVisible) return;
+
+    // Отложенный показ «пальца»
+    timeoutRef.current = setTimeout(() => {
+      if (!interactionOccurred.current) {
+        setShowHint(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timeoutRef.current);
+  }, [isVisible]);
+
+  // 3) Сбрасываем подсказку, когда карточка уходит из видимости
+  useEffect(() => {
+    if (!isVisible) {
+      clearTimeout(timeoutRef.current);
+      setShowHint(false);
+    }
+  }, [isVisible]);
+
+  // 4) Обработчики тача — первый свайп гасит подсказку
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartX === null) return;
+    const deltaX = Math.abs(e.touches[0].clientX - touchStartX);
+
+    if (deltaX > 30 && !interactionOccurred.current) {
+      interactionOccurred.current = true;
+      clearTimeout(timeoutRef.current);
+      setShowHint(false);
+    }
+  };
 
   if (!plan) return null;
 
@@ -26,7 +87,13 @@ export default function PlanCard({
   const finalPrice = Math.round(basePrice * months * (1 - discount));
 
   return (
-    <div className="snap-center flex-shrink-0 w-[92%] sm:w-[392px] bg-white rounded-[34px] border border-white px-[24px] py-[24px] flex flex-col">
+    <div
+      ref={cardRef}
+      className="relative snap-center flex-shrink-0 w-[92%] sm:w-[392px] bg-white rounded-[34px] border border-white px-[24px] py-[24px] flex flex-col"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
+      {/* ——— Содержимое карточки ——— */}
       <div className="text-center mb-4">
         <div className="min-h-[100px] flex flex-col justify-start items-center">
           <h3 className="text-[28px] font-[600] leading-[36px] font-[Involve]">
@@ -75,6 +142,7 @@ export default function PlanCard({
 
       {isPaid && (
         <div className="mt-4 space-y-2 text-[13px] text-[#555] font-[Manrope]">
+          {/* чекбоксы соглашений */}
           <div className="flex items-start gap-2">
             <input
               type="checkbox"
@@ -109,7 +177,6 @@ export default function PlanCard({
               </a>
             </span>
           </div>
-
           <div className="flex items-start gap-2">
             <input
               type="checkbox"
@@ -136,6 +203,17 @@ export default function PlanCard({
               </a>
             </span>
           </div>
+        </div>
+      )}
+
+      {/* ——— ПОДСКАЗКА: иконка «палец» — показывается только если карточка видна и без взаимодействия */}
+      {showHint && (
+        <div className="absolute right-[-10px] top-1/2 transform -translate-y-1/2 z-50 pointer-events-none">
+          <img
+            src="/assets/svg/cursor_finger.svg"
+            alt="Swipe right hint"
+            className="w-[36px] h-[36px] animate-swipe-right opacity-80"
+          />
         </div>
       )}
     </div>
