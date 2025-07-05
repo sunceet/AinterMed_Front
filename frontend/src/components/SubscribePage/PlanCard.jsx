@@ -75,15 +75,6 @@ export default function PlanCard({
     }
   };
 
-  // 4a) Обработчик окончания тача — тоже погасит подсказку при первом свайпе
-  const handleTouchEnd = () => {
-    if (!interactionOccurred.current) {
-      interactionOccurred.current = true;
-      clearTimeout(timeoutRef.current);
-      setShowHint(false);
-    }
-  };
-
   if (!plan) return null;
 
   const isPaid = plan.id !== "free";
@@ -101,7 +92,6 @@ export default function PlanCard({
       className="relative snap-center flex-shrink-0 w-[92%] sm:w-[392px] bg-white rounded-[34px] border border-white px-[24px] py-[24px] flex flex-col"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd} // добавили здесь
     >
       {/* ——— Содержимое карточки ——— */}
       <div className="text-center mb-4">
@@ -173,7 +163,6 @@ export default function PlanCard({
               <a
                 href="https://aintermed.com/legal/terms"
                 target="_blank"
-                rel="noreferrer"
                 className="underline"
               >
                 {t("pricing.terms_link1")}
@@ -182,7 +171,6 @@ export default function PlanCard({
               <a
                 href="https://aintermed.com/legal/privacy"
                 target="_blank"
-                rel="noreferrer"
                 className="underline"
               >
                 {t("pricing.terms_link2")}
@@ -209,7 +197,6 @@ export default function PlanCard({
               <a
                 href="https://aintermed.com/legal/oferta"
                 target="_blank"
-                rel="noreferrer"
                 className="underline"
               >
                 {t("pricing.terms_link3")}
