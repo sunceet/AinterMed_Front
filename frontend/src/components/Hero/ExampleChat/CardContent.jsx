@@ -46,10 +46,7 @@ const CardContent = ({ chat, position = 0 }) => {
           <div
             className={position !== 0 ? "pointer-events-none opacity-50" : ""}
           >
-            <button
-              onClick={() => window.open("https://aintermed.com/ai", "_blank")}
-              className="w-8 h-8 flex items-center justify-center"
-            >
+            <button className="w-8 h-8 flex items-center justify-center">
               <img
                 src="/assets/svg/bigarrow.svg"
                 alt="Arrow"
