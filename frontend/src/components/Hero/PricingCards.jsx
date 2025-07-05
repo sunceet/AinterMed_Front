@@ -106,9 +106,11 @@ const PricingCards = () => {
             </div>
 
             <ul className="flex-grow text-[15px] font-[Manrope] text-[#555555] leading-[26px] list-disc pl-[15px] text-left mb-[24px]">
-              {plan.features.map((feature, i) => (
-                <li key={i}>{feature}</li>
-              ))}
+              {(Array.isArray(plan.features) ? plan.features : []).map(
+                (feature, i) => (
+                  <li key={i}>{feature}</li>
+                )
+              )}
             </ul>
 
             <button

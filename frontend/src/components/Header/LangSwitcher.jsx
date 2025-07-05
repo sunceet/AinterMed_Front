@@ -1,25 +1,14 @@
-"use client";
 import { useTranslation } from "react-i18next";
+import { setCookie } from "../../../utils/setCookie";
 
-function setCookie(name, value, days = 365) {
-  if (typeof document === "undefined") return;
-  let expires = "";
-  if (days) {
-    const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-const LangSwitcher = ({ link }) => {
+export default function LangSwitcher({ link }) {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    setCookie("NEXT_LOCALE", lng);
-    window.location.reload();
+    setCookie("NEXT_LOCALE", lng); // сохраняем язык в куку
+    i18n.changeLanguage(lng); // меняем язык i18n на клиенте (для мгновенной подмены)
+    window.location.reload(); // перезагружаем страницу, чтобы SSR увидел новый язык
   };
 
   return (
@@ -38,6 +27,4 @@ const LangSwitcher = ({ link }) => {
       </button>
     </div>
   );
-};
-
-export default LangSwitcher;
+}
