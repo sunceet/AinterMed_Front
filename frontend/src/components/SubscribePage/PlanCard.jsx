@@ -19,6 +19,7 @@ export default function PlanCard({
   const cardRef = useRef(null);
   const timeoutRef = useRef(null);
   const interactionOccurred = useRef(false);
+  const { hasUserSwiped, setHasUserSwiped } = useSubscribeContext();
 
   const [isVisible, setIsVisible] = useState(false);
   const [showHint, setShowHint] = useState(false);
@@ -39,7 +40,7 @@ export default function PlanCard({
   // 2) Когда карточка становится видимой — запускаем таймер подсказки
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
-    if (!isMobile || !isVisible) return;
+    if (!isMobile || !isVisible || hasUserSwiped) return;
 
     // Отложенный показ «пальца»
     timeoutRef.current = setTimeout(() => {
@@ -49,7 +50,7 @@ export default function PlanCard({
     }, 3000);
 
     return () => clearTimeout(timeoutRef.current);
-  }, [isVisible]);
+  }, [isVisible, hasUserSwiped]);
 
   // 3) Сбрасываем подсказку, когда карточка уходит из видимости
   useEffect(() => {
@@ -70,6 +71,7 @@ export default function PlanCard({
 
     if (deltaX > 30 && !interactionOccurred.current) {
       interactionOccurred.current = true;
+      setHasUserSwiped(true);
       clearTimeout(timeoutRef.current);
       setShowHint(false);
     }
@@ -130,7 +132,7 @@ export default function PlanCard({
         <button
           onClick={openModal}
           disabled={!canSubmit}
-          className={`w-full h-[56px] rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition-transform duration-100 ${
+          className={`w-full h-[56px] rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition-transform duration-100 touch-manipulation ${
             canSubmit
               ? "hover:scale-105 cursor-pointer"
               : "opacity-50 cursor-not-allowed"
@@ -143,7 +145,7 @@ export default function PlanCard({
       {isPaid && (
         <div className="mt-4 space-y-2 text-[13px] text-[#555] font-[Manrope]">
           {/* чекбоксы соглашений */}
-          <div className="flex items-start gap-2">
+          <div className="flex items-start gap-3">
             <input
               type="checkbox"
               checked={agree.a}
@@ -156,28 +158,43 @@ export default function PlanCard({
                   },
                 }))
               }
-              className="mt-[2px] accent-[#437CFF] cursor-pointer"
+              className="mt-[2px] accent-[#437CFF] cursor-pointer w-4 h-4 flex-shrink-0"
             />
-            <span className="text-left">
-              {t("pricing.terms1")}&nbsp;
-              <a
-                href="https://aintermed.com/legal/terms"
-                target="_blank"
-                className="underline"
-              >
-                {t("pricing.terms_link1")}
-              </a>{" "}
-              {t("pricing.and")}&nbsp;
-              <a
-                href="https://aintermed.com/legal/privacy"
-                target="_blank"
-                className="underline"
-              >
-                {t("pricing.terms_link2")}
-              </a>
-            </span>
+            <label
+              className="text-left cursor-pointer flex-1"
+              onClick={() =>
+                setAgreements((prev) => ({
+                  ...prev,
+                  [plan.id]: {
+                    ...prev[plan.id],
+                    a: !prev[plan.id].a,
+                  },
+                }))
+              }
+            >
+              <span className="select-none">
+                {t("pricing.terms1")}&nbsp;
+                <a
+                  href="https://aintermed.com/legal/terms"
+                  target="_blank"
+                  className="underline hover:text-blue-600 transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {t("pricing.terms_link1")}
+                </a>{" "}
+                {t("pricing.and")}&nbsp;
+                <a
+                  href="https://aintermed.com/legal/privacy"
+                  target="_blank"
+                  className="underline hover:text-blue-600 transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {t("pricing.terms_link2")}
+                </a>
+              </span>
+            </label>
           </div>
-          <div className="flex items-start gap-2">
+          <div className="flex items-start gap-3">
             <input
               type="checkbox"
               checked={agree.b}
@@ -190,28 +207,43 @@ export default function PlanCard({
                   },
                 }))
               }
-              className="mt-[2px] accent-[#437CFF] cursor-pointer"
+              className="mt-[2px] accent-[#437CFF] cursor-pointer w-4 h-4 flex-shrink-0"
             />
-            <span className="text-left">
-              {t("pricing.terms2")}&nbsp;
-              <a
-                href="https://aintermed.com/legal/oferta"
-                target="_blank"
-                className="underline"
-              >
-                {t("pricing.terms_link3")}
-              </a>
-            </span>
+            <label
+              className="text-left cursor-pointer flex-1"
+              onClick={() =>
+                setAgreements((prev) => ({
+                  ...prev,
+                  [plan.id]: {
+                    ...prev[plan.id],
+                    b: !prev[plan.id].b,
+                  },
+                }))
+              }
+            >
+              <span className="select-none">
+                {t("pricing.terms2")}&nbsp;
+                <a
+                  href="https://aintermed.com/legal/oferta"
+                  target="_blank"
+                  className="underline hover:text-blue-600 transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {t("pricing.terms_link3")}
+                </a>
+              </span>
+            </label>
           </div>
         </div>
       )}
 
-      {showHint && (
-        <div className="absolute right-[-10px] top-1/2 transform -translate-y-1/2 z-50 pointer-events-none">
+      {showHint && plan.id === "advanced" && (
+        <div className="absolute right-[-10px] top-1/2 transform -translate-y-1/2 z-50 pointer-events-none select-none">
           <img
             src="/assets/svg/cursor_finger.svg"
             alt="Swipe right hint"
-            className="w-[36px] h-[36px] animate-swipe-right opacity-80"
+            className="w-[36px] h-[36px] animate-swipe-right opacity-80 touch-none"
+            draggable="false"
           />
         </div>
       )}

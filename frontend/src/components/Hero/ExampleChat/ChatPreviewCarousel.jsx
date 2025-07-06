@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import chatSamples from "./chatSamples";
 import { useTranslation } from "react-i18next";
 import CardContent from "./CardContent";
@@ -18,45 +18,61 @@ const ChatPreviewCarousel = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Throttled touch handlers для лучшей производительности
+  const handlePrev = useCallback(() => {
+    setActiveIndex((prev) => (prev - 1 + total) % total);
+  }, [total]);
+
+  const handleNext = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % total);
+  }, [total]);
+
   useEffect(() => {
     if (!isMobile) return;
 
     let touchStartX = 0;
     let touchEndX = 0;
+    let isScrolling = false;
 
     const handleTouchStart = (e) => {
       touchStartX = e.touches[0].clientX;
+      isScrolling = false;
     };
 
     const handleTouchMove = (e) => {
       touchEndX = e.touches[0].clientX;
+      const deltaX = Math.abs(touchStartX - touchEndX);
+      if (deltaX > 10) {
+        isScrolling = true;
+      }
     };
 
     const handleTouchEnd = () => {
+      if (!isScrolling) return;
+
       const deltaX = touchStartX - touchEndX;
-      if (deltaX > 50) requestAnimationFrame(handleNext);
-      if (deltaX < -50) requestAnimationFrame(handlePrev);
+      if (deltaX > 50) {
+        requestAnimationFrame(handleNext);
+      } else if (deltaX < -50) {
+        requestAnimationFrame(handlePrev);
+      }
     };
 
     const container = document.getElementById("chat-carousel");
-    container.addEventListener("touchstart", handleTouchStart);
-    container.addEventListener("touchmove", handleTouchMove);
-    container.addEventListener("touchend", handleTouchEnd);
+    if (!container) return;
+
+    container.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    container.addEventListener("touchmove", handleTouchMove, { passive: true });
+    container.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     return () => {
       container.removeEventListener("touchstart", handleTouchStart);
       container.removeEventListener("touchmove", handleTouchMove);
       container.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [isMobile]);
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + total) % total);
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % total);
-  };
+  }, [isMobile, handlePrev, handleNext]);
 
   const baseWidth = isMobile ? 300 : 460;
   const baseHeight = isMobile ? 320 : 300;
@@ -81,20 +97,23 @@ const ChatPreviewCarousel = () => {
         id="chat-carousel"
         className="relative w-full max-w-[640px] mx-auto h-[400px] flex items-center justify-center"
       >
+        {/* Упрощенные градиенты для лучшей производительности */}
         <div
-          className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[1000px] h-[100px] z-0 pointer-events-none opacity-30"
+          className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[1000px] h-[100px] z-0 pointer-events-none opacity-20"
           style={{
             background: "linear-gradient(180deg, #437CFF 0%, #65EDFF 100%)",
             borderRadius: "100%",
-            filter: "blur(130px)",
+            filter: "blur(80px)",
+            willChange: "auto",
           }}
         />
         <div
-          className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[1000px] h-[120px] z-0 pointer-events-none opacity-30"
+          className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[1000px] h-[120px] z-0 pointer-events-none opacity-20"
           style={{
             background: "linear-gradient(0deg, #437CFF 0%, #65EDFF 100%)",
             borderRadius: "100%",
-            filter: "blur(130px)",
+            filter: "blur(80px)",
+            willChange: "auto",
           }}
         />
 
@@ -120,12 +139,18 @@ const ChatPreviewCarousel = () => {
             const position = diff;
             const scale = 1 - Math.abs(position) * scaleStep;
             const translateX = position * offsetX;
-            const blur =
-              position === 0
+
+            // Упрощенные blur эффекты для мобильных
+            const blur = isMobile
+              ? position === 0
+                ? "blur-none"
+                : "blur-[2px]"
+              : position === 0
                 ? "blur-none"
                 : Math.abs(position) === 1
                   ? "blur-[5px]"
                   : "blur-[10px]";
+
             const zIndex = 30 - Math.abs(position) * 10;
             const opacity =
               Math.abs(position) <= 2 ? (position === 0 ? 1 : 0.85) : 0;
@@ -138,13 +163,16 @@ const ChatPreviewCarousel = () => {
                 style={{
                   width: baseWidth,
                   height: baseHeight,
-                  transform: `translateX(${translateX}px) scale(${scale})`,
-                  transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
+                  transform: `translate3d(${translateX}px, 0, 0) scale(${scale})`,
+                  transition: isMobile
+                    ? "transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1)"
+                    : "transform 0.3s ease-out, opacity 0.3s ease-out",
                   zIndex,
                   opacity,
                   pointerEvents,
                   willChange: "transform, opacity",
                   backfaceVisibility: "hidden",
+                  transformStyle: "preserve-3d",
                 }}
               >
                 <CardContent chat={chat} position={position} />

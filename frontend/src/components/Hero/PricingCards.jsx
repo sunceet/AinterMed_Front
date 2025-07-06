@@ -115,7 +115,7 @@ const PricingCards = () => {
 
             <button
               onClick={() => (window.location.href = "/subscribe")}
-              className={`w-full h-[56px] cursor-pointer rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition ${plan.buttonColor}`}
+              className={`w-full h-[56px] cursor-pointer touch-manipulation rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition ${plan.buttonColor}`}
             >
               {t("pricing.button")}
             </button>
