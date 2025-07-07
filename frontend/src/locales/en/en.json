@@ -315,5 +315,11 @@
   "pricing.terms_link2": "Privacy Policy",
 
   "pricing.terms2": "I agree to the",
-  "pricing.terms_link3": "recurring payment offer terms"
+  "pricing.terms_link3": "recurring payment offer terms",
+
+  "cookie": {
+    "text": "We use cookies to improve the website. Learn more in our",
+    "link": "cookie usage policy",
+    "button": "Accept"
+  }
 }

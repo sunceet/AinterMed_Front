@@ -32,22 +32,13 @@ const Footer = () => {
                   <h3 className="mb-[4px] bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text font-semibold">
                     {t("footer.section.legal")}
                   </h3>
-                  <a
-                    href="https://aintermed.com/legal/privacy"
-                    className="hover:underline"
-                  >
+                  <a href="/legal/privacy" className="hover:underline">
                     {t("footer.links.privacy")}
                   </a>
-                  <a
-                    href="https://aintermed.com/legal/terms"
-                    className="hover:underline"
-                  >
+                  <a href="/legal/terms" className="text-black ">
                     {t("footer.links.terms")}
                   </a>
-                  <a
-                    href="https://aintermed.com/legal/oferta"
-                    className="hover:underline"
-                  >
+                  <a href="/legal/oferta" className="text-black">
                     {t("footer.links.public")}
                   </a>
                 </div>
@@ -96,22 +87,13 @@ const Footer = () => {
               <h3 className="font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
                 {t("footer.section.legal")}
               </h3>
-              <a
-                href="https://aintermed.com/legal/privacy"
-                className="text-black hover:underline"
-              >
+              <a href="/legal/privacy" className="text-black hover:underline">
                 {t("footer.links.privacy")}
               </a>
-              <a
-                href="https://aintermed.com/legal/terms"
-                className="text-black hover:underline"
-              >
+              <a href="/legal/terms" className="text-black hover:underline">
                 {t("footer.links.terms")}
               </a>
-              <a
-                href="https://aintermed.com/legal/oferta"
-                className="text-black hover:underline"
-              >
+              <a href="/legal/oferta" className="text-black hover:underline">
                 {t("footer.links.public")}
               </a>
             </div>

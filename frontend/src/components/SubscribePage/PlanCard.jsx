@@ -175,7 +175,7 @@ export default function PlanCard({
               <span className="select-none">
                 {t("pricing.terms1")}&nbsp;
                 <a
-                  href="https://aintermed.com/legal/terms"
+                  href="/legal/terms"
                   target="_blank"
                   className="underline hover:text-blue-600 transition-colors"
                   onClick={(e) => e.stopPropagation()}
@@ -184,8 +184,7 @@ export default function PlanCard({
                 </a>{" "}
                 {t("pricing.and")}&nbsp;
                 <a
-                  href="https://aintermed.com/legal/privacy"
-                  target="_blank"
+                  href="/legal/privacy"
                   className="underline hover:text-blue-600 transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -224,7 +223,7 @@ export default function PlanCard({
               <span className="select-none">
                 {t("pricing.terms2")}&nbsp;
                 <a
-                  href="https://aintermed.com/legal/oferta"
+                  href="/legal/oferta"
                   target="_blank"
                   className="underline hover:text-blue-600 transition-colors"
                   onClick={(e) => e.stopPropagation()}

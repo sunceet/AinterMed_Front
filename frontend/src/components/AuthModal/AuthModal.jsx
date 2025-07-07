@@ -201,18 +201,15 @@ export default function AuthModal({ onClose, mode = "register" }) {
 
                 <p className="text-[14px] text-[#5B5B5B] font-[Manrope] leading-tight max-w-[400px]">
                   {t("auth2.agree_text")}&nbsp;
-                  <a
-                    href="https://aintermed.com/legal/privacy"
-                    target="_blank"
-                    className="text-[#438EFF] underline"
-                  >
+                  <a href="/legal/privacy" className="text-[#438EFF] underline">
                     {t("auth2.privacy")}
                   </a>{" "}
                   {t("auth2.and")}&nbsp;
                   <a
-                    href="https://aintermed.com/legal/terms"
+                    href="/legal/terms"
                     target="_blank"
                     className="text-[#438EFF] underline"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {t("auth2.terms")}
                   </a>

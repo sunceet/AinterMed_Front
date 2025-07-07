@@ -90,13 +90,16 @@ const ReviewsGrid = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Добавляем padding-left для центрирования первого отзыва на мобилке
+  // Добавляем padding для центрирования первого и последнего отзыва на мобилке
   useEffect(() => {
     if (isMobile && scrollContainerRef.current) {
       // gap-3 = 12px gap между карточками
-      scrollContainerRef.current.style.paddingLeft = `${CARD_WIDTH / 2 + 12}px`;
+      const paddingValue = `${CARD_WIDTH / 2 + 12}px`;
+      scrollContainerRef.current.style.paddingLeft = paddingValue;
+      scrollContainerRef.current.style.paddingRight = paddingValue;
     } else if (scrollContainerRef.current) {
       scrollContainerRef.current.style.paddingLeft = "";
+      scrollContainerRef.current.style.paddingRight = "";
     }
   }, [isMobile]);
 
