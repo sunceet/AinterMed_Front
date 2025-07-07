@@ -1,11 +1,13 @@
 "use client";
+
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className=" w-full min-h-[250px] border-t bg-white border-t-[#C6C6C6] md:py-[50px] xl:py-[50px] py-[30px]">
+    <footer className="w-full min-h-[250px] border-t bg-white border-t-[#C6C6C6] md:py-[50px] xl:py-[50px] py-[30px]">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 font-[Manrope]">
         <div className="flex flex-col md:flex-row justify-between max-w-[1255px] mx-auto text-[#00000070] gap-[-30px]">
           {/* Логотип и инфо (слева) */}
@@ -13,7 +15,7 @@ const Footer = () => {
             <img
               src="/assets/svg/Logo_AInterMed.svg"
               alt="Логотип"
-              className=" w-[144px] h-[22px] xl:w-[210.35px] xl:h-[32.72px]"
+              className="w-[144px] h-[22px] xl:w-[210.35px] xl:h-[32.72px]"
             />
 
             <div className="mt-5 text-left text-[14px] xl:text-[16px] leading-[26px] font-normal hidden md:block text-black">
@@ -32,15 +34,15 @@ const Footer = () => {
                   <h3 className="mb-[4px] bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text font-semibold">
                     {t("footer.section.legal")}
                   </h3>
-                  <a href="/legal/privacy" className="hover:underline">
+                  <Link href="/legal/privacy" className="hover:underline">
                     {t("footer.links.privacy")}
-                  </a>
-                  <a href="/legal/terms" className="text-black ">
+                  </Link>
+                  <Link href="/legal/terms" className="text-black">
                     {t("footer.links.terms")}
-                  </a>
-                  <a href="/legal/oferta" className="text-black">
+                  </Link>
+                  <Link href="/legal/oferta" className="text-black">
                     {t("footer.links.public")}
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="flex flex-col gap-[2px] w-fit whitespace-nowrap">
@@ -75,7 +77,7 @@ const Footer = () => {
               </div>
 
               {/* Подпись под колонками на мобилке */}
-              <div className="text-left text-[10px]  leading-[18px] text-black font-normal mt-6">
+              <div className="text-left text-[10px] leading-[18px] text-black font-normal mt-6">
                 <p className="text-[#00000050]">{t("footer.company")}</p>
                 <p className="text-[#00000050]">{t("footer.inn")}</p>
                 <p className="text-[#00000050] mt-2">{t("footer.copyright")}</p>
@@ -87,15 +89,18 @@ const Footer = () => {
               <h3 className="font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
                 {t("footer.section.legal")}
               </h3>
-              <a href="/legal/privacy" className="text-black hover:underline">
+              <Link
+                href="/legal/privacy"
+                className="text-black hover:underline"
+              >
                 {t("footer.links.privacy")}
-              </a>
-              <a href="/legal/terms" className="text-black hover:underline">
+              </Link>
+              <Link href="/legal/terms" className="text-black hover:underline">
                 {t("footer.links.terms")}
-              </a>
-              <a href="/legal/oferta" className="text-black hover:underline">
+              </Link>
+              <Link href="/legal/oferta" className="text-black hover:underline">
                 {t("footer.links.public")}
-              </a>
+              </Link>
             </div>
 
             <div className="hidden md:flex flex-col gap-[6px] w-fit">

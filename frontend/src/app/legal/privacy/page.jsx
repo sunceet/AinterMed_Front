@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
           <div className="text-center mb-6 sm:mb-12">
             <h1 className="text-[30px] sm:text-[38px] md:text-5xl font-bold font-[Involve] text-gray-900 mb-4">
               <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
-                Публичная оферта
+                Политика конфиденциальности
               </span>
             </h1>
           </div>
