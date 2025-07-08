@@ -69,20 +69,14 @@ html {
   overflow-y: scroll;
 }
 
-.perspective {
-  perspective: 1000px;
-}
-
-.rotate-x-180 {
-  transform: rotateX(180deg);
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
 @layer utilities {
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
   .animate-gradient-x {
     background-size: 500% 100%;
     animation: gradient-x 6s ease infinite;
