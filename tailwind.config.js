@@ -25,6 +25,10 @@ module.exports = {
           },
         },
       },
+      spacing: {
+        15: "3.75rem",
+        75: "18.75rem",
+      },
       animation: {
         fadeDownBlur: "fadeDownBlur 1s ease-out forwards",
       },
