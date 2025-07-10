@@ -103,7 +103,7 @@
     "6": {
       "name": "Slyugrov Nyurgun",
       "date": "May 1, 2025",
-      "text": "A very convenient and useful platform for medical students and doctors. It creates clear diagrams and tables for differential diagnosis and helps you quickly understand complex topics. For medical students, it will be useful not only for preparing for university exams, but also for international certification exams. I use the official ChatGPT subscription for $21, and this platform costs 299 rubles — for this price, it is incredibly profitable. It works quickly, stably, and answers medical questions much better than many other resources."
+      "text": "A very convenient and useful platform for medical students and doctors. It creates clear diagrams and tables for differential diagnosis and helps you quickly understand complex topics. For medical students, it will be useful not only for preparing for university exams, but also for international certification exams. I use the official ChatGPT subscription for $20, and this platform costs 499 rubles — for this price, it is incredibly profitable. It works quickly, stably, and answers medical questions much better than many other resources."
     },
     "7": {
       "name": "Anna Zhamina",
@@ -321,5 +321,60 @@
     "text": "We use cookies to improve the website. Learn more in our",
     "link": "cookie usage policy",
     "button": "Accept"
-  }
+  },
+
+  "Гид по участковой практике": "Guideline for District Practice",
+  "Аллергия": "Allergy",
+  "Жалобы, Анамнез, Статус, Лечение": "Complaints, Anamnesis, Status, Treatment",
+  "Гастрит ": "Gastritis",
+  "Железодефицитная анемия": "Iron-Deficiency Anemia",
+  "ОРВИ осмотр": "Flu Examination",
+  "ОРВИ шаблон": "Flu Template",
+  "Обучающие материалы": "Training Materials",
+  "Атопический дерматит": "Atopic Dermatitis",
+  "Болезнь Крона": "Crohn's Disease",
+  "Болезнь Паркинсона": "Parkinson's Disease",
+  "Брадиаритмии и нарушения проводимости": "Bradyarrhythmias and Conduction Disorders",
+  "Бронхиальная астма": "Bronchial Asthma",
+  "Внебольничная пневмония": "Community-acquired Pneumonia",
+  "Гастрит и Дуоденит": "Gastritis and Duodenitis",
+  "Гастроэзофагеальная рефлюксная болезнь": "Gastroesophageal Reflux Disease",
+  "Дивертикулярная болезнь": "Diverticular Disease",
+  "Желчнокаменная болезнь": "Gallstone Disease",
+  "Ишемическая болезнь сердца": "Ischemic Heart Disease",
+  "Ишемический инсульт и транзиторная ишемическая атака": "Ischemic Stroke and Transient Ischemic Attack",
+  "Кардиомиопатия такоцубо": "Takotsubo Cardiomyopathy",
+  "Наджелудочковые тахикардии (НЖТ)": "Supraventricular Tachycardias (SVT)",
+  "Острый бронхит": "Acute Bronchitis",
+  "Острый инфаркт миокарда с подъемом сегмента ST (STEMI)": "Acute Myocardial Infarction with ST Elevation (STEMI)",
+  "Острый коронарный синдром без подъема сегмента ST": "Acute Coronary Syndrome without ST Elevation",
+  "Перикардит": "Pericarditis",
+  "Пневмокониозы": "Pneumoconiosis",
+  "Рассеянный склероз": "Multiple Sclerosis",
+  "Саркоидоз": "Sarcoidosis",
+  "Синдром Гийена-Барре": "Guillain-Barré Syndrome",
+  "Синдром избыточного бактериального роста (СИБР)": "Small Intestinal Bacterial Overgrowth Syndrome (SIBO)",
+  "Туберкулез у взрослых": "Tuberculosis in Adults",
+  "Холецистит": "Cholecystitis",
+  "Хроническая обструктивная болезнь легких": "Chronic Obstructive Pulmonary Disease",
+  "Хроническая сердечная недостаточность (ХСН)": "Chronic Heart Failure",
+  "Хронический бронхит": "Chronic Bronchitis",
+  "Хронический панкреатит": "Chronic Pancreatitis",
+  "Эмфизема легких": "Emphysema",
+  "Эпилепсия": "Epilepsy",
+  "Язвенная болезнь": "Peptic Ulcer Disease",
+  "Язвенный колит": "Ulcerative Colitis",
+  "Искусственный интеллект": "Artificial Intelligence",
+  "Как пользоваться искусственным интеллектом?": "How to Use Artificial Intelligence?",
+  "Образование доступное каждому": "Education Accessible to Everyone",
+  "Часто задаваемые вопросы (FAQ)": "Frequently Asked Questions (FAQ)",
+  "Методички и гайды": "Guidelines and Handbooks",
+  "Определение группы крови": "Blood Type Definition",
+  "ЭКГ при различных патологиях сердца": "ECG in Various Heart Pathologies",
+  "Электрокардиография (ЭКГ)": "Electrocardiography (ECG)",
+  "Электроэнцефалография": "Electroencephalography",
+  "Эхокардиография": "Echocardiography"
+
+
+
 }

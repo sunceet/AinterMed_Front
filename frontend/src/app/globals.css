@@ -102,6 +102,18 @@ html {
     background-size: 500% 100%;
     animation: gradient-x 6s ease infinite;
   }
+  .rotate-x-180 {
+    transform: rotateX('180deg');
+  }
+  .backface-hidden{
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .animate-gradient-x {
+    background-size: 500% 100%;
+    animation: gradient-x 6s ease infinite;
+  }
+
 
   @keyframes gradient-x {
     0% {
@@ -116,7 +128,6 @@ html {
   }
 }
 
-/* Добавь в глобальные стили (например, globals.css) */
 @keyframes pulseScale {
   0%,
   100% {

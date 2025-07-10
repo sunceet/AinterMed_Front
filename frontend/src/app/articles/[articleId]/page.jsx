@@ -19,8 +19,8 @@ export default async function ArticlePage({ params }) {
     );
 
   return (
-    <div className="max-w-2xl mx-auto pt-12 px-4">
-      <h1 className="font-[Involve] font-bold text-[28px] mb-3 text-black">
+    <div className="max-w-2xl mb-10 mx-auto pt-12 px-4">
+      <h1 className="font-[Involve] font-bold text-[20px] sm:text-[28px] mb-3 text-black">
         {article.title}
       </h1>
       <div className="font-[Manrope] text-[18px] text-gray-700 mb-8">

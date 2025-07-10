@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const AiBlock = () => {
@@ -107,14 +108,14 @@ const AiBlock = () => {
 
             {/* Кнопка >1280 */}
             <div className="mt-6 hidden xl:block">
-              <a
-                href="https://aintermed.com/ai"
+              <Link
+                href="/articles"
                 target="_blank"
                 className="inline-block px-8 py-4 font-[Involve] text-[16px] font-medium bg-gradient-to-r from-[#65b5ff] to-[#437CFF]
                          text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase hover:brightness-110 z-[2] duration-100 hover:scale-105"
               >
                 {t("aiblock.block2button")}
-              </a>
+              </Link>
             </div>
           </div>
 
