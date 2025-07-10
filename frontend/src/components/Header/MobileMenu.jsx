@@ -66,13 +66,13 @@ export default function MobileMenu({
           {t("nav.chat")}
         </a>
 
-        <a
+        <Link
           href="/articles"
           onClick={() => setMenuOpen(false)}
           className={getLinkClass(false)}
         >
           {t("nav.knowledge")}
-        </a>
+        </Link>
 
         <Link
           href="/about"
