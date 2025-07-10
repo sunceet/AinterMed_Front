@@ -382,9 +382,16 @@
   "Электрокардиография (ЭКГ)": "Electrocardiography (ECG)",
   "Методическое пособие":"Methodological manual",
   "Электроэнцефалография": "Electroencephalography",
-  "Эхокардиография ": "Echocardiography"
+  "Эхокардиография ": "Echocardiography",
+  "articles": {
+    "7e3f7706-bffe-4367-a707-eab5c201ad46": {
+      "title": "Allergy",
+      "description": "Complaints, History, Status, Treatment",
+      "content": "<p><strong>Complaints:</strong> rhinorrhea, nasal congestion, sneezing, nasal itching, occasional lacrimation, itching over the body.</p><p><strong>Disease history:</strong> suffering for the 2nd day. There was contact with an allergen. Previously diagnosed allergy to dust and wool.</p><p><strong>Life history:</strong> Not registered as a dispensary patient. Denies surgery. Denies tuberculosis. Denies viral hepatitis. Denies venereal diseases. Denies blood transfusions. Allergic history aggravated. Heredity (diabetes mellitus, hypertension, cancer, kidney diseases) not aggravated. Denies harmful habits (smoking, alcohol, drugs).</p><p><strong>Saturation:</strong> 99</p><p><strong>Pulse:</strong> 77</p><p><strong>Blood pressure, mm Hg:</strong> 120/80</p><p><strong>Temperature:</strong> 36.6</p><p><strong>Respiratory rate:</strong> 16</p><p><strong>Objective status:</strong> General condition relatively satisfactory. Skin and visible mucous membranes are of normal color, there are traces of scratching. Pharyngeal mucosa without peculiarities. Breathing through the nose is not difficult. Peripheral lymph nodes are not palpable. Thyroid gland without abnormalities. Vesicular breath sounds above the lungs, no rales. Heart tones clear, clean. Abdomen of normal shape, soft, painless. Liver and spleen not enlarged. Pasternacki syndrome negative on both sides. Stool and diuresis normal. Musculoskeletal system without peculiarities. No edema. Fundoscopy normal.</p><p><strong>Diagnosis:</strong> T78.4 Allergy unspecified. Allergic rhinitis.</p><p><strong>Recommendations:</strong> CBC with eosinophils, Ig E, avoid allergen, consult allergist if necessary.</p><p>Outpatient regimen: Desloratadine 5 mg tablet once daily for 5 days. Fenistil gel 0.1% topically on affected skin 2-4 times daily. Levocabastine spray 2 doses in each half of the nose 2-4 times daily. Azelastine eye drops 1 drop in each eye 2-4 times daily.</p><p>&nbsp;</p>"
+    },
+    "faf31dc6-aae1-4302-af59-55dd00466858":{
+      "title":""
 
-
-
-
+    }
+  }
 }

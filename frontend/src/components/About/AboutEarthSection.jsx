@@ -18,7 +18,7 @@ export default function AboutEarthSection() {
           width={750}
           height={750}
           priority
-          className="w-full h-full object-contain transition-transform duration-200 hover:scale-105"
+          className="w-full h-full mt-10 object-contain transition-transform duration-200 hover:scale-105"
         />
       </motion.div>
     </section>

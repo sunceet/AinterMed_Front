@@ -86,6 +86,7 @@ export default function MobileMenu({
           {t("nav.knowledge")}
         </Link>
 
+
         <div className="flex gap-4">
           <button
             className={`${currentLang === "ru" ? "text-[#438EFF]" : ""}`}

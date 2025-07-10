@@ -55,7 +55,7 @@ export default function ArticlesPage() {
               key={cat.id}
               onClick={() => setActiveIdx(idx)}
               type="button"
-              className={`px-1 py-2 cursor-pointer xl:py-3 text-[11px] text-center sm:text-[16px] font-medium font-[Manrope] transition-colors duration-150
+              className={`px-1 py-2 cursor-pointer xl:py-4 text-[11px] text-center sm:text-[16px] font-medium font-[Manrope] transition-colors duration-150
                 ${activeIdx === idx
                   ? "bg-gradient-to-r from-[#437CFF] to-[#437CFF] text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100"
