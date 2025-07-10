@@ -113,7 +113,7 @@
     "8": {
       "name": "Victoria Volkova",
       "date": "June 15, 2025",
-      "text": "I have been looking for a reliable and fast source of medical information for a long time — AinterMed exceeded all expectations. You ask a question and get a clear, structured answer based on current data. No need to read through dozens of pages — the service understands even complex queries. Plus, you can calculate BMI, GFR, test results, and other indicators with explanations. AinterMed saves time and really helps."
+      "text": "I have been looking for a reliable and fast source of medical information for a long time — AInterMed exceeded all expectations. You ask a question and get a clear, structured answer based on current data. No need to read through dozens of pages — the service understands even complex queries. Plus, you can calculate BMI, GFR, test results, and other indicators with explanations. AInterMed saves time and really helps."
     }
   },
   "pricing.heading1": "Choose yours",
@@ -150,10 +150,10 @@
   "plans.premium.title": "Premium",
   "plans.premium.description": "Everything without restrictions. For those looking for maximum intellectual support",
   "plans.premium.features": [
-    "Access to all AinterMed models (General + Pro)",
+    "Access to all AInterMed models (General + Pro)",
     "Designed for students, doctors, and researchers",
     "Full access to intellectual support",
-    "Everything from the advanced version of AinterMed",
+    "Everything from the advanced version of AInterMed",
     "Advanced analytics and answer analysis"
   ],
 
@@ -273,13 +273,13 @@
     "titleGradient": "models",
 
     "altmedFree": {
-      "name": "Aintermed Free",
+      "name": "AIntermed Free",
       "title": "For those who want to familiarize themselves",
       "f1": "In the free version, you can ask up to 4 questions per day in the General model only"
     },
 
     "altmedGeneral": {
-      "name": "Aintermed General",
+      "name": "AIntermed General",
       "title": "For students and aspiring physicians:",
       "f1": "Answers to medical questions: easy-to-understand answers to the basic disciplines.",
       "f2": "Exam preparation help: tests and explanations.",
@@ -288,7 +288,7 @@
     },
 
     "altmedPro": {
-      "name": "Aintermed Pro",
+      "name": "AIntermed Pro",
       "title": "For professionals, faculty and residents",
       "f1": "Flagship model with in-depth analytics.",
       "f2": "Case studies and case scenarios.",

@@ -1,19 +1,37 @@
 "use client";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
+// Асинхронно загружаем категории с API
 async function fetchCategories() {
   const res = await fetch("https://api.aintermed.com/articles/by-categories");
   if (!res.ok) return [];
   return res.json();
 }
 
+// Кастомный хук для загрузки категорий с API
 let categoriesPromise = null;
 function useCategories() {
+  const { t } = useTranslation(); // Для перевода
   const [categories, setCategories] = React.useState(null);
+
   React.useEffect(() => {
     if (!categoriesPromise) categoriesPromise = fetchCategories();
-    categoriesPromise.then(setCategories);
-  }, []);
+    
+    categoriesPromise.then((data) => {
+      const translatedCategories = data.map((cat) => ({
+        ...cat,
+        name: t(cat.name), // Переводим название категории
+        articles: cat.articles.map((art) => ({
+          ...art,
+          title: t(art.title), // Переводим заголовок статьи
+          description: t(art.description) // Переводим описание статьи
+        }))
+      }));
+      setCategories(translatedCategories); // Сохраняем переведенные данные
+    });
+  }, [t]); // Добавляем t как зависимость, чтобы перезагружать данные при изменении языка
+
   return categories;
 }
 
@@ -22,7 +40,7 @@ export default function ArticlesPage() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   if (!categories || categories.length === 0) {
-    return null; 
+    return null; // Если данных нет, ничего не показываем
   }
 
   const activeCategory = categories[activeIdx];
@@ -43,7 +61,7 @@ export default function ArticlesPage() {
                   : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
             >
-              {"\u00A0" + "\u00A0" + cat.name + "\u00A0" + "\u00A0"}
+              {"\u00A0" + "\u00A0" + cat.name + "\u00A0" + "\u00A0"} {/* Переводим название категории */}
             </button>
           ))}
         </div>
@@ -63,10 +81,10 @@ export default function ArticlesPage() {
               </span>
               <div>
                 <div className="font-[Involve] font-semibold text-[15px] sm:text-[22px] mb-0.5 text-black group-hover:text-[#437CFF] transition">
-                  {art.title}
+                  {art.title} {/* Переводим заголовок статьи */}
                 </div>
                 <div className="font-[Manrope] text-[17px] text-gray-700">
-                  {art.description}
+                  {art.description} {/* Переводим описание статьи */}
                 </div>
               </div>
             </div>
