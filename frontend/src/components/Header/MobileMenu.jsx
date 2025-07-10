@@ -67,7 +67,7 @@ export default function MobileMenu({
         </a>
 
         <a
-          href="#knowledge"
+          href="/articles"
           onClick={() => setMenuOpen(false)}
           className={getLinkClass(false)}
         >
