@@ -79,11 +79,6 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             />
           </Link>
           <div className="flex-1" />
-          <img
-            src="/assets/svg/search.svg"
-            alt="Поиск"
-            className="h-5.5 w-5.5 cursor-pointer"
-          />
           <button
             className="p-1 rounded-full cursor-pointer transition"
             onClick={() => setIsOpen(false)}

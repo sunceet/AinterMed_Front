@@ -15,7 +15,7 @@ module.exports = {
         involve: ["Involve", "sans-serif"],
         manrope: ["Manrope", "sans-serif"],
       },
-      spacing:{
+      spacing: {
         15: "3.75rem",
         75: "18.75rem",
       },
