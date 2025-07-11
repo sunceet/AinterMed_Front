@@ -18,8 +18,7 @@ export default function MobileMenu({
 
   // Убрали логику скролла и isTariffActive, теперь подсветка зависит только от пути
   const isTariffsLinkActive = pathname === "/subscribe";
-    const isArticlesLinkActive = pathname === "/articles";
-
+  const isArticlesLinkActive = pathname === "/articles";
 
   const getLinkClass = (active) =>
     `transition ${active ? "text-[#438EFF]" : "text-black"}`;
@@ -60,15 +59,13 @@ export default function MobileMenu({
           {t("nav.main")}
         </button>
 
-        <a
-          href="#chat"
+        <Link
+          href="/chat"
           onClick={() => setMenuOpen(false)}
           className={getLinkClass(false)}
         >
           {t("nav.chat")}
-        </a>
-
-
+        </Link>
 
         <Link
           href="/about"
@@ -85,7 +82,6 @@ export default function MobileMenu({
         >
           {t("nav.knowledge")}
         </Link>
-
 
         <div className="flex gap-4">
           <button

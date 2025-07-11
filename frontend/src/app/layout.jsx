@@ -4,6 +4,7 @@ import NoSSR from "../components/NoSSR";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import CookieConsent from "../components/CookieConsent";
+import AppShell from "../components/AppShell";
 
 export const metadata = {
   title: "AinterMed",
@@ -12,19 +13,12 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout({ children }) {
-  const cookieStore = await cookies();
-  const lang = cookieStore.get("NEXT_LOCALE")?.value || "ru";
-
+export default function RootLayout({ children }) {
+  const lang = "ru";
   return (
     <html lang={lang}>
       <body>
-        <NoSSR>
-          <Header />
-          {children}
-          <Footer />
-          <CookieConsent />
-        </NoSSR>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

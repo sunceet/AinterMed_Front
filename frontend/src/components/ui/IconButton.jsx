@@ -1,4 +1,3 @@
-// components/ui/IconButton.jsx
 const IconButton = ({
   children,
   onClick,

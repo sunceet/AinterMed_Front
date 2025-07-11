@@ -103,9 +103,9 @@ html {
     animation: gradient-x 6s ease infinite;
   }
   .rotate-x-180 {
-    transform: rotateX('180deg');
+    transform: rotateX("180deg");
   }
-  .backface-hidden{
+  .backface-hidden {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
@@ -113,7 +113,6 @@ html {
     background-size: 500% 100%;
     animation: gradient-x 6s ease infinite;
   }
-
 
   @keyframes gradient-x {
     0% {
