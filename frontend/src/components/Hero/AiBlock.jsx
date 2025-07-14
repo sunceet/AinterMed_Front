@@ -54,7 +54,7 @@ const AiBlock = () => {
           </div>
           <div className="w-full xl:w-auto flex justify-center">
             <img
-              src="/assets/svg/Chat_bot1.svg"
+              src="/assets/svg/Chat_bot1.png"
               alt="ИИ"
               className="object-contain
                        max-h-[200px] sm:max-h-[220px] md:max-h-[240px] lg:max-h-[270px] xl:max-h-[300px]"
@@ -121,7 +121,7 @@ const AiBlock = () => {
 
           <div className="w-full xl:w-auto flex justify-center">
             <img
-              src="/assets/svg/Chat_bot2.svg"
+              src="/assets/svg/Chat_bot2.png"
               alt="База знаний"
               className="object-contain
                        max-h-[200px] sm:max-h-[220px] md:max-h-[240px] lg:max-h-[270px] xl:max-h-[300px]"

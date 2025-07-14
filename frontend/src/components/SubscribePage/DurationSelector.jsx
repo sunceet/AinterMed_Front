@@ -72,7 +72,7 @@ export default function DurationSelector() {
             className={`px-6 py-[6px] rounded-full text-sm font-[Manrope] font-medium transition border ${
               isActive
                 ? "bg-[#5AB6FF] text-white border-[#5AB6FF]"
-                : "bg-[#f3f3f3] text-[#555555] border-[#555555]"
+                : "bg-[#f3f3f3] text-[#555555] border-[#d6d6d6]"
             }`}
           >
             {content}

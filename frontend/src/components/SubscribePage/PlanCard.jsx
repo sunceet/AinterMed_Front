@@ -158,7 +158,9 @@ export default function PlanCard({
                   },
                 }))
               }
-              className="mt-[2px] accent-[#437CFF] cursor-pointer w-4 h-4 flex-shrink-0"
+              className="mt-[2px] accent-[#437CFF] cursor-pointer                
+               w-4 h-4 
+               flex-shrink-0"
             />
             <label
               className="text-left cursor-pointer flex-1"

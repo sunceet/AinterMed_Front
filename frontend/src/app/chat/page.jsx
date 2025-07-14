@@ -24,6 +24,7 @@ const mockChats = [
   { id: 14, name: "Отделение неотложной помощи", date: "month" },
   { id: 15, name: "Нейрохирургия - определение", date: "month" },
   { id: 16, name: "Привет Аинтермед", date: "month" },
+  { id:17, name: "aplsdalsdp", date:"date"},
   {
     id: 17,
     name: "Микроинсульт - это кратковременное наруш...",

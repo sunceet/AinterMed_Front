@@ -70,21 +70,22 @@
   },
 
   "reviews": {
-    "0": {
-      "name": "Alexey Smirnov",
-      "date": "May 12, 2025",
-      "text": "I usually use the neural network when we cover complex topics in class. It helps me retain the material faster. It's a handy tool for finding verified medical articles."
+        "0": {
+      "name": "Slyugrov Nyurgun",
+      "date": "May 1, 2025",
+      "text": "A very convenient and useful platform for medical students and doctors. It creates clear diagrams and tables for differential diagnosis and helps you quickly understand complex topics. For medical students, it will be useful not only for preparing for university exams, but also for international certification exams. I use the official ChatGPT subscription for $20, and this platform costs 499 rubles — for this price, it is incredibly profitable. It works quickly, stably, and answers medical questions much better than many other resources."
     },
     "1": {
-      "name": "Elena Ivanova",
-      "date": "June 3, 2025",
-      "text": "I am very cautious about AI, but I have had no problems with this service. I have not noticed any errors in the answers. I receive detailed answers to my educational queries; the main thing is to ask the right questions."
+      "name": "Anna Zhamina",
+      "date": "May 25, 2025",
+      "text": "I use your service regularly — it is really useful and clearly explains various aspects, and it does an excellent job with differential diagnosis. It's the best solution for saving time when studying. My only wish is to add the ability to upload images. As for the rest of the features, I really like them. The answers are clear and structured."
     },
     "2": {
-      "name": "Igor Petrov",
-      "date": "April 22, 2025",
-      "text": "This service saved me during exam season. I had a difficult exam in pharmacy in the winter, and thanks to AI, I didn't have to waste time searching for information. The result was a 5."
+      "name": "Victoria Volkova",
+      "date": "June 15, 2025",
+      "text": "I have been looking for a reliable and fast source of medical information for a long time — AInterMed exceeded all expectations. You ask a question and get a clear, structured answer based on current data. No need to read through dozens of pages — the service understands even complex queries. Plus, you can calculate BMI, GFR, test results, and other indicators with explanations. AInterMed saves time and really helps."
     },
+    
     "3": {
       "name": "Maria Kozlova",
       "date": "June 5, 2025",
@@ -101,19 +102,19 @@
       "text": "I use your service regularly — it is really useful and clearly explains various aspects, and it does an excellent job with differential diagnosis. My only suggestion is to add the ability to upload images. As for the other features, I really like them. The answers are clear and structured."
     },
     "6": {
-      "name": "Slyugrov Nyurgun",
-      "date": "May 1, 2025",
-      "text": "A very convenient and useful platform for medical students and doctors. It creates clear diagrams and tables for differential diagnosis and helps you quickly understand complex topics. For medical students, it will be useful not only for preparing for university exams, but also for international certification exams. I use the official ChatGPT subscription for $20, and this platform costs 499 rubles — for this price, it is incredibly profitable. It works quickly, stably, and answers medical questions much better than many other resources."
+      "name": "Alexey Smirnov",
+      "date": "May 12, 2025",
+      "text": "I usually use the neural network when we cover complex topics in class. It helps me retain the material faster. It's a handy tool for finding verified medical articles."
     },
     "7": {
-      "name": "Anna Zhamina",
-      "date": "May 25, 2025",
-      "text": "I use your service regularly — it is really useful and clearly explains various aspects, and it does an excellent job with differential diagnosis. It's the best solution for saving time when studying. My only wish is to add the ability to upload images. As for the rest of the features, I really like them. The answers are clear and structured."
+      "name": "Elena Ivanova",
+      "date": "June 3, 2025",
+      "text": "I am very cautious about AI, but I have had no problems with this service. I have not noticed any errors in the answers. I receive detailed answers to my educational queries; the main thing is to ask the right questions."
     },
     "8": {
-      "name": "Victoria Volkova",
-      "date": "June 15, 2025",
-      "text": "I have been looking for a reliable and fast source of medical information for a long time — AInterMed exceeded all expectations. You ask a question and get a clear, structured answer based on current data. No need to read through dozens of pages — the service understands even complex queries. Plus, you can calculate BMI, GFR, test results, and other indicators with explanations. AInterMed saves time and really helps."
+      "name": "Igor Petrov",
+      "date": "April 22, 2025",
+      "text": "This service saved me during exam season. I had a difficult exam in pharmacy in the winter, and thanks to AI, I didn't have to waste time searching for information. The result was a 5."
     }
   },
   "pricing.heading1": "Choose yours",
@@ -236,9 +237,9 @@
     "CTA": "Join thousands of students from leading medical schools who have already made the choice to innovate!",
     "Features1": "The platform combines advanced artificial intelligence capabilities with medical expertise",
     "Features2": ", to simplify learning and accelerate professional growth.",
-    "Features3": "What AIntermed offers:",
+    "Features3": "What AInterMed offers:",
     "Features4": "Personalized learning - intelligent analysis of requests and preferences to create customized itineraries.",
-    "Features5": "AI assistants - specialized models AIntermed General and AIntermed Pro, based on current clinical guidelines and databases.",
+    "Features5": "AI assistants - specialized models AInterMed General and AIntermed Pro, based on current clinical guidelines and databases.",
     "Features6": "Interactive practice - virtual patients, clinical cases, tests and medical calculators.",
     "Features7": "Time saving - access to accurate, structured information and complex topics in a convenient format.",
     "Features8": "We have more than",
@@ -247,7 +248,7 @@
     "Features11": "50+ medical universities in Russia, Belarus, Kazakhstan and Kyrgyzstan.",
     "Features12": "Join a community of young medics choosing to innovate!",
     "Intro1": "About our company",
-    "Intro2": "AIntermed - new generation educational platform",
+    "Intro2": "AInterMed - new generation educational platform",
     "Intro3": "for medical students, resident physicians and young specialists.",
     "Intro4": "We are a Far Eastern startup, residents of Technopark Yakutia and OREH Center for Technological Entrepreneurship.",
     "Stats1": "3000+",
@@ -273,13 +274,13 @@
     "titleGradient": "models",
 
     "altmedFree": {
-      "name": "AIntermed Free",
+      "name": "AInterMed Free",
       "title": "For those who want to familiarize themselves",
       "f1": "In the free version, you can ask up to 4 questions per day in the General model only"
     },
 
     "altmedGeneral": {
-      "name": "AIntermed General",
+      "name": "AInterMed General",
       "title": "For students and aspiring physicians:",
       "f1": "Answers to medical questions: easy-to-understand answers to the basic disciplines.",
       "f2": "Exam preparation help: tests and explanations.",
@@ -288,7 +289,7 @@
     },
 
     "altmedPro": {
-      "name": "AIntermed Pro",
+      "name": "AInterMed Pro",
       "title": "For professionals, faculty and residents",
       "f1": "Flagship model with in-depth analytics.",
       "f2": "Case studies and case scenarios.",
@@ -369,9 +370,9 @@
   "Язвенный колит": "Ulcerative colitis",
   "Искусственный интеллект": "Artificial intelligence",
   "Как пользоваться искусственным интеллектом? ": "How to Use Artificial Intelligence?",
-  "Для того чтобы максимально эффективно использовать возможности платформы AIntermed, важно понимать, как правильно формулировать свои запросы.": "In order to maximize the capabilities of the AIntermed platform, it is important to understand how to formulate your queries correctly.",
+  "Для того чтобы максимально эффективно использовать возможности платформы AIntermed, важно понимать, как правильно формулировать свои запросы.": "In order to maximize the capabilities of the AInterMed platform, it is important to understand how to formulate your queries correctly.",
   "Образование доступное каждому": "Education available to everyone",
-  "Демократизация медицины с платформой AIntermed": "Democratizing medicine with the AIntermed platform",
+  "Демократизация медицины с платформой AIntermed": "Democratizing medicine with the AInterMed platform",
   "Часто задаваемые вопросы (FAQ)": "Frequently Asked Questions (FAQ)",
   "Ответы нашей команды на пользовательские вопросы":"Our team's answers to user questions",
   "Методички и гайды": "Tutorials and guides",

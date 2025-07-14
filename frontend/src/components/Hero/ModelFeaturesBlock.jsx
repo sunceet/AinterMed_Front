@@ -104,7 +104,7 @@ export default function ModelFeaturesBlock() {
               <img
                 src="/assets/svg/arrow_for_model.svg"
                 alt="Назад"
-                className="w-[28px] h-[28px] rotate-180"
+                className="w-[28px] h-[28px] rotate-180 cursor-pointer hover:scale-110 duration-100"
               />
             </button>
             <button
@@ -114,7 +114,7 @@ export default function ModelFeaturesBlock() {
               <img
                 src="/assets/svg/arrow_for_model.svg"
                 alt="Вперёд"
-                className="w-[28px] h-[28px]"
+                className="w-[28px] h-[28px] cursor-pointer hover:scale-110 duration-100"
               />
             </button>
           </div>

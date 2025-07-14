@@ -8,6 +8,7 @@ const groupChats = (chats) => [
   { label: "Вчера", items: chats.filter((c) => c.date === "yesterday") },
   { label: "7 дней", items: chats.filter((c) => c.date === "week") },
   { label: "30 дней", items: chats.filter((c) => c.date === "month") },
+  // {label: "12.04.2024", items: chats.filter ((c) => c.date === "what_month")}
 ];
 
 // chats: массив чатов, приходит с бэкенда. Каждый чат должен содержать id, name, date (today/yesterday/week/month), и, возможно, другие поля.
@@ -93,7 +94,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
         </div>
         <div className="px-7 pb-2">
           {/* Кнопка "Новый чат": здесь нужно вызывать функцию создания нового чата на бэкенде и обновлять список чатов. */}
-          <button className="w-full cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white h-[48px] rounded-full text-[14px] font-[Involve] shadow-md hover:from-[#3566c7] hover:to-[#437CFF] transition mb-2">
+          <button className="w-full cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white h-[48px] rounded-full text-[14px] font-[Involve]  hover:from-[#3566c7] hover:to-[#437CFF] transition mb-2">
             <img
               src="/assets/svg/plus.svg"
               alt="plus"
