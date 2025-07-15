@@ -42,13 +42,14 @@ export default function ChatWelcome() {
       {/* История сообщений */}
       <div
         ref={historyRef}
-        className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 ${
+        className={`flex flex-col w-full  z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 ${
           hasMessages ? "pt-15" : "hidden"
         }`}
+        
       >
         {messages.map((msg, index) => (
           <article key={msg.id} data-testid={`conversation-turn-${index}`}>
-            <div className=" text-base mx-auto py-3 px-2 sm:px-3 lg:px-4 max-w-[864px] ">
+            <div className=" text-base mx-auto py-3 px-2 sm:px-3 xl:2 max-w-[864px] ">
               <div
                 className={`flex ${
                   msg.role === "assistant"
@@ -76,7 +77,7 @@ export default function ChatWelcome() {
                               whitespace-pre-line bg-blue-100 p-3
                               ${
                                 msg.role === "user"
-                                  ? "bg-[#E6ECFF] rounded-[24px] px-4 py-3"
+                                  ? "bg-[#E6ECFF] rounded-[24px] rounded-br-[2px]  px-4 py-3"
                                   : "bg-white px-2 py-2"
                               }
                             `}
@@ -116,21 +117,22 @@ export default function ChatWelcome() {
 
       {/* Input-блок — по центру или внизу */}
       <div
-        className={`w-full max-w-[864px]  px-2 sm:px-4 transition-all duration-500 ${
+        className={`w-full max-w-[864px]  px-2 xl:px-3 transition-all duration-500 ${
           hasMessages
             ? ""
             : "flex-1 flex flex-col items-center justify-center gap-6"
         }`}
       >
         {!hasMessages && (
-          <h1 className="text-xl sm:text-2xl md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
+          <h1 className="text-xl sm:text-[34px] md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
             Добро пожаловать в AInterMed
           </h1>
         )}
 
-        <div className="w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col sm:gap-4  border border-[#C6C6C6] shadow-lg rounded-[24px] sm:rounded-[34px]">
+        <div className="relative z-100 w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col sm:gap-1 xl:gap-2 border border-[#C6C6C6] shadow-2xl/5 rounded-[24px] sm:rounded-[34px] shadow-[0_0_60px_20px_rgba(255,255,255,1)] ">
+
           <input
-            className="pt-2 sm:pt-[11px] pl-1 pr-1 sm:pl-5 sm:pr-5 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[16px] sm:text-[16px] md:text-[18px] font-normal font-[Manrope] leading-[20px] sm:leading-[22px] w-full rounded-full border-none"
+            className=" pt-2 sm:pt-[11px] pl-3 pr-3 sm:pl-5 sm:pr-5 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[16px] sm:text-[19px] md:text-[21px] font-normal font-[Manrope] leading-[20px] sm:leading-[22px] w-full rounded-full border-none"
             placeholder="Спросите что-нибудь..."
             type="text"
             value={input}
@@ -195,7 +197,7 @@ export default function ChatWelcome() {
         </div>
       </div>
 
-      {/* Анимация появления сообщений */}
+      {/* Анимация появления сообщений */}  
       <style jsx>{`
         .animate-slide-in {
           animation: slideIn 0.25s ease-out;

@@ -50,7 +50,7 @@ function groupChats(chats) {
       month.push(chat);
     } else {
       // Группировка по месяцам и годам
-      const key = `${months[chatDate.getMonth()]} ${chatDate.getFullYear()}`;
+      const key = `${months[chatDate.getMonth()]}`; //${chatDate.getFullYear()}
       if (!byMonth[key]) byMonth[key] = [];
       byMonth[key].push(chat);
     }
@@ -100,7 +100,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       {/* Кнопка открытия сайдбара на десктопе, когда он закрыт */}
       {!isOpen && (
         <button
-          className="fixed top-6 left-2 z-[300] bg-white rounded-full shadow p-2 border border-[#E0E0E0] transition sm:block hidden"
+          className="fixed top-6 left-2 z-[300] bg-white rounded-full shadow p-2 border border-[#E0E0E0] transition md:block hidden"
           onClick={() => setIsOpen(true)}
           title="Открыть боковую панель"
         >
@@ -112,14 +112,15 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
         </button>
       )}
       {/* Мобильный header всегда виден на sm и меньше */}
-      <div className="sm:hidden bg-white  flex items-center justify-between w-full h-16 px-3  border-b border-[#E0E0E0] z-[210] fixed top-0 left-0">
+      <div className="md:hidden bg-white  flex items-center justify-between w-full h-16 px-3  border-b border-[#E0E0E0] z-[210] fixed top-0 left-0">
         <BurgerMenuButton menuOpen={isOpen} setMenuOpen={setIsOpen} />
         <Link href="/">
-          <img
-            src="/assets/svg/Logo.svg"
-            alt="Logo"
-            className="h-5 w-auto pr-[110px] transition-all cursor-pointer"
-          />
+        <img
+          src="/assets/svg/Logo.svg"
+          alt="Logo"
+          className="h-5 sm:h-6 w-auto m transition-all cursor-pointer fixed left-15 top-[22px] sm:top-[20px]"
+        />
+
         </Link>
         <button className="p-2 ml-2" title="Новый чат">
           <img src="/assets/svg/plus.svg" alt="plus" className="h-6 w-6" />
@@ -128,10 +129,10 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       <aside
         className={`transition-all duration-300 h-full bg-[#F7F7F7] border-r border-[#ffffff] flex flex-col z-20
           ${isOpen ? "w-[338px] min-w-[260px] opacity-100" : "w-0 min-w-0 opacity-0 pointer-events-none"}
-          fixed sm:static top-0 left-0 sm:top-auto sm:left-auto
-          h-screen sm:h-full
+          fixed md:static top-0 left-0 md:top-auto md:left-auto
+          h-screen md:h-full
           z-[200]
-          sm:z-20
+          md:z-20
         `}
         style={{
           overflow: isOpen ? "visible" : "hidden",
@@ -181,7 +182,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
                   {group.items.map((chat) => (
                     <div
                       key={chat.id}
-                      className={`flex items-center gap-2 px-4 py-2 rounded cursor-pointer hover:bg-[#e6edfa] transition ${chat.id === activeId ? "bg-[#e6edfa]" : ""}`}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-xl cursor-pointer hover:bg-[#e6edfa] transition ${chat.id === activeId ? "bg-[#e6edfa]" : ""}`}
                       onClick={() => setActiveId(chat.id)}
                     >
                       {/* При клике на чат вызывается setActiveId(chat.id): здесь можно подгружать сообщения выбранного чата с бэкенда. */}
@@ -211,7 +212,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       {/* Мобильное затемнение фона при открытой панели */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 bg-opacity-40 z-[150] sm:hidden transition-opacity duration-300"
+          className="fixed inset-0 bg-black/40 bg-opacity-40 z-[150] md:hidden transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}

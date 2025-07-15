@@ -13,6 +13,7 @@ monthAgo.setDate(today.getDate() - 30);
 const juneDate = new Date(today.getFullYear(), 5, 10);
 const mayDate = new Date(today.getFullYear(), 4, 15);
 const aprilDate = new Date(today.getFullYear(), 3, 10);
+const marchDate = new Date(today.getFullYear(),2,10);
 
 const mockChats = [
   {
@@ -57,6 +58,7 @@ const mockChats = [
     date: juneDate.toISOString(),
   },
   { id: 22, name: "Весенний осмотр", date: aprilDate.toISOString() },
+  {id:23, name:"Военкомат", date:marchDate.toISOString()},
 ];
 
 export default function ChatPage() {
