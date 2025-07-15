@@ -130,7 +130,7 @@ export default function ChatWelcome() {
 
         <div className="w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col sm:gap-4  border border-[#C6C6C6] shadow-lg rounded-[24px] sm:rounded-[34px]">
           <input
-            className="pt-2 sm:pt-[11px] pl-3 pr-3 sm:pl-5 sm:pr-5 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[15px] sm:text-[16px] md:text-[18px] font-normal font-[Manrope] leading-[20px] sm:leading-[22px] w-full rounded-full border-none"
+            className="pt-2 sm:pt-[11px] pl-1 pr-1 sm:pl-5 sm:pr-5 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[15px] sm:text-[16px] md:text-[18px] font-normal font-[Manrope] leading-[20px] sm:leading-[22px] w-full rounded-full border-none"
             placeholder="Спросите что-нибудь..."
             type="text"
             value={input}
