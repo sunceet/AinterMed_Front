@@ -4,18 +4,21 @@ const reviews = [
     dateKey: "reviews.0.date",
     textKey: "reviews.0.text",
     rating: 5,
+    avatar: "/assets/svg/Nyrgyn_Slygrov.jpg",
   },
   {
     nameKey: "reviews.1.name",
     dateKey: "reviews.1.date",
     textKey: "reviews.1.text",
     rating: 5,
+    avatar: "/assets/svg/Anna_Jhamina.jpg",
   },
   {
     nameKey: "reviews.2.name",
     dateKey: "reviews.2.date",
     textKey: "reviews.2.text",
     rating: 5,
+    avatar: "/assets/svg/Viktorya_Volkova.jpg",
   },
   {
     nameKey: "reviews.3.name",

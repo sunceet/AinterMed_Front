@@ -3,13 +3,80 @@ import { useState, useEffect } from "react";
 import BurgerMenuButton from "../Header/BurgerMenuButton";
 import Link from "next/link";
 
-const groupChats = (chats) => [
-  { label: "Сегодня", items: chats.filter((c) => c.date === "today") },
-  { label: "Вчера", items: chats.filter((c) => c.date === "yesterday") },
-  { label: "7 дней", items: chats.filter((c) => c.date === "week") },
-  { label: "30 дней", items: chats.filter((c) => c.date === "month") },
-  // {label: "12.04.2024", items: chats.filter ((c) => c.date === "what_month")}
-];
+function groupChats(chats) {
+  const now = new Date();
+  const startOfToday = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate()
+  );
+  const startOfYesterday = new Date(startOfToday);
+  startOfYesterday.setDate(startOfToday.getDate() - 1);
+  const startOf7DaysAgo = new Date(startOfToday);
+  startOf7DaysAgo.setDate(startOfToday.getDate() - 7);
+  const startOf30DaysAgo = new Date(startOfToday);
+  startOf30DaysAgo.setDate(startOfToday.getDate() - 30);
+
+  const months = [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь",
+  ];
+
+  const today = [];
+  const yesterday = [];
+  const week = [];
+  const month = [];
+  const byMonth = {};
+
+  chats.forEach((chat) => {
+    const chatDate = new Date(chat.date);
+    if (chatDate >= startOfToday) {
+      today.push(chat);
+    } else if (chatDate >= startOfYesterday) {
+      yesterday.push(chat);
+    } else if (chatDate >= startOf7DaysAgo) {
+      week.push(chat);
+    } else if (chatDate >= startOf30DaysAgo) {
+      month.push(chat);
+    } else {
+      // Группировка по месяцам и годам
+      const key = `${months[chatDate.getMonth()]} ${chatDate.getFullYear()}`;
+      if (!byMonth[key]) byMonth[key] = [];
+      byMonth[key].push(chat);
+    }
+  });
+
+  const result = [];
+  if (today.length) result.push({ label: "Сегодня", items: today });
+  if (yesterday.length) result.push({ label: "Вчера", items: yesterday });
+  if (week.length) result.push({ label: "7 дней", items: week });
+  if (month.length) result.push({ label: "30 дней", items: month });
+  // Добавляем группы по месяцам (сортировка по убыванию даты)
+  Object.keys(byMonth)
+    .sort((a, b) => {
+      // a,b = june 2024, july 2024
+      // Сортировка по году и месяцу
+      const [ma, ya] = a.split(" ");
+      const [mb, yb] = b.split(" ");
+      const dateA = new Date(parseInt(ya), months.indexOf(ma));
+      const dateB = new Date(parseInt(yb), months.indexOf(mb));
+      return dateB - dateA;
+    })
+    .forEach((key) => {
+      result.push({ label: key, items: byMonth[key] });
+    });
+  return result;
+}
 
 // chats: массив чатов, приходит с бэкенда. Каждый чат должен содержать id, name, date (today/yesterday/week/month), и, возможно, другие поля.
 export default function ChatSidebar({ chats, activeId, setActiveId }) {

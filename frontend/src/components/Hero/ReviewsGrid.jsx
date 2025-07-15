@@ -24,7 +24,7 @@ const ReviewCard = ({ review }) => {
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 rounded-full overflow-hidden">
           <Image
-            src="/assets/svg/anonym.svg"
+            src={review.avatar ? review.avatar : "/assets/svg/anonym.svg"}
             alt="Avatar"
             width={48}
             height={48}

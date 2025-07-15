@@ -3,36 +3,60 @@ import { useState } from "react";
 import ChatSidebar from "../../components/Chat/ChatSidebar";
 import ChatWelcome from "../../components/Chat/ChatWelcome";
 
+const today = new Date();
+const yesterday = new Date();
+yesterday.setDate(today.getDate() - 1);
+const weekAgo = new Date();
+weekAgo.setDate(today.getDate() - 7);
+const monthAgo = new Date();
+monthAgo.setDate(today.getDate() - 30);
+const juneDate = new Date(today.getFullYear(), 5, 10);
+const mayDate = new Date(today.getFullYear(), 4, 15);
+const aprilDate = new Date(today.getFullYear(), 3, 10);
+
 const mockChats = [
-  { id: 1, name: "Контрольные вопросы по погрешности", date: "today" },
-  { id: 2, name: "Студенты из любых регионов", date: "yesterday" },
+  {
+    id: 1,
+    name: "Контрольные вопросы по погрешности",
+    date: today.toISOString(),
+  },
+  { id: 2, name: "Студенты из любых регионов", date: yesterday.toISOString() },
   {
     id: 3,
     name: "Наша миссия сделать качественное медиц...",
-    date: "yesterday",
+    date: yesterday.toISOString(),
   },
-  { id: 4, name: "Визит к врачу", date: "week" },
-  { id: 5, name: "Как дела?", date: "week" },
-  { id: 6, name: "Доброе утро", date: "week" },
-  { id: 7, name: "Персональный клинический ассистент для ст...", date: "week" },
-  { id: 8, name: "Искусственный интеллект", date: "week" },
-  { id: 9, name: "Перейти к базе", date: "week" },
-  { id: 10, name: "Перейти к ИИ", date: "week" },
-  { id: 11, name: "AInterMed расскажи о себе", date: "month" },
-  { id: 12, name: "Что такое рак легких", date: "month" },
-  { id: 13, name: "Добрый день", date: "month" },
-  { id: 14, name: "Отделение неотложной помощи", date: "month" },
-  { id: 15, name: "Нейрохирургия - определение", date: "month" },
-  { id: 16, name: "Привет Аинтермед", date: "month" },
-  { id:17, name: "aplsdalsdp", date:"date"},
+  { id: 4, name: "Визит к врачу", date: weekAgo.toISOString() },
+  { id: 5, name: "Как дела?", date: weekAgo.toISOString() },
+  { id: 6, name: "Доброе утро", date: weekAgo.toISOString() },
   {
-    id: 17,
-    name: "Микроинсульт - это кратковременное наруш...",
-    date: "month",
+    id: 7,
+    name: "Персональный клинический ассистент для ст...",
+    date: weekAgo.toISOString(),
   },
-  { id: 18, name: "Боль в почках", date: "month" },
-  { id: 19, name: "Болит живот", date: "month" },
-  { id: 20, name: "Что делать если кровь не перестает идти", date: "month" },
+  { id: 8, name: "Искусственный интеллект", date: weekAgo.toISOString() },
+  { id: 9, name: "Перейти к базе", date: weekAgo.toISOString() },
+  { id: 10, name: "Перейти к ИИ", date: weekAgo.toISOString() },
+  { id: 11, name: "AInterMed расскажи о себе", date: monthAgo.toISOString() },
+  { id: 12, name: "Что такое рак легких", date: monthAgo.toISOString() },
+  { id: 13, name: "Добрый день", date: monthAgo.toISOString() },
+  { id: 14, name: "Отделение неотложной помощи", date: monthAgo.toISOString() },
+  { id: 15, name: "Нейрохирургия - определение", date: monthAgo.toISOString() },
+  { id: 16, name: "Привет Аинтермед", date: monthAgo.toISOString() },
+  { id: 17, name: "aplsdalsdp", date: mayDate.toISOString() },
+  {
+    id: 18,
+    name: "Микроинсульт - это кратковременное наруш...",
+    date: juneDate.toISOString(),
+  },
+  { id: 19, name: "Боль в почках", date: mayDate.toISOString() },
+  { id: 20, name: "Болит живот", date: juneDate.toISOString() },
+  {
+    id: 21,
+    name: "Что делать если кровь не перестает идти",
+    date: juneDate.toISOString(),
+  },
+  { id: 22, name: "Весенний осмотр", date: aprilDate.toISOString() },
 ];
 
 export default function ChatPage() {
