@@ -130,13 +130,17 @@ export default function ChatWelcome() {
 
         <div className="w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col sm:gap-4  border border-[#C6C6C6] shadow-lg rounded-[24px] sm:rounded-[34px]">
           <input
-            className="pt-2 sm:pt-[11px] pl-1 pr-1 sm:pl-5 sm:pr-5 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[15px] sm:text-[16px] md:text-[18px] font-normal font-[Manrope] leading-[20px] sm:leading-[22px] w-full rounded-full border-none"
+            className="pt-2 sm:pt-[11px] pl-1 pr-1 sm:pl-5 sm:pr-5 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[16px] sm:text-[16px] md:text-[18px] font-normal font-[Manrope] leading-[20px] sm:leading-[22px] w-full rounded-full border-none"
             placeholder="Спросите что-нибудь..."
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            style={{ minHeight: 44 }}
+            style ={{
+              transform:"scale(0.875)",
+              transformOrigin:"left center",
+            }}
+            // style={{ minHeight: 44 }}
           />
           <div className="flex flex-wrap xl:flex-nowrap items-end justify-between mt-2 sm:mt-3 gap-4 sm:gap-8 xl:gap-20">
             <div className="flex gap-1 sm:gap-2 flex-wrap">
