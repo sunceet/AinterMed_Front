@@ -11,7 +11,7 @@ export default function AppShell({ children }) {
   return (
     <NoSSR>
       {!isChat && <Header />}
-      {children}
+      <div className="pt-18">{children}</div>
       {!isChat && <Footer />}
       {!isChat && <CookieConsent />}
     </NoSSR>

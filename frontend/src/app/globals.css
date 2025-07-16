@@ -162,7 +162,22 @@ html {
 }
 
 body.modal-open header {
-  display: none !important;
+  filter: blur(8px) !important;
+}
+
+body.modal-open .modal-blur {
+  filter: blur(8px) !important;
+  pointer-events: none;
+}
+
+body.modal-open header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  border-radius: inherit;
+  z-index: 101;
+  pointer-events: none;
 }
 
 @keyframes swipe-right {

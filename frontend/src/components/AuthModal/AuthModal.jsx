@@ -23,7 +23,6 @@ export default function AuthModal({ onClose, mode = "register" }) {
     const originalBodyOverflow = document.body.style.overflow;
 
     document.body.classList.add("modal-open");
-
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
 
