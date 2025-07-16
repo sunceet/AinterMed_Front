@@ -11,7 +11,9 @@ export default function AppShell({ children }) {
   return (
     <NoSSR>
       {!isChat && <Header />}
-      <div className="pt-18">{children}</div>
+      <div className={pathname.startsWith("/chat") ? "" : "pt-18"}>
+        {children}
+      </div>
       {!isChat && <Footer />}
       {!isChat && <CookieConsent />}
     </NoSSR>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 // В Next.js App Router ассеты лучше держать в public и передавать путь как строку!
 const models = [
@@ -49,6 +50,35 @@ export default function ModelFeaturesBlock() {
   const { t } = useTranslation();
   const [index, setIndex] = useState(2);
   const model = models[index];
+
+  // --- swipe logic ---
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    touchStartX.current = e.changedTouches[0].clientX;
+  };
+  const onTouchMove = (e) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+  };
+  const onTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > 0) {
+        // swipe left
+        next();
+      } else {
+        // swipe right
+        prev();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+  // --- end swipe logic ---
 
   const prev = () => setIndex(index === 0 ? models.length - 1 : index - 1);
   const next = () => setIndex(index === models.length - 1 ? 0 : index + 1);
@@ -141,7 +171,12 @@ export default function ModelFeaturesBlock() {
 
       {/* Mobile */}
       <div className="xl:hidden px-4 pt-10 pb-16 flex flex-col items-center gap-6">
-        <div className="relative w-[300px] h-[300px] flex items-center justify-center">
+        <div
+          className="relative w-[300px] h-[300px] flex items-center justify-center"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div className="relative w-[500px] h-[500px]">
             {model.video && (
               <video
