@@ -195,3 +195,7 @@ body.modal-open header::after {
 .animate-swipe-right {
   animation: swipe-right 1.4s ease-in-out infinite;
 }
+
+.scrollbar-stable {
+  scrollbar-gutter: stable;
+}

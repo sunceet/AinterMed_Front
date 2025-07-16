@@ -42,18 +42,19 @@ export default function ChatWelcome() {
       {/* История сообщений */}
       <div
         ref={historyRef}
-        className={`flex flex-col w-full  z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 ${
+        className={`flex flex-col w-full  z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
           hasMessages ? "pt-15" : "hidden"
         }`}
+        style={{ overflowY: "overlay" }}
       >
         {messages.map((msg, index) => (
           <article key={msg.id} data-testid={`conversation-turn-${index}`}>
-            <div className=" text-base mx-auto py-3 px-2 sm:px-3 xl:2 max-w-[864px] ">
+            <div className=" text-base mx-auto py-2 max-w-[864px] ">
               <div
                 className={`flex ${
                   msg.role === "assistant"
-                    ? "flex-row items-start"
-                    : "flex-row-reverse items-end"
+                    ? "flex-row items-start ml-5"
+                    : "flex-row-reverse items-end mr-1"
                 }`}
               >
                 {msg.role === "assistant" && (
