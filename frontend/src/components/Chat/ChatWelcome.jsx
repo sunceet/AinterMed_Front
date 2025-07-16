@@ -53,8 +53,8 @@ export default function ChatWelcome() {
               <div
                 className={`flex ${
                   msg.role === "assistant"
-                    ? "flex-row items-start md:ml-5"
-                    : "flex-row-reverse items-end md:mr-1"
+                    ? "flex-row items-start ml-1 lg:ml-2 2xl::ml-5"
+                    : "flex-row-reverse items-end mr-1 lg:mr-2 2xl::mr-1"
                 }`}
               >
                 {msg.role === "assistant" && (
