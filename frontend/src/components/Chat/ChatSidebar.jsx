@@ -112,16 +112,17 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
         </button>
       )}
       {/* Мобильный header всегда виден на sm и меньше */}
-      <div className="md:hidden bg-white  flex items-center justify-between w-full h-16 px-3  border-b border-[#E0E0E0] z-[210] fixed top-0 left-0">
-        <BurgerMenuButton menuOpen={isOpen} setMenuOpen={setIsOpen} />
-        <Link href="/">
-        <img
-          src="/assets/svg/Logo.svg"
-          alt="Logo"
-          className="h-5 sm:h-6 w-auto m transition-all cursor-pointer fixed left-15 top-[22px] sm:top-[20px]"
-        />
-
-        </Link>
+      <div className="md:hidden bg-white flex items-center w-full h-18 px-4 border-b border-[#C6C6C6] z-[210] fixed top-0 left-0 justify-between">
+        <div className="flex items-center gap-2">
+          <BurgerMenuButton menuOpen={isOpen} setMenuOpen={setIsOpen} />
+          <Link href="/">
+            <img
+              src="/assets/svg/Logo.svg"
+              alt="Logo"
+              className="h-5 sm:h-6 w-auto pl-2 m object-contain"
+            />
+          </Link>
+        </div>
         <button className="p-2 ml-2" title="Новый чат">
           <img src="/assets/svg/plus.svg" alt="plus" className="h-6 w-6" />
         </button>

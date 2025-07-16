@@ -30,7 +30,8 @@ export default function Header() {
       <header className="sticky top-0 z-100 bg-white/90 backdrop-blur border-b border-[#C6C6C6]">
         <div className="mx-auto flex h-18 items-center justify-center max-w-screen-xl px-4 sm:px-4 lg:px-8 font-[Manrope]">
           <div className="flex w-full max-w-[1255px] items-center justify-between gap-6 relative xl:left-[20px]">
-            <div className="flex items-center gap-6 relative xl:-left-[40px]">
+            {/* Desktop: Лого + навигация */}
+            <div className="items-center gap-6 relative xl:-left-[40px] hidden xl:flex">
               <a href="/" aria-label="На главную">
                 <img
                   src="/assets/svg/Logo.svg"
@@ -41,6 +42,7 @@ export default function Header() {
               <DesktopNav link={link} />
             </div>
 
+            {/* Desktop: Языки, кнопки, уведомления */}
             <div className="hidden xl:flex items-center gap-4">
               <LangSwitcher link={link} />
               <AuthButtons btn={btn} setShowAuthModal={setShowAuthModal} />
@@ -53,7 +55,21 @@ export default function Header() {
               </button>
             </div>
 
-            <div className="flex items-center gap-4 xl:hidden">
+            {/* Мобильный header: бургер слева, лого справа от него, уведомления справа */}
+            <div className="flex items-center gap-4 w-full xl:hidden justify-between">
+              <div className="flex items-center gap-2">
+                <BurgerMenuButton
+                  menuOpen={menuOpen}
+                  setMenuOpen={setMenuOpen}
+                />
+                <a href="/" aria-label="На главную">
+                  <img
+                    src="/assets/svg/Logo.svg"
+                    alt="Logo"
+                    className="h-5 sm:h-6 w-auto pl-2 m object-contain "
+                  />
+                </a>
+              </div>
               <button>
                 <img
                   src="/assets/svg/Bell.svg"
@@ -61,7 +77,6 @@ export default function Header() {
                   className="h-7 w-auto"
                 />
               </button>
-              <BurgerMenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             </div>
           </div>
         </div>
