@@ -119,7 +119,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             <img
               src="/assets/svg/Logo.svg"
               alt="Logo"
-              className="h-5 sm:h-6 w-auto pl-2 m object-contain"
+              className="h-6 w-auto pl-2 m object-contain"
             />
           </Link>
         </div>
