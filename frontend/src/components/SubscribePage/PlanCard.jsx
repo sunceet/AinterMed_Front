@@ -128,6 +128,16 @@ export default function PlanCard({
         ))}
       </ul>
 
+      {/* Кнопка для бесплатного тарифа */}
+      {plan.id === "free" && (
+        <button
+          onClick={openModal}
+          className="w-full h-[56px] rounded-full text-white font-[Involve] text-[15px] font-medium uppercase tracking-wide transition-transform duration-100 touch-manipulation bg-gradient-to-r from-[#437CFF] to-[#65EDFF] hover:scale-105 cursor-pointer mb-2"
+        >
+          Попробовать бесплатно
+        </button>
+      )}
+
       {isPaid && (
         <button
           onClick={openModal}
