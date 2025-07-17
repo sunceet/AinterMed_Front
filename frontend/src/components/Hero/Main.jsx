@@ -12,6 +12,7 @@ import ReviewsGrid from "./ReviewsGrid";
 import PricingCards from "./PricingCards";
 import ChatPreviewCarousel from "./ExampleChat/ChatPreviewCarousel";
 import ModelFeaturesBlock from "./ModelFeaturesBlock";
+import PartnersBlock from "./PartnersBlock";
 
 const Main = () => (
   <section className="relative w-full bg-white text-center overflow-hidden">
@@ -39,9 +40,10 @@ const Main = () => (
 
       <ReviewsGrid />
 
-      <div className="w-full rounded-t-4xl mt-20 bg-[#F2F2F2]">
+      <div className="w-full rounded-t-4xl mt-20 bg-[#F2F2F2] sm:pb-16">
         <PricingCards />
         <FaqBlock />
+        <PartnersBlock />
       </div>
     </div>
   </section>

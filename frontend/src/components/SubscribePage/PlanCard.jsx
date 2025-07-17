@@ -129,6 +129,8 @@ export default function PlanCard({
       </ul>
 
       {/* Кнопка для бесплатного тарифа */}
+
+      {/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */}
       {plan.id === "free" && (
         <button
           onClick={openModal}
