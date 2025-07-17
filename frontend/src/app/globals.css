@@ -174,7 +174,7 @@ body.modal-open header::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.58);
+  background: rgba(0, 0, 0, 0.01);
   border-radius: inherit;
   z-index: 101;
   pointer-events: none;
