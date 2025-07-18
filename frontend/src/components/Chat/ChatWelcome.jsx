@@ -117,7 +117,7 @@ export default function ChatWelcome() {
 
       {/* Input-блок — по центру или внизу */}
       <div
-        className={`w-full max-w-[864px]  px-2 xl:px-3 transition-all duration-500 ${
+        className={`w-full max-w-[910px]  px-2 xl:px-3 transition-all duration-500 ${
           hasMessages
             ? ""
             : "flex-1 flex flex-col items-center justify-center gap-6"
@@ -211,4 +211,4 @@ export default function ChatWelcome() {
       `}</style>
     </div>
   );
-}
+} 

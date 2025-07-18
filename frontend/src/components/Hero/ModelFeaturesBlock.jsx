@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 
-// В Next.js App Router ассеты лучше держать в public и передавать путь как строку!
 const models = [
   {
     id: "AltmedFree",
@@ -97,7 +96,7 @@ export default function ModelFeaturesBlock() {
       {/* Desktop */}
       <div className="hidden xl:flex justify-center py-16 px-4">
         <div className="w-[1255px] flex items-center justify-between gap-2">
-          <div className="w-[420px] bg-[#F4F4F4] p-8 rounded-2xl text-left">
+          <div className="w-[420px] bg-[#F4F4F4] p-8 rounded-[28px] text-left">
             <h3 className="font-involve font-semibold text-[20px] leading-[32px] text-black mb-6">
               {t(model.titleKey)}
             </h3>
