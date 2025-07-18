@@ -44,7 +44,7 @@ export default function CookieConsent() {
     <div
       className={`fixed bottom-0 left-0 right-0 z-50 flex justify-center transition-opacity duration-300 ${isHiding ? "opacity-0" : "opacity-100"}`}
     >
-      <div className="w-full max-w-2xl mx-2 sm:mx-auto mb-4 bg-white/70 backdrop-blur-md border border-white/1 rounded-2xl px-3 sm:px-5 py-3 sm:py-4 flex flex-row items-center gap-3 sm:gap-6">
+      <div className="w-full max-w-2xl mx-2 sm:mx-auto mb-4 bg-white/70 backdrop-blur-md border border-[#C6C6C6] rounded-2xl px-3 sm:px-5 py-3 sm:py-4 flex flex-row items-center gap-3 sm:gap-6">
         <div className="flex-1 text-xs sm:text-sm md:text-base text-gray-800 text-left">
           {t("cookie.text")}{" "}
           <a href="/legal/privacy" className="underline text-blue-600">

@@ -15,7 +15,7 @@ const CtaButton = () => {
         y: { duration: 0.8, ease: "easeOut" },
         filter: { duration: 1, delay: 0.2 },
       }}
-      href="https://aintermed.com/ai"
+      href="/chat"
       target="_blank"
       rel="noopener noreferrer"
       className="relative overflow-hidden font-[Involve] font-medium flex items-center justify-center gap-2

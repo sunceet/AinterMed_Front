@@ -17,13 +17,13 @@ const partners = [
 
 const PartnersBlock = () => (
   <div className="w-full flex justify-center px-4 py-10">
-    <div className="grid grid-cols-4 gap-6 w-full max-w-6xl items-center">
+    <div className="grid grid-cols-4 gap-4 w-full max-w-4xl items-center">
       {partners.map((partner, idx) => (
         <div key={idx} className="flex justify-center items-center w-full">
           <a target="_blank" rel="noopener noreferrer">
             <img
               src={partner.src}
-              className="w-[70px] h-[70px] sm:w-[150px] sm:h-[150px] object-contain"
+              className="w-[70px] h-[70px] sm:w-[120px] sm:h-[120px] object-contain"
               draggable="false"
               onContextMenu={(e) => e.preventDefault()}
               style={{ pointerEvents: "auto" }}
