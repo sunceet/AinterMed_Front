@@ -187,7 +187,7 @@ export default function ChatWelcome() {
 
       {/* Нижнее предупреждение */}
       <div className="w-full  xl:py-3 flex justify-center pointer-events-none select-none">
-        <div className="text-[10px] sm:text-[12px] text-[#888] text-center w-full max-w-2xl mx-auto">
+        <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-white text-center w-full max-w-2xl mx-auto">
           AInterMed может ошибаться — рекомендуется сверять информацию с
           официальными и проверенными источниками
         </div>
@@ -211,4 +211,4 @@ export default function ChatWelcome() {
       `}</style>
     </div>
   );
-} 
+}

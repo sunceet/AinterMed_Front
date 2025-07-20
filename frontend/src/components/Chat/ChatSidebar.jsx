@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import BurgerMenuButton from "../Header/BurgerMenuButton";
 import Link from "next/link";
+import ToggleDarkMode from "../ui/ToggleDarkMode";
 
 function groupChats(chats) {
   const now = new Date();
@@ -160,6 +161,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               className="h-full w-full"
             />
           </button>
+          <ToggleDarkMode />
         </div>
         <div className="px-7 pb-2">
           {/* Кнопка "Новый чат": здесь нужно вызывать функцию создания нового чата на бэкенде и обновлять список чатов. */}
