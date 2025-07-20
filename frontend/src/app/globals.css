@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-primary: #438eff;
+  --color-secondary: #000000;
+  --color-tertiary: #888888;
+  --color-quaternary: #ffffff;
+}
 
 @font-face {
   font-family: "Involve";

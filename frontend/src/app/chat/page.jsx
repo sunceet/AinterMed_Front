@@ -70,7 +70,7 @@ export default function ChatPage() {
         activeId={activeId}
         setActiveId={setActiveId}
       />
-      <main className="flex-1 bg-white flex flex-col">
+      <main className="flex-1 bg-white dark:bg-[#1b1c1d] flex flex-col">
         <ChatWelcome />
       </main>
     </div>

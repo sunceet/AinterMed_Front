@@ -129,7 +129,7 @@ export default function ChatWelcome() {
           </h1>
         )}
 
-        <div className="relative z-100 w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col  border border-[#C6C6C6] shadow-2xl/5 rounded-[24px] sm:rounded-[34px] shadow-[0_0_60px_20px_rgba(255,255,255,1)] ">
+        <div className="relative z-100 w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col  border border-[#C6C6C6] dark:border-[#373737]  shadow-2xl/5 rounded-[24px] sm:rounded-[34px] shadow-[0_0_60px_20px_rgba(255,255,255,1)] dark:dark:shadow-[0_0_60px_20px_rgba(255,255,255,0.3)]">
           <input
             className="pt-2 pb-2.5 sm:pt-[11px] pl-3 pr-3 sm:pl-5 sm:pr-6 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[16px] sm:text-[19px] md:text-[19px] font-normal font-[Manrope] leading-[24px] w-full rounded-full border-none min-h-[44px]"
             placeholder="Спросите что-нибудь..."
@@ -144,7 +144,7 @@ export default function ChatWelcome() {
             <div className="flex gap-1 sm:gap-2 flex-wrap">
               <button
                 type="button"
-                className="flex items-center pl-3 sm:pl-4 px-3 sm:px-5 py-2 bg-white border border-[#C6C6C6] rounded-full text-xs sm:text-sm font-medium text-gray-800"
+                className="flex items-center pl-3 sm:pl-4 px-3 sm:px-5 py-2 bg-white dark:bg-[#282a2c] border border-[#C6C6C6] dark:border-[#373737]  rounded-full text-xs sm:text-sm font-medium text-gray-800"
                 disabled
               >
                 <span className="text-black">AInterMed</span>
@@ -152,13 +152,13 @@ export default function ChatWelcome() {
               </button>
               <button
                 type="button"
-                className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white border border-[#C6C6C6] rounded-full text-xs sm:text-sm font-medium"
+                className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white dark:bg-[#282a2c]  border border-[#C6C6C6] dark:border-[#373737] rounded-full text-xs sm:text-sm font-medium"
                 disabled
               >
                 <img
                   src="/assets/svg/fi-rr-globe.svg"
                   alt="Globe"
-                  className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 dark:invert dark:brightness-0"
                 />
                 <span>Поиск</span>
               </button>
@@ -187,7 +187,7 @@ export default function ChatWelcome() {
 
       {/* Нижнее предупреждение */}
       <div className="w-full  xl:py-3 flex justify-center pointer-events-none select-none">
-        <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-white text-center w-full max-w-2xl mx-auto">
+        <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
           AInterMed может ошибаться — рекомендуется сверять информацию с
           официальными и проверенными источниками
         </div>

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import BurgerMenuButton from "../Header/BurgerMenuButton";
 import Link from "next/link";
-import ToggleDarkMode from "../ui/ToggleDarkMode";
+import ThemeToggle from "../ThemeToggle";
 
 function groupChats(chats) {
   const now = new Date();
@@ -101,14 +101,14 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       {/* Кнопка открытия сайдбара на десктопе, когда он закрыт */}
       {!isOpen && (
         <button
-          className="fixed top-6 left-2 z-[300] bg-white rounded-full shadow p-2 border border-[#E0E0E0] transition md:block hidden"
+          className="fixed top-6 left-2 z-[300] bg-white dark:bg-[#1F2123] rounded-full shadow p-2 border border-[#E0E0E0] dark:border-[#333] transition md:block hidden"
           onClick={() => setIsOpen(true)}
           title="Открыть боковую панель"
         >
           <img
             src="/assets/svg/open-close.svg"
             alt="Открыть"
-            className="h-full w-full cursor-pointer rotate-180"
+            className="h-full w-full cursor-pointer  rotate-180 dark:invert dark:brightness-0"
           />
         </button>
       )}
@@ -129,7 +129,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
         </button>
       </div>
       <aside
-        className={`transition-all duration-300 h-full bg-[#F7F7F7] border-r border-[#ffffff] flex flex-col z-20
+        className={`transition-all duration-300 h-full bg-[#F7F7F7] dark:bg-[#282a2c] border-[#ffffff] flex flex-col z-20
           ${isOpen ? "w-[338px] min-w-[260px] opacity-100" : "w-0 min-w-0 opacity-0 pointer-events-none"}
           fixed md:static top-0 left-0 md:top-auto md:left-auto
           h-screen md:h-full
@@ -150,6 +150,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             />
           </Link>
           <div className="flex-1" />
+          <ThemeToggle />
           <button
             className="p-1 rounded-full cursor-pointer transition"
             onClick={() => setIsOpen(false)}
@@ -158,14 +159,13 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             <img
               src="/assets/svg/open-close.svg"
               alt="Скрыть"
-              className="h-full w-full"
+              className="h-full w-full dark:invert dark:brightness-0"
             />
           </button>
-          <ToggleDarkMode />
         </div>
         <div className="px-7 pb-2">
           {/* Кнопка "Новый чат": здесь нужно вызывать функцию создания нового чата на бэкенде и обновлять список чатов. */}
-          <button className="w-full cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white h-[48px] rounded-full text-[14px] font-[Involve]  hover:from-[#3566c7] hover:to-[#437CFF] transition mb-2">
+          <button className="w-full cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white  h-[48px] rounded-full text-[14px] font-[Involve]  hover:from-[#3566c7] hover:to-[#437CFF] transition mb-2">
             <img
               src="/assets/svg/plus.svg"
               alt="plus"
@@ -179,13 +179,13 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             (group) =>
               group.items.length > 0 && (
                 <div key={group.label} className="mb-2">
-                  <div className="text-[#888] text-[14px] font-[Manrope]  px-4 mb-1 mt-3">
+                  <div className="text-[#888] dark:text-[#FFFFFF80] text-[14px] font-[Manrope]  px-4 mb-1 mt-3">
                     {group.label}
                   </div>
                   {group.items.map((chat) => (
                     <div
                       key={chat.id}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-xl cursor-pointer hover:bg-[#e6edfa] transition ${chat.id === activeId ? "bg-[#e6edfa]" : ""}`}
+                      className={`flex text-black dark:text-white items-center gap-2 px-4 py-2 rounded-xl cursor-pointer hover:bg-[#e6edfa]   transition ${chat.id === activeId ? "bg-[#e6edfa] dark:bg-[#2c384b] " : ""}`}
                       onClick={() => setActiveId(chat.id)}
                     >
                       {/* При клике на чат вызывается setActiveId(chat.id): здесь можно подгружать сообщения выбранного чата с бэкенда. */}
@@ -196,7 +196,23 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               )
           )}
         </div>
-        <div className="p-4 text-xs text-[#888] bg-gradient-to-t from-[rgba(247,247,247,1)] to-[rgba(247,247,247,0)] border-t border-[#E0E0E0] flex items-start gap-3">
+
+        <div className="p-4 text-xs text-[#888]  border-[#E0E0E0] flex items-start gap-3">
+          <img
+            src="/assets/svg/anonym_for_chat.svg"
+            alt="Аватар"
+            className="h-[51px] w-[51px] mr-1 opacity-80 flex-shrink-0"
+          />
+          <div className="flex flex-col pt-1 justify-center">
+            <span className="text-[16px] text-black dark:text-white font-[Manrope] font-semibold leading-tight">
+              Иван Иванов Иванович
+            </span>
+            <span className="text-[14px] text-black dark:text-gray-300 mt-0.5 font-[Manrope] font-normal">
+              Тариф: Бесплатный
+            </span>
+          </div>
+        </div>
+        {/* <div className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3">
           <img
             src="/assets/svg/stars.svg"
             alt="Stars"
@@ -210,7 +226,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               Полный доступ, возможности для команд и многое другое.
             </span>
           </div>
-        </div>
+        </div> */}
       </aside>
       {/* Мобильное затемнение фона при открытой панели */}
       {isOpen && (

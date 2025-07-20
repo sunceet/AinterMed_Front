@@ -22,6 +22,23 @@ export default function RootLayout({ children }) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  const theme = localStorage.getItem('theme');
+                  if (
+                    theme === 'dark' || 
+                    (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                  ) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (_) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body>
         <AppShell>{children}</AppShell>
