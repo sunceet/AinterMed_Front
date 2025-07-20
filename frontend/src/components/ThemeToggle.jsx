@@ -35,7 +35,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className={`relative w-[60px] h-[30px] rounded-full transition-colors duration-300 ${
+      className={`cursor-pointer relative w-[60px] h-[30px] rounded-full transition-colors duration-300 ${
         theme === "dark" ? "bg-[#1F2123]" : "bg-[#E9E9E9]"
       }`}
     >

@@ -4,6 +4,22 @@ import BurgerMenuButton from "../Header/BurgerMenuButton";
 import Link from "next/link";
 import ThemeToggle from "../ThemeToggle";
 
+function useIsDarkTheme() {
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    const check = () =>
+      setIsDark(document.documentElement.classList.contains("dark"));
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+  return isDark;
+}
+
 function groupChats(chats) {
   const now = new Date();
   const startOfToday = new Date(
@@ -94,6 +110,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
     }
   }, []);
 
+  const isDark = useIsDarkTheme();
   const grouped = groupChats(chats);
 
   return (
@@ -113,12 +130,16 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
         </button>
       )}
       {/* Мобильный header всегда виден на sm и меньше */}
-      <div className="md:hidden bg-white flex items-center w-full h-18 px-4 border-b border-[#C6C6C6] z-[210] fixed top-0 left-0 justify-between">
+      <div className="md:hidden bg-white dark:bg-[#282A2C] flex items-center w-full h-18 px-4  border-[#C6C6C6] z-[210] fixed top-0 left-0 justify-between">
         <div className="flex items-center gap-2">
           <BurgerMenuButton menuOpen={isOpen} setMenuOpen={setIsOpen} />
           <Link href="/">
             <img
-              src="/assets/svg/Logo.svg"
+              src={
+                isDark
+                  ? "/assets/svg/logo_for_dark_theme.svg"
+                  : "/assets/svg/Logo.svg"
+              }
               alt="Logo"
               className="h-6 w-auto pl-2 m object-contain"
             />
@@ -144,7 +165,11 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
         <div className="flex items-center gap-3 px-4 pt-6 pb-2 relative">
           <Link href="/">
             <img
-              src="/assets/svg/Logo.svg"
+              src={
+                isDark
+                  ? "/assets/svg/logo_for_dark_theme.svg"
+                  : "/assets/svg/Logo.svg"
+              }
               alt="Logo"
               className="h-10 w-40 transition-all"
             />

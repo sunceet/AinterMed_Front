@@ -1,10 +1,8 @@
 import "./globals.css";
-import { cookies } from "next/headers";
-import NoSSR from "../components/NoSSR";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import CookieConsent from "../components/CookieConsent";
+// import { cookies } from "next/headers";
+// import NoSSR from "../components/NoSSR";
 import AppShell from "../components/AppShell";
+import CookieConsent from "../components/CookieConsent";
 
 export const metadata = {
   title: "AinterMed",
@@ -18,29 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang={lang}>
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                try {
-                  const theme = localStorage.getItem('theme');
-                  if (
-                    theme === 'dark' || 
-                    (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                  ) {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch (_) {}
-              })();
-            `,
-          }}
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>
+      <body className="bg-white dark:bg-[#18191A]">
+        <CookieConsent />
         <AppShell>{children}</AppShell>
       </body>
     </html>

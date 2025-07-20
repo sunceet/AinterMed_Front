@@ -15,7 +15,7 @@ import ModelFeaturesBlock from "./ModelFeaturesBlock";
 import PartnersBlock from "./PartnersBlock";
 
 const Main = () => (
-  <section className="relative w-full bg-white text-center overflow-hidden">
+  <section className="relative w-full bg-white text-center overflow-hidden pt-18">
     <VideoDesktop />
 
     <div className="relative z-10 pt-[40px]">
@@ -26,7 +26,7 @@ const Main = () => (
         <CtaButton />
       </div>
 
-      <div className="mt-[300px] xl:mt-[480px] mb-[60px] flex justify-center">
+      <div className="mt-[300px] md:mt-[320px] lg:mt-[360px] xl:mt-[480px] mb-[60px] flex justify-center">
         <PromptInput />
       </div>
 
