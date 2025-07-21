@@ -209,9 +209,9 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             />
           </button>
         </div>
-        <div className="pb-2">
+        <div className="pb-2 flex justify-center">
           {/* Кнопка "Новый чат": здесь нужно вызывать функцию создания нового чата на бэкенде и обновлять список чатов. */}
-          <button className="w-[291px] mx-auto cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-3 text-white h-[54px] rounded-full text-[16px] font-[Involve] px-6 transition mb-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#2F67EA] dark:to-[#00BFFF] hover:from-[#3566c7] hover:to-[#437CFF] dark:hover:from-[#2652ba] dark:hover:to-[#00a7e6]">
+          <button className="w-full mx-6 cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-3 text-white h-[54px] rounded-full text-[16px] font-[Involve] transition mb-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#2F67EA] dark:to-[#00BFFF] hover:from-[#3566c7] hover:to-[#437CFF] dark:hover:from-[#2652ba] dark:hover:to-[#00a7e6]">
             <img
               src="/assets/svg/plus.svg"
               alt="plus"

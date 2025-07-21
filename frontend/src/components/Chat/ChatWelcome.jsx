@@ -82,7 +82,7 @@ export default function ChatWelcome() {
         }`}
       >
         {!hasMessages && (
-          <h1 className="relative z-[200] text-xl sm:text-[34px] md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#437CFF] dark:to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
+          <h1 className="relative z-[150] text-xl sm:text-[34px] md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#437CFF] dark:to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
             Добро пожаловать в AInterMed
           </h1>
         )}
