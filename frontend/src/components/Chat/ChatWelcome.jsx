@@ -28,27 +28,31 @@ export default function ChatWelcome() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Запрет скролла body
+  // Запрет фона скролла
   useEffect(() => {
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
+    document.body.style.height = "100%";
     return () => {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
+      document.body.style.height = "";
     };
   }, []);
 
   return (
     <div
       className="flex flex-col items-center w-full bg-transparent overflow-hidden"
-      style={{ height: "100dvh" }}
+      style={{ height: "100svh" }}
     >
       <div
         ref={historyRef}
-        className={`flex flex-col w-full z-100 px-1 overflow-y-auto transition-all duration-500 scrollbar-stable ${
+        className={`flex flex-col w-full z-100 px-1 transition-all duration-500 ${
           hasMessages ? "pt-15" : "hidden"
         }`}
         style={{
-          maxHeight: "calc(100dvh - 270px)", // textarea + футер + отступы
-          overflowY: "overlay",
+          flexGrow: 1,
+          overflowY: "auto",
         }}
       >
         {messages.map((msg, index) => (
@@ -71,7 +75,7 @@ export default function ChatWelcome() {
                   </div>
                 )}
                 <div
-                  className={`relative rounded-2xl before:absolute before:top-0 before:border-t-8 ${
+                  className={`relative rounded-2xl ${
                     msg.role === "user"
                       ? "max-w-[90%] ml-auto bg-[#E6ECFF] dark:bg-[#438EFF1A] rounded-[24px] rounded-br-[2px] px-4 py-3"
                       : "w-10/12 max-w-full sm:max-w-none md:w-9/12 xl:w-7/12 bg-white dark:bg-[#1b1c1d] px-2 py-2"
