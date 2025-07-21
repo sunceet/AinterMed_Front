@@ -172,12 +172,11 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       </div>
       <aside
         className={`transition-all duration-300 h-full bg-[#F7F7F7] dark:bg-[#282a2c] border-[#ffffff] flex flex-col z-20
-          ${isOpen ? "w-[338px] min-w-[260px] opacity-100" : "w-0 min-w-0 opacity-0 pointer-events-none"}
+          ${isOpen ? "fixed w-[338px] min-w-[260px] opacity-100" : "w-0 min-w-0 opacity-0 pointer-events-none"}
           md:static top-0 left-0 md:top-auto md:left-auto
           h-screen md:h-full
           z-[200]
           md:z-20
-          relative
         `}
         style={{
           overflow: isOpen ? "visible" : "hidden",
