@@ -243,9 +243,9 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           )}
         </div>
 
-        <div ref={profileRef} className="relative">
+        <div ref={profileRef} className="relative overflow-visible">
           <div
-            className="p-4  text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
+            className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
             onClick={() => setProfileMenuOpen((v) => !v)}
           >
             <img
@@ -266,8 +266,9 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               </span>
             </div>
           </div>
+
           {profileMenuOpen && (
-            <div className="absolute left-0 bottom-[80px] w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
+            <div className="absolute left-0 top-full mt-2 w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
               <div className="px-4 pb-2 flex justify-start">
                 <ThemeToggle />
               </div>
@@ -300,6 +301,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             </div>
           )}
         </div>
+
         {/* <div className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3">
           <img
             src="/assets/svg/stars.svg"
