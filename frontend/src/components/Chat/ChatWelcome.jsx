@@ -37,7 +37,10 @@ export default function ChatWelcome() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-full min-h-[100dvh] bg-transparent overflow-hidden">
+    <div
+      className="flex flex-col items-center w-full bg-transparent overflow-hidden"
+      style={{ height: "100dvh" }}
+    >
       <div
         ref={historyRef}
         className={`flex flex-col w-full z-100 px-1 overflow-y-auto transition-all duration-500 scrollbar-stable ${
