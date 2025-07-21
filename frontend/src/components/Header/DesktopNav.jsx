@@ -39,7 +39,10 @@ export default function DesktopNav() {
         {t("nav.chat")}
       </a>
 
-      <Link href="/articles" className={getLinkClass(pathname === "/articles")}>
+      <Link
+        href="/articles"
+        className={getLinkClass(pathname.startsWith("/articles"))}
+      >
         {t("nav.knowledge")}
       </Link>
 

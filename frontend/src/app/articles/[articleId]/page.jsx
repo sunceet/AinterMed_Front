@@ -29,7 +29,7 @@ export default function ArticlePage({ params }) {
 
   if (loading) {
     return (
-      <div className="max-w-2xl mx-auto pt-16 text-center text-gray-500">
+      <div className=" max-w-2xl mx-auto  text-center text-gray-500">
         {t("Загрузка...")}
       </div>
     );
@@ -44,7 +44,7 @@ export default function ArticlePage({ params }) {
   }
 
   return (
-    <div className="max-w-2xl mb-10 mx-auto pt-12 px-4">
+    <div className="max-w-2xl mb-10 mx-auto pt-25 px-4">
       <h1 className="font-[Involve] font-bold text-[20px] sm:text-[28px] mb-3 text-black">
         {t(article.title)}
       </h1>

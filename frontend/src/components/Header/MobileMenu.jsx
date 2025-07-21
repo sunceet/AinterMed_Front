@@ -77,7 +77,7 @@ export default function MobileMenu({
         <Link
           href="/articles"
           onClick={() => setMenuOpen(false)}
-          className={getLinkClass(pathname === "/articles")}
+          className={getLinkClass(pathname.startsWith("/articles"))}
         >
           {t("nav.knowledge")}
         </Link>
