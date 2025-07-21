@@ -2,18 +2,13 @@ import { useState, useRef, useEffect } from "react";
 
 export default function ChatWelcome() {
   const [input, setInput] = useState("");
-  const [inputKey, setInputKey] = useState(0);
+  const [inputKey, setInputKey] = useState(0); // для сброса textarea
   const [messages, setMessages] = useState([]);
   const bottomRef = useRef(null);
+  const historyRef = useRef(null);
   const textareaRef = useRef(null);
 
   const hasMessages = messages.length > 0;
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 30); // чтобы успело отрендериться
-    return () => clearTimeout(t);
-  }, []);
 
   const handleSend = () => {
     if (input.trim() !== "") {
@@ -25,7 +20,7 @@ export default function ChatWelcome() {
       };
       setMessages((prev) => [...prev, userMessage, assistantMessage]);
       setInput("");
-      setInputKey((prev) => prev + 1);
+      setInputKey((prev) => prev + 1); // сброс <textarea>
     }
   };
 
@@ -33,35 +28,14 @@ export default function ChatWelcome() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  useEffect(() => {
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100%";
-    return () => {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-      document.body.style.height = "";
-    };
-  }, []);
-
   return (
-    <div
-      className={`w-full bg-transparent ${
-        hasMessages
-          ? "flex flex-col justify-between items-center"
-          : "flex flex-col justify-center items-center"
-      }`}
-      style={{ height: "100svh", overflow: "hidden" }}
-    >
-      {/* История сообщений */}
+    <div className="flex flex-col items-center w-full min-h-screen bg-transparent">
       <div
-        className={`flex flex-col w-full z-100 px-1 transition-all duration-500 ${
+        ref={historyRef}
+        className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
           hasMessages ? "pt-15" : "hidden"
         }`}
-        style={{
-          flexGrow: 1,
-          overflowY: "auto",
-        }}
+        style={{ overflowY: "overlay" }}
       >
         {messages.map((msg, index) => (
           <article key={msg.id} data-testid={`conversation-turn-${index}`}>
@@ -83,7 +57,7 @@ export default function ChatWelcome() {
                   </div>
                 )}
                 <div
-                  className={`relative rounded-2xl ${
+                  className={`relative rounded-2xl before:absolute before:top-0 before:border-t-8 ${
                     msg.role === "user"
                       ? "max-w-[90%] ml-auto bg-[#E6ECFF] dark:bg-[#438EFF1A] rounded-[24px] rounded-br-[2px] px-4 py-3"
                       : "w-10/12 max-w-full sm:max-w-none md:w-9/12 xl:w-7/12 bg-white dark:bg-[#1b1c1d] px-2 py-2"
@@ -100,22 +74,19 @@ export default function ChatWelcome() {
         <div ref={bottomRef} />
       </div>
 
-      {/* Приветствие и поле ввода */}
       <div
-        className={`relative z-[200] w-full max-w-[910px] px-2 xl:px-3 transition-all duration-500 ${
-          mounted
-            ? "translate-y-0 opacity-100"
-            : "translate-y-[-20px] opacity-0"
+        className={`w-full max-w-[910px] px-2 xl:px-3 transition-all duration-500 ${
+          hasMessages
+            ? ""
+            : "flex-1 flex flex-col items-center justify-center gap-6"
         }`}
       >
-        {" "}
         {!hasMessages && (
-          <div className="flex flex-col items-center justify-center gap-6 mt-auto mb-6">
-            <h1 className="relative z-[150] text-xl sm:text-[34px] md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#437CFF] dark:to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
-              Добро пожаловать в AInterMed
-            </h1>
-          </div>
+          <h1 className="relative z-[150] text-xl sm:text-[34px] md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#437CFF] dark:to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
+            Добро пожаловать в AInterMed
+          </h1>
         )}
+
         <div className="relative z-100 w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col bg-white dark:bg-[#282A2C] border border-[#C6C6C6] dark:border-[#373737] shadow-2xl/5 rounded-[24px] sm:rounded-[34px] shadow-[0_0_60px_20px_rgba(255,255,255,1)] dark:shadow-[0_0_60px_20px_#1b1c1d]">
           <textarea
             key={inputKey}
@@ -185,6 +156,12 @@ export default function ChatWelcome() {
         </div>
       </div>
 
+      <div className="w-full xl:py-3 flex justify-center pointer-events-none select-none">
+        <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
+          Уточняйте информацию в официальных источниках
+        </div>
+      </div>
+
       <style jsx>{`
         .animate-slide-in {
           animation: slideIn 0.25s ease-out;
@@ -200,13 +177,6 @@ export default function ChatWelcome() {
           }
         }
       `}</style>
-
-      {/* Футер */}
-      <div className="w-full xl:py-3 flex justify-center pointer-events-none select-none">
-        <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
-          Уточняйте информацию в официальных источниках
-        </div>
-      </div>
     </div>
   );
 }
