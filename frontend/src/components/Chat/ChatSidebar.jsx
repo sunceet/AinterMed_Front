@@ -245,15 +245,11 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
 
         <div ref={profileRef} className="relative">
           <div
-            className="p-4  text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
+            className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
             onClick={() => setProfileMenuOpen((v) => !v)}
           >
             <img
-              src={
-                isDark
-                  ? "/assets/svg/anonym_for_dark_theme.svg"
-                  : "/assets/svg/anonym_for_light_theme.svg"
-              }
+              src="/assets/svg/anonym_for_chat.svg"
               alt="Аватар"
               className="h-[51px] w-[51px] mr-1 opacity-80 flex-shrink-0"
             />
@@ -267,12 +263,12 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             </div>
           </div>
           {profileMenuOpen && (
-            <div className="absolute left-0 bottom-[80px] w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
+            <div className="absolute left-0 bottom-[60px] w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
               <div className="px-4 pb-2 flex justify-start">
                 <ThemeToggle />
               </div>
               <button
-                className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
                 onClick={() => {
                   setProfileMenuOpen(false);
                   window.location.href = "/articles";
@@ -281,7 +277,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
                 База-Знаний
               </button>
               <button
-                className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
                 onClick={() => {
                   setProfileMenuOpen(false);
                 }}
