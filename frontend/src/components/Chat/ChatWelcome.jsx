@@ -28,7 +28,7 @@ export default function ChatWelcome() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // 🚫 Блокировка скролла фона Safari
+  // Запрет скролла body
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -40,10 +40,13 @@ export default function ChatWelcome() {
     <div className="flex flex-col items-center w-full min-h-[100dvh] bg-transparent overflow-hidden">
       <div
         ref={historyRef}
-        className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
+        className={`flex flex-col w-full z-100 px-1 overflow-y-auto transition-all duration-500 scrollbar-stable ${
           hasMessages ? "pt-15" : "hidden"
         }`}
-        style={{ overflowY: "overlay" }}
+        style={{
+          maxHeight: "calc(100dvh - 270px)", // textarea + футер + отступы
+          overflowY: "overlay",
+        }}
       >
         {messages.map((msg, index) => (
           <article key={msg.id} data-testid={`conversation-turn-${index}`}>
@@ -164,7 +167,7 @@ export default function ChatWelcome() {
         </div>
       </div>
 
-      <div className="w-full xl:py-3 flex justify-center pointer-events-none select-none">
+      <div className="w-full xl:py-3 flex justify-center pointer-events-none select-none flex-grow-0">
         <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
           Уточняйте информацию в официальных источниках
         </div>
