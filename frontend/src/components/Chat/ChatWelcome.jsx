@@ -41,7 +41,7 @@ export default function ChatWelcome() {
   return (
     <div
       className="flex flex-col items-center w-full bg-transparent overflow-hidden"
-      style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+      style={{ minHeight: "calc(var(--vh, 1vh) * 100 - 30px)" }}
     >
       <div
         ref={historyRef}
