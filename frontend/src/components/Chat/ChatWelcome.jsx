@@ -1,19 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 
-function useHeaderHeight(defaultHeight = 64) {
-  const [headerHeight, setHeaderHeight] = useState(defaultHeight);
-  useEffect(() => {
-    function updateHeight() {
-      const el = document.getElementById("main-header");
-      setHeaderHeight(el ? el.offsetHeight : defaultHeight);
-    }
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
-  }, [defaultHeight]);
-  return headerHeight;
-}
-
 export default function ChatWelcome() {
   const [input, setInput] = useState("");
   const [inputKey, setInputKey] = useState(0);
@@ -23,7 +9,6 @@ export default function ChatWelcome() {
   const textareaRef = useRef(null);
 
   const hasMessages = messages.length > 0;
-  const headerHeight = useHeaderHeight(64); // 64 - дефолтная высота, поменяй если у тебя другая
 
   useEffect(() => {
     const setVh = () => {
@@ -56,7 +41,7 @@ export default function ChatWelcome() {
   return (
     <div
       className="flex flex-col items-center w-full bg-transparent overflow-hidden"
-      style={{ height: `calc(100dvh - ${headerHeight}px)` }}
+      style={{ height: "100dvh" }}
     >
       <div
         ref={historyRef}
