@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 export default function ChatWelcome() {
   const [input, setInput] = useState("");
-  const [inputKey, setInputKey] = useState(0); // для сброса textarea
+  const [inputKey, setInputKey] = useState(0);
   const [messages, setMessages] = useState([]);
   const bottomRef = useRef(null);
   const historyRef = useRef(null);
@@ -20,7 +20,7 @@ export default function ChatWelcome() {
       };
       setMessages((prev) => [...prev, userMessage, assistantMessage]);
       setInput("");
-      setInputKey((prev) => prev + 1); // сброс <textarea>
+      setInputKey((prev) => prev + 1);
     }
   };
 
@@ -28,8 +28,16 @@ export default function ChatWelcome() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // 🚫 Блокировка скролла фона Safari
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col items-center w-full min-h-screen bg-transparent">
+    <div className="flex flex-col items-center w-full min-h-[100dvh] bg-transparent overflow-hidden">
       <div
         ref={historyRef}
         className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
