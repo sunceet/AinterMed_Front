@@ -173,10 +173,11 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       <aside
         className={`transition-all duration-300 h-full bg-[#F7F7F7] dark:bg-[#282a2c] border-[#ffffff] flex flex-col z-20
           ${isOpen ? "w-[338px] min-w-[260px] opacity-100" : "w-0 min-w-0 opacity-0 pointer-events-none"}
-          fixed md:static top-0 left-0 md:top-auto md:left-auto
+          md:static top-0 left-0 md:top-auto md:left-auto
           h-screen md:h-full
           z-[200]
           md:z-20
+          relative
         `}
         style={{
           overflow: isOpen ? "visible" : "hidden",
@@ -243,7 +244,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           )}
         </div>
 
-        <div ref={profileRef} className="relative">
+        <div ref={profileRef} className="relative z-30">
           <div
             className="p-4  text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
             onClick={() => setProfileMenuOpen((v) => !v)}
