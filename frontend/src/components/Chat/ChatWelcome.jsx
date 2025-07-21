@@ -2,13 +2,27 @@ import { useState, useRef, useEffect } from "react";
 
 export default function ChatWelcome() {
   const [input, setInput] = useState("");
-  const [inputKey, setInputKey] = useState(0); // для сброса textarea
+  const [inputKey, setInputKey] = useState(0);
   const [messages, setMessages] = useState([]);
   const bottomRef = useRef(null);
   const historyRef = useRef(null);
   const textareaRef = useRef(null);
 
   const hasMessages = messages.length > 0;
+
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    setVh();
+    window.addEventListener("resize", setVh);
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleSend = () => {
     if (input.trim() !== "") {
@@ -20,16 +34,15 @@ export default function ChatWelcome() {
       };
       setMessages((prev) => [...prev, userMessage, assistantMessage]);
       setInput("");
-      setInputKey((prev) => prev + 1); // сброс <textarea>
+      setInputKey((prev) => prev + 1);
     }
   };
 
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
   return (
-    <div className="flex flex-col items-center w-full min-h-screen bg-transparent">
+    <div
+      className="flex flex-col items-center w-full bg-transparent"
+      style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+    >
       <div
         ref={historyRef}
         className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
