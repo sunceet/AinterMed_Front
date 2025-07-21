@@ -41,7 +41,7 @@ export default function ChatWelcome() {
   return (
     <div
       className="flex flex-col items-center w-full bg-transparent overflow-hidden"
-      style={{ minHeight: "calc(var(--vh, 1vh) * 100 - 30px)" }}
+      style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
     >
       <div
         ref={historyRef}
@@ -88,8 +88,10 @@ export default function ChatWelcome() {
       </div>
 
       <div
-        className={`w-full max-w-[910px] px-2 xl:px-3 transition-all duration-500 flex flex-col items-center ${
-          hasMessages ? "" : "justify-center gap-6 flex-grow"
+        className={`w-full max-w-[910px] px-2 xl:px-3 transition-all duration-500 flex flex-col ${
+          hasMessages
+            ? "flex-grow"
+            : "flex-grow items-center justify-center gap-6"
         }`}
       >
         {!hasMessages && (
@@ -167,7 +169,7 @@ export default function ChatWelcome() {
         </div>
       </div>
 
-      <div className="w-full xl:py-3 flex justify-center shrink-0 pointer-events-none select-none">
+      <div className="w-full xl:py-3 flex justify-center pointer-events-none select-none shrink-0">
         <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
           Уточняйте информацию в официальных источниках
         </div>
