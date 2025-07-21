@@ -65,6 +65,13 @@ export default function MobileMenu({
         >
           {t("nav.chat")}
         </Link>
+        <Link
+          href="/articles"
+          onClick={() => setMenuOpen(false)}
+          className={getLinkClass(pathname.startsWith("/articles"))}
+        >
+          {t("nav.knowledge")}
+        </Link>
 
         <Link
           href="/about"
@@ -75,11 +82,11 @@ export default function MobileMenu({
         </Link>
 
         <Link
-          href="/articles"
+          href="/subscribe"
           onClick={() => setMenuOpen(false)}
-          className={getLinkClass(pathname.startsWith("/articles"))}
+          className={getLinkClass(pathname === "/subscribe")}
         >
-          {t("nav.knowledge")}
+          {t("nav.tariffs")}
         </Link>
 
         <div className="flex gap-4">
