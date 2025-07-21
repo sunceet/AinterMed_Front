@@ -145,11 +145,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       {/* Мобильный header всегда виден на sm и меньше */}
       <div className="md:hidden bg-white dark:bg-[#282A2C] flex items-center w-full h-18 px-4  border-[#C6C6C6] z-[210] fixed top-0 left-0 justify-between">
         <div className="flex items-center gap-2">
-          <BurgerMenuButton
-            className="dark:invert dark:brightness-0 "
-            menuOpen={isOpen}
-            setMenuOpen={setIsOpen}
-          />
+          <BurgerMenuButton menuOpen={isOpen} setMenuOpen={setIsOpen} />
           <Link href="/">
             <img
               src={
@@ -163,11 +159,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           </Link>
         </div>
         <button className="p-2 ml-2" title="Новый чат">
-          <img
-            src="/assets/svg/plus.svg"
-            alt="plus"
-            className="h-6 w-6 dark:invert"
-          />
+          <img src="/assets/svg/plus.svg" alt="plus" className="h-6 w-6" />
         </button>
       </div>
       <aside
@@ -183,7 +175,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           position: undefined,
         }}
       >
-        <div className="flex items-center gap-3 px-6 pt-6 pb-2 relative">
+        <div className="flex items-center gap-3 px-4 pt-6 pb-2 relative">
           <Link href="/">
             <img
               src={
@@ -198,7 +190,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           <div className="flex-1" />
           {/* <ThemeToggle /> */}
           <button
-            className="rounded-full cursor-pointer transition"
+            className="p-1 rounded-full cursor-pointer transition"
             onClick={() => setIsOpen(false)}
             title="Закрыть боковую панель"
           >
@@ -209,9 +201,9 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             />
           </button>
         </div>
-        <div className="pb-2 flex justify-center">
+        <div className="px-7 pb-2">
           {/* Кнопка "Новый чат": здесь нужно вызывать функцию создания нового чата на бэкенде и обновлять список чатов. */}
-          <button className="w-full mx-6 cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-3 text-white h-[54px] rounded-full text-[16px] font-[Involve] transition mb-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#2F67EA] dark:to-[#00BFFF] hover:from-[#3566c7] hover:to-[#437CFF] dark:hover:from-[#2652ba] dark:hover:to-[#00a7e6]">
+          <button className="w-full cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white  h-[48px] rounded-full text-[14px] font-[Involve]  hover:from-[#3566c7] hover:to-[#437CFF] transition mb-2">
             <img
               src="/assets/svg/plus.svg"
               alt="plus"
@@ -231,7 +223,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
                   {group.items.map((chat) => (
                     <div
                       key={chat.id}
-                      className={`flex text-black dark:text-white items-center gap-2 px-4 py-2 rounded-xl cursor-pointer hover:bg-[#e6edfa] dark:hover:bg-[#323639]  transition ${chat.id === activeId ? "bg-[#e6edfa] dark:bg-[#2c384b] " : ""}`}
+                      className={`flex text-black dark:text-white items-center gap-2 px-4 py-2 rounded-xl cursor-pointer hover:bg-[#e6edfa]   transition ${chat.id === activeId ? "bg-[#e6edfa] dark:bg-[#2c384b] " : ""}`}
                       onClick={() => setActiveId(chat.id)}
                     >
                       {/* При клике на чат вызывается setActiveId(chat.id): здесь можно подгружать сообщения выбранного чата с бэкенда. */}
