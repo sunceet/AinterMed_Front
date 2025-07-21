@@ -169,13 +169,13 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       <aside
         className={`transition-all duration-300 bg-[#F7F7F7] dark:bg-[#282a2c] flex flex-col z-20
           ${isOpen ? "w-[338px] min-w-[260px] opacity-100" : "w-0 min-w-0 opacity-0 pointer-events-none"}
-          fixed md:static top-0 left-0 z-[200] md:z-20`}
+          flex md:static top-0 left-0 z-[200] md:z-20`}
         style={{
           height: "100dvh",
           overflow: isOpen ? "visible" : "hidden",
           position:
             typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
-              ? "fixed"
+              ? "flex"
               : "static",
         }}
       >
@@ -303,7 +303,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
 
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-[150] md:hidden transition-opacity duration-300"
+          className="flex inset-0 bg-black/40 z-[150] md:hidden transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}

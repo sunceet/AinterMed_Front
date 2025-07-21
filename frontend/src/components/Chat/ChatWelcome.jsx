@@ -40,7 +40,11 @@ export default function ChatWelcome() {
 
   return (
     <div className="relative flex h-dvh w-full flex-col font-[Manrope] bg-transparent overflow-hidden">
-      <div className="flex-1 flex flex-col w-full items-center pt-18 md:pt-0">
+      {/* Контейнер для мобильного отступа под fixed header */}
+      <div
+        className="flex-1 flex flex-col w-full items-center"
+        style={{ paddingTop: "72px" }}
+      >
         <div
           ref={historyRef}
           className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
