@@ -2,10 +2,11 @@ import { useState, useRef, useEffect } from "react";
 
 export default function ChatWelcome() {
   const [input, setInput] = useState("");
+  const [inputKey, setInputKey] = useState(0); // для сброса textarea
   const [messages, setMessages] = useState([]);
-  // const [showScrollToBottom, setShowScrollToBottom] = useState(false);
   const bottomRef = useRef(null);
   const historyRef = useRef(null);
+  const textareaRef = useRef(null);
 
   const hasMessages = messages.length > 0;
 
@@ -19,6 +20,7 @@ export default function ChatWelcome() {
       };
       setMessages((prev) => [...prev, userMessage, assistantMessage]);
       setInput("");
+      setInputKey((prev) => prev + 1); // сброс <textarea>
     }
   };
 
@@ -26,35 +28,23 @@ export default function ChatWelcome() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // useEffect(() => {
-  //   const el = historyRef.current;
-  //   if (!el) return;
-  //   const handleScroll = () => {
-  //     const isAtBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 40;
-  //     setShowScrollToBottom(!isAtBottom);
-  //   };
-  //   el.addEventListener("scroll", handleScroll);
-  //   return () => el.removeEventListener("scroll", handleScroll);
-  // }, []);
-
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-transparent">
-      {/* История сообщений */}
       <div
         ref={historyRef}
-        className={`flex flex-col w-full  z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
+        className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
           hasMessages ? "pt-15" : "hidden"
         }`}
         style={{ overflowY: "overlay" }}
       >
         {messages.map((msg, index) => (
           <article key={msg.id} data-testid={`conversation-turn-${index}`}>
-            <div className=" text-base mx-auto py-2 max-w-[864px] ">
+            <div className="text-base mx-auto py-4 max-w-[864px]">
               <div
                 className={`flex ${
                   msg.role === "assistant"
                     ? "flex-row items-start ml-1 lg:ml-2 2xl:ml-5"
-                    : "flex-row-reverse items-end mr-1 lg:mr-2 "
+                    : "flex-row-reverse items-end mr-1 lg:mr-2"
                 }`}
               >
                 {msg.role === "assistant" && (
@@ -67,22 +57,13 @@ export default function ChatWelcome() {
                   </div>
                 )}
                 <div
-                  className={`
-                              relative  rounded-2xl before:absolute before:top-0 before:border-t-8
-                              ${
-                                msg.role === "user"
-                                  ? "max-w-[90%] ml-auto"
-                                  : "w-10/12 max-w-full sm:max-w-none md:w-9/12 xl:w-7/12"
-                              }
-                              whitespace-pre-line bg-blue-100 p-3
-                              ${
-                                msg.role === "user"
-                                  ? "bg-[#E6ECFF] rounded-[24px] rounded-br-[2px]  px-4 py-3"
-                                  : "bg-white px-2 py-2"
-                              }
-                            `}
+                  className={`relative rounded-2xl before:absolute before:top-0 before:border-t-8 ${
+                    msg.role === "user"
+                      ? "max-w-[90%] ml-auto bg-[#E6ECFF] dark:bg-[#438EFF1A] rounded-[24px] rounded-br-[2px] px-4 py-3"
+                      : "w-10/12 max-w-full sm:max-w-none md:w-9/12 xl:w-7/12 bg-white dark:bg-[#1b1c1d] px-2 py-2"
+                  }`}
                 >
-                  <div className="prose-primarya prose max-w-none break-words break-all prose-pre:p-0 whitespace-pre-wrap font-[Manrope] text-[15px] text-[#1C1C1C]">
+                  <div className="prose max-w-none break-words break-all whitespace-pre-wrap font-[Manrope] text-[15px] text-[#1C1C1C] dark:text-white">
                     {msg.text}
                   </div>
                 </div>
@@ -93,66 +74,56 @@ export default function ChatWelcome() {
         <div ref={bottomRef} />
       </div>
 
-      {/* Кнопка прокрутки вниз */}
-      {/* {showScrollToBottom && (
-        <div className="w-full z-50 max-w-[864px] bg-amber-200/0 px-4 flex justify-end pointer-events-none">
-          <button
-            onClick={() => {
-              historyRef.current?.scrollTo({
-                top: historyRef.current.scrollHeight,
-                behavior: "smooth",
-              });
-            }}
-            className="bg-transparent cursor-pointer rounded-full p-2 border border-[#E6ECFF] hover:bg-[#F0F4FF] transition shadow pointer-events-auto"
-            aria-label="Прокрутить вниз"
-          >
-            <img
-              src="/assets/svg/Arrow_For_Chat.svg"
-              alt="Вниз"
-              className="w-7 h-7"
-            />
-          </button>
-        </div>
-      )} */}
-
-      {/* Input-блок — по центру или внизу */}
       <div
-        className={`w-full max-w-[910px]  px-2 xl:px-3 transition-all duration-500 ${
+        className={`w-full max-w-[910px] px-2 xl:px-3 transition-all duration-500 ${
           hasMessages
             ? ""
             : "flex-1 flex flex-col items-center justify-center gap-6"
         }`}
       >
         {!hasMessages && (
-          <h1 className="text-xl sm:text-[34px] md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
+          <h1 className="relative z-[200] text-xl sm:text-[34px] md:text-[40px] font-semibold bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#437CFF] dark:to-[#65EDFF] text-transparent bg-clip-text text-center font-[Involve]">
             Добро пожаловать в AInterMed
           </h1>
         )}
 
-        <div className="relative z-100 w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col  border border-[#C6C6C6] dark:border-[#373737]  shadow-2xl/5 rounded-[24px] sm:rounded-[34px] shadow-[0_0_60px_20px_rgba(255,255,255,1)] dark:dark:shadow-[0_0_60px_20px_rgba(255,255,255,0.3)]">
-          <input
-            className="pt-2 pb-2.5 sm:pt-[11px] pl-3 pr-3 sm:pl-5 sm:pr-6 bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none text-[16px] sm:text-[19px] md:text-[19px] font-normal font-[Manrope] leading-[24px] w-full rounded-full border-none min-h-[44px]"
+        <div className="relative z-100 w-full px-2 sm:px-3 py-2 sm:py-3 flex flex-col bg-white dark:bg-[#282A2C] border border-[#C6C6C6] dark:border-[#373737] shadow-2xl/5 rounded-[24px] sm:rounded-[34px] shadow-[0_0_60px_20px_rgba(255,255,255,1)] dark:shadow-[0_0_60px_20px_#1b1c1d]">
+          <textarea
+            key={inputKey}
+            ref={textareaRef}
+            className="pt-2 pb-2.5 sm:pt-[11px] pl-3 pr-3 sm:pl-5 sm:pr-6 bg-transparent text-gray-700 dark:text-white placeholder-gray-500 dark:placeholder-[#A3A3A3] focus:outline-none text-[16px] sm:text-[19px] md:text-[19px] font-normal font-[Manrope] leading-[24px] w-full rounded-[24px] border-none resize-none max-h-[200px] overflow-y-auto"
             placeholder="Спросите что-нибудь..."
-            type="text"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-
-            // style={{ minHeight: 44 }}
+            onChange={(e) => {
+              const el = e.target;
+              setInput(el.value);
+              el.style.height = "auto";
+              el.style.height = `${el.scrollHeight}px`;
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                handleSend();
+              }
+            }}
+            rows={1}
           />
+
           <div className="flex flex-wrap xl:flex-nowrap items-end justify-between mt-1 sm:mt-2 gap-4 sm:gap-8 xl:gap-20">
             <div className="flex gap-1 sm:gap-2 flex-wrap">
               <button
                 type="button"
-                className="flex items-center pl-3 sm:pl-4 px-3 sm:px-5 py-2 bg-white dark:bg-[#282a2c] border border-[#C6C6C6] dark:border-[#373737]  rounded-full text-xs sm:text-sm font-medium text-gray-800"
+                className="flex items-center pl-3 sm:pl-4 px-3 sm:px-5 py-2 bg-white dark:bg-[#282a2c] border border-[#C6C6C6] dark:border-[#373737] rounded-full text-xs sm:text-sm font-medium text-gray-800"
                 disabled
               >
-                <span className="text-black">AInterMed</span>
-                <span className="text-[#437CFF] font-semibold">&nbsp;PRO</span>
+                <span className="text-black dark:text-white">AInterMed</span>
+                <span className="text-[#437CFF] font-semibold">
+                  &nbsp;&nbsp;PRO
+                </span>
               </button>
               <button
                 type="button"
-                className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white dark:bg-[#282a2c]  border border-[#C6C6C6] dark:border-[#373737] rounded-full text-xs sm:text-sm font-medium"
+                className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white dark:bg-[#282a2c] border border-[#C6C6C6] dark:border-[#373737] rounded-full text-xs sm:text-sm font-medium"
                 disabled
               >
                 <img
@@ -160,7 +131,7 @@ export default function ChatWelcome() {
                   alt="Globe"
                   className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 dark:invert dark:brightness-0"
                 />
-                <span>Поиск</span>
+                <span className="text-black dark:text-white">Поиск</span>
               </button>
             </div>
             <button
@@ -170,30 +141,27 @@ export default function ChatWelcome() {
               <img
                 src="/assets/svg/lightning.svg"
                 alt="Lightning"
-                className="w-[15px] h-[20px] sm:w-[17px] sm:h-[22px]"
+                className="w-[15px] h-[20px] sm:w-[17px] sm:h-[22px] dark:invert"
               />
-              <span className="text-[13px] sm:text-[14px] text-black font-[Manrope] font-medium h-[20px] sm:h-[22px] flex items-center">
+              <span className="text-[13px] sm:text-[14px] text-black dark:text-white font-[Manrope] font-medium h-[20px] sm:h-[22px] flex items-center">
                 Попыток: 4
               </span>
               <img
                 src="/assets/svg/bigarrow.svg"
                 alt="Arrow"
-                className="h-[40px] w-[40px] sm:h-[48px] sm:w-[48px]"
+                className="h-[40px] w-[40px] sm:h-[48px] sm:w-[48px] dark:invert"
               />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Нижнее предупреждение */}
-      <div className="w-full  xl:py-3 flex justify-center pointer-events-none select-none">
+      <div className="w-full xl:py-3 flex justify-center pointer-events-none select-none">
         <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
-          AInterMed может ошибаться — рекомендуется сверять информацию с
-          официальными и проверенными источниками
+          Уточняйте информацию в официальных источниках
         </div>
       </div>
 
-      {/* Анимация появления сообщений */}
       <style jsx>{`
         .animate-slide-in {
           animation: slideIn 0.25s ease-out;

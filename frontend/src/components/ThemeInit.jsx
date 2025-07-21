@@ -1,7 +1,9 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function ThemeInit() {
+  const pathname = usePathname();
   useEffect(() => {
     const path = window.location.pathname;
     if (!path.startsWith("/chat")) {
@@ -17,6 +19,6 @@ export default function ThemeInit() {
         document.documentElement.classList.remove("dark");
       }
     }
-  }, []);
+  }, [pathname]);
   return null;
 }

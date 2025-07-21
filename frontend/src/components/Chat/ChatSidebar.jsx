@@ -145,7 +145,11 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
       {/* Мобильный header всегда виден на sm и меньше */}
       <div className="md:hidden bg-white dark:bg-[#282A2C] flex items-center w-full h-18 px-4  border-[#C6C6C6] z-[210] fixed top-0 left-0 justify-between">
         <div className="flex items-center gap-2">
-          <BurgerMenuButton menuOpen={isOpen} setMenuOpen={setIsOpen} />
+          <BurgerMenuButton
+            className="dark:invert dark:brightness-0 "
+            menuOpen={isOpen}
+            setMenuOpen={setIsOpen}
+          />
           <Link href="/">
             <img
               src={
@@ -159,7 +163,11 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           </Link>
         </div>
         <button className="p-2 ml-2" title="Новый чат">
-          <img src="/assets/svg/plus.svg" alt="plus" className="h-6 w-6" />
+          <img
+            src="/assets/svg/plus.svg"
+            alt="plus"
+            className="h-6 w-6 dark:invert"
+          />
         </button>
       </div>
       <aside
@@ -175,7 +183,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           position: undefined,
         }}
       >
-        <div className="flex items-center gap-3 px-4 pt-6 pb-2 relative">
+        <div className="flex items-center gap-3 px-6 pt-6 pb-2 relative">
           <Link href="/">
             <img
               src={
@@ -190,7 +198,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           <div className="flex-1" />
           {/* <ThemeToggle /> */}
           <button
-            className="p-1 rounded-full cursor-pointer transition"
+            className="rounded-full cursor-pointer transition"
             onClick={() => setIsOpen(false)}
             title="Закрыть боковую панель"
           >
@@ -201,9 +209,9 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             />
           </button>
         </div>
-        <div className="px-7 pb-2">
+        <div className="pb-2">
           {/* Кнопка "Новый чат": здесь нужно вызывать функцию создания нового чата на бэкенде и обновлять список чатов. */}
-          <button className="w-full cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-white  h-[48px] rounded-full text-[14px] font-[Involve]  hover:from-[#3566c7] hover:to-[#437CFF] transition mb-2">
+          <button className="w-[291px] mx-auto cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-3 text-white h-[54px] rounded-full text-[16px] font-[Involve] px-6 transition mb-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#2F67EA] dark:to-[#00BFFF] hover:from-[#3566c7] hover:to-[#437CFF] dark:hover:from-[#2652ba] dark:hover:to-[#00a7e6]">
             <img
               src="/assets/svg/plus.svg"
               alt="plus"
@@ -223,7 +231,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
                   {group.items.map((chat) => (
                     <div
                       key={chat.id}
-                      className={`flex text-black dark:text-white items-center gap-2 px-4 py-2 rounded-xl cursor-pointer hover:bg-[#e6edfa]   transition ${chat.id === activeId ? "bg-[#e6edfa] dark:bg-[#2c384b] " : ""}`}
+                      className={`flex text-black dark:text-white items-center gap-2 px-4 py-2 rounded-xl cursor-pointer hover:bg-[#e6edfa] dark:hover:bg-[#323639]  transition ${chat.id === activeId ? "bg-[#e6edfa] dark:bg-[#2c384b] " : ""}`}
                       onClick={() => setActiveId(chat.id)}
                     >
                       {/* При клике на чат вызывается setActiveId(chat.id): здесь можно подгружать сообщения выбранного чата с бэкенда. */}
@@ -237,11 +245,15 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
 
         <div ref={profileRef} className="relative">
           <div
-            className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
+            className="p-4  text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
             onClick={() => setProfileMenuOpen((v) => !v)}
           >
             <img
-              src="/assets/svg/anonym_for_chat.svg"
+              src={
+                isDark
+                  ? "/assets/svg/anonym_for_dark_theme.svg"
+                  : "/assets/svg/anonym_for_light_theme.svg"
+              }
               alt="Аватар"
               className="h-[51px] w-[51px] mr-1 opacity-80 flex-shrink-0"
             />
@@ -255,12 +267,12 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             </div>
           </div>
           {profileMenuOpen && (
-            <div className="absolute left-0 bottom-[60px] w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
+            <div className="absolute left-0 bottom-[80px] w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
               <div className="px-4 pb-2 flex justify-start">
                 <ThemeToggle />
               </div>
               <button
-                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+                className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
                 onClick={() => {
                   setProfileMenuOpen(false);
                   window.location.href = "/articles";
@@ -269,7 +281,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
                 База-Знаний
               </button>
               <button
-                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+                className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
                 onClick={() => {
                   setProfileMenuOpen(false);
                 }}

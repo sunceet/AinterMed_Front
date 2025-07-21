@@ -30,13 +30,11 @@ export default function ThemeToggle() {
 
   if (!mounted) return null;
 
-  if (!mounted) return null;
-
   return (
     <button
       onClick={toggleTheme}
       className={`cursor-pointer relative w-[60px] h-[30px] rounded-full transition-colors duration-300 ${
-        theme === "dark" ? "bg-[#1F2123]" : "bg-[#E9E9E9]"
+        theme === "dark" ? "bg-[#141516]" : "bg-[#E9E9E9]"
       }`}
     >
       <div
