@@ -95,7 +95,6 @@ export default function PlanCard({
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
     >
-      {/* ——— Содержимое карточки ——— */}
       <div className="text-center mb-4">
         <div className="min-h-[100px] flex flex-col justify-start items-center">
           <h3 className="text-[28px] font-[600] leading-[36px] font-[Involve]">
@@ -136,7 +135,7 @@ export default function PlanCard({
           onClick={openModal}
           className="w-full h-[56px] rounded-full text-black font-[Involve] text-[15px] font-medium uppercase tracking-wide transition-transform duration-100 touch-manipulation bg-[#F5F6F6] hover:scale-105 cursor-pointer mb-2"
         >
-          Попробовать бесплатно
+          {t("pricing.button_free")}
         </button>
       )}
 

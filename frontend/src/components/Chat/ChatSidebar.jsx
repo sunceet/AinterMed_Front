@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import BurgerMenuButton from "../Header/BurgerMenuButton";
 import Link from "next/link";
 import ThemeToggle from "../ThemeToggle";
@@ -112,6 +112,19 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
 
   const isDark = useIsDarkTheme();
   const grouped = groupChats(chats);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
+  const profileRef = useRef(null);
+
+  useEffect(() => {
+    if (!profileMenuOpen) return;
+    function handleClickOutside(event) {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setProfileMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [profileMenuOpen]);
 
   return (
     <>
@@ -175,7 +188,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             />
           </Link>
           <div className="flex-1" />
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <button
             className="p-1 rounded-full cursor-pointer transition"
             onClick={() => setIsOpen(false)}
@@ -222,20 +235,58 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           )}
         </div>
 
-        <div className="p-4 text-xs text-[#888]  border-[#E0E0E0] flex items-start gap-3">
-          <img
-            src="/assets/svg/anonym_for_chat.svg"
-            alt="Аватар"
-            className="h-[51px] w-[51px] mr-1 opacity-80 flex-shrink-0"
-          />
-          <div className="flex flex-col pt-1 justify-center">
-            <span className="text-[16px] text-black dark:text-white font-[Manrope] font-semibold leading-tight">
-              Иван Иванов Иванович
-            </span>
-            <span className="text-[14px] text-black dark:text-gray-300 mt-0.5 font-[Manrope] font-normal">
-              Тариф: Бесплатный
-            </span>
+        <div ref={profileRef} className="relative">
+          <div
+            className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
+            onClick={() => setProfileMenuOpen((v) => !v)}
+          >
+            <img
+              src="/assets/svg/anonym_for_chat.svg"
+              alt="Аватар"
+              className="h-[51px] w-[51px] mr-1 opacity-80 flex-shrink-0"
+            />
+            <div className="flex flex-col pt-1 justify-center">
+              <span className="text-[16px] text-black dark:text-white font-[Manrope] font-semibold leading-tight">
+                Иван Иванов Иванович
+              </span>
+              <span className="text-[14px] text-black dark:text-gray-300 mt-0.5 font-[Manrope] font-normal">
+                Тариф: Бесплатный
+              </span>
+            </div>
           </div>
+          {profileMenuOpen && (
+            <div className="absolute left-0 bottom-[60px] w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
+              <div className="px-4 pb-2 flex justify-start">
+                <ThemeToggle />
+              </div>
+              <button
+                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+                onClick={() => {
+                  setProfileMenuOpen(false);
+                  window.location.href = "/articles";
+                }}
+              >
+                База-Знаний
+              </button>
+              <button
+                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+                onClick={() => {
+                  setProfileMenuOpen(false);
+                }}
+              >
+                Обратная связь
+              </button>
+              <button
+                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-red-100 dark:hover:bg-red-900 text-red-600 dark:text-red-400 transition"
+                onClick={() => {
+                  setProfileMenuOpen(false);
+                  alert("Выйти");
+                }}
+              >
+                Выйти
+              </button>
+            </div>
+          )}
         </div>
         {/* <div className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3">
           <img

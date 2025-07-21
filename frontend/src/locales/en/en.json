@@ -70,7 +70,7 @@
   },
 
   "reviews": {
-        "0": {
+    "0": {
       "name": "Slyugrov Nyurgun",
       "date": "May 1, 2025",
       "text": "A very convenient and useful platform for medical students and doctors. It creates clear diagrams and tables for differential diagnosis and helps you quickly understand complex topics. For medical students, it will be useful not only for preparing for university exams, but also for international certification exams. I use the official ChatGPT subscription for $20, and this platform costs 499 rubles — for this price, it is incredibly profitable. It works quickly, stably, and answers medical questions much better than many other resources."
@@ -85,7 +85,7 @@
       "date": "June 15, 2025",
       "text": "I have been looking for a reliable and fast source of medical information for a long time — AInterMed exceeded all expectations. You ask a question and get a clear, structured answer based on current data. No need to read through dozens of pages — the service understands even complex queries. Plus, you can calculate BMI, GFR, test results, and other indicators with explanations. AInterMed saves time and really helps."
     },
-    
+
     "3": {
       "name": "Maria Kozlova",
       "date": "June 5, 2025",
@@ -121,6 +121,7 @@
   "pricing.heading2": "tariff",
   "pricing.subheading": "Cheaper than a tutor, better than ChatGPT",
   "pricing.button": "Subscribe",
+  "pricing.button_free": "Try it for free",
 
   "plans.price": "0",
   "plans.period": "/month",
@@ -324,14 +325,14 @@
     "button": "Accept"
   },
 
-    "Гид по участковой практике": "A guide to neighbourhood practice",
+  "Гид по участковой практике": "A guide to neighbourhood practice",
   "Аллергия": "Allergies",
   "Жалобы, Анамнез, Статус, Лечение": "Complaints, History, Status, Treatment",
   "Гастрит ": "Gastritis",
-  "Жалобы, Анамнез, Осмотр, Лечение":"Complaints, History, Examination, Treatment",
+  "Жалобы, Анамнез, Осмотр, Лечение": "Complaints, History, Examination, Treatment",
   "Железодефицитная анемия": "Iron deficiency anemia",
   "ОРВИ осмотр": "ARVI checkup",
-  "шаблон для работы на участке": "Site template", 
+  "шаблон для работы на участке": "Site template",
   "ОРВИ шаблон": "ARI template",
   "Обучающие материалы": "Training materials",
   "Атопический дерматит": "Atopic dermatitis",
@@ -374,14 +375,14 @@
   "Образование доступное каждому": "Education available to everyone",
   "Демократизация медицины с платформой AIntermed": "Democratizing medicine with the AInterMed platform",
   "Часто задаваемые вопросы (FAQ)": "Frequently Asked Questions (FAQ)",
-  "Ответы нашей команды на пользовательские вопросы":"Our team's answers to user questions",
+  "Ответы нашей команды на пользовательские вопросы": "Our team's answers to user questions",
   "Методички и гайды": "Tutorials and guides",
   "Определение группы крови": "Blood type determination",
-  "Гайд как определить группу крови":"A guide on how to determine blood type",
+  "Гайд как определить группу крови": "A guide on how to determine blood type",
   "ЭКГ при различных патологиях сердца": "ECG in various cardiac pathologies",
-  "Гайд-описание изменений электрокардиограммы (ЭКГ) при различных патологиях сердца":"Hyde description of electrocardiogram (ECG) changes in various cardiac pathologies",
+  "Гайд-описание изменений электрокардиограммы (ЭКГ) при различных патологиях сердца": "Hyde description of electrocardiogram (ECG) changes in various cardiac pathologies",
   "Электрокардиография (ЭКГ)": "Electrocardiography (ECG)",
-  "Методическое пособие":"Methodological manual",
+  "Методическое пособие": "Methodological manual",
   "Электроэнцефалография": "Electroencephalography",
   "Эхокардиография ": "Echocardiography",
   "articles": {
@@ -390,9 +391,8 @@
       "description": "Complaints, History, Status, Treatment",
       "content": "<p><strong>Complaints:</strong> rhinorrhea, nasal congestion, sneezing, nasal itching, occasional lacrimation, itching over the body.</p><p><strong>Disease history:</strong> suffering for the 2nd day. There was contact with an allergen. Previously diagnosed allergy to dust and wool.</p><p><strong>Life history:</strong> Not registered as a dispensary patient. Denies surgery. Denies tuberculosis. Denies viral hepatitis. Denies venereal diseases. Denies blood transfusions. Allergic history aggravated. Heredity (diabetes mellitus, hypertension, cancer, kidney diseases) not aggravated. Denies harmful habits (smoking, alcohol, drugs).</p><p><strong>Saturation:</strong> 99</p><p><strong>Pulse:</strong> 77</p><p><strong>Blood pressure, mm Hg:</strong> 120/80</p><p><strong>Temperature:</strong> 36.6</p><p><strong>Respiratory rate:</strong> 16</p><p><strong>Objective status:</strong> General condition relatively satisfactory. Skin and visible mucous membranes are of normal color, there are traces of scratching. Pharyngeal mucosa without peculiarities. Breathing through the nose is not difficult. Peripheral lymph nodes are not palpable. Thyroid gland without abnormalities. Vesicular breath sounds above the lungs, no rales. Heart tones clear, clean. Abdomen of normal shape, soft, painless. Liver and spleen not enlarged. Pasternacki syndrome negative on both sides. Stool and diuresis normal. Musculoskeletal system without peculiarities. No edema. Fundoscopy normal.</p><p><strong>Diagnosis:</strong> T78.4 Allergy unspecified. Allergic rhinitis.</p><p><strong>Recommendations:</strong> CBC with eosinophils, Ig E, avoid allergen, consult allergist if necessary.</p><p>Outpatient regimen: Desloratadine 5 mg tablet once daily for 5 days. Fenistil gel 0.1% topically on affected skin 2-4 times daily. Levocabastine spray 2 doses in each half of the nose 2-4 times daily. Azelastine eye drops 1 drop in each eye 2-4 times daily.</p><p>&nbsp;</p>"
     },
-    "faf31dc6-aae1-4302-af59-55dd00466858":{
-      "title":""
-
+    "faf31dc6-aae1-4302-af59-55dd00466858": {
+      "title": ""
     }
   }
 }

@@ -7,7 +7,7 @@ export default function SubscribeHeader() {
 
   return (
     <>
-      <h2 className="pt-2 text-[28px] xl:text-[40px] mb-2 font-[Involve] font-semibold text-black text-center">
+      <h2 className="pt-25 text-[28px] xl:text-[40px] mb-2 font-[Involve] font-semibold text-black text-center">
         {t("pricing.heading1")}{" "}
         <span className="bg-gradient-to-r from-[#437CFF] to-[#65EDFF] text-transparent bg-clip-text">
           {t("pricing.heading2")}

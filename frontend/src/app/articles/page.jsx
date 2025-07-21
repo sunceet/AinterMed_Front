@@ -17,7 +17,7 @@ function useCategories() {
 
   React.useEffect(() => {
     if (!categoriesPromise) categoriesPromise = fetchCategories();
-    
+
     categoriesPromise.then((data) => {
       const translatedCategories = data.map((cat) => ({
         ...cat,
@@ -25,8 +25,8 @@ function useCategories() {
         articles: cat.articles.map((art) => ({
           ...art,
           title: t(art.title), // Переводим заголовок статьи
-          description: t(art.description) // Переводим описание статьи
-        }))
+          description: t(art.description), // Переводим описание статьи
+        })),
       }));
       setCategories(translatedCategories); // Сохраняем переведенные данные
     });
@@ -46,7 +46,7 @@ export default function ArticlesPage() {
   const activeCategory = categories[activeIdx];
 
   return (
-    <div className="max-w-[950px] mx-auto mb-25 pt-12 px-4">
+    <div className="max-w-[950px] mx-auto mb-25 pt-25 px-4">
       {/* КНОПКИ */}
       <div className="flex justify-center">
         <div className="inline-flex justify-center mb-10 border border-gray-300 rounded-full overflow-hidden">
@@ -56,12 +56,14 @@ export default function ArticlesPage() {
               onClick={() => setActiveIdx(idx)}
               type="button"
               className={`px-1 xl:px-3 py-2 cursor-pointer xl:py-4 text-[11px] text-center sm:text-[16px] font-medium font-[Manrope] transition-colors duration-150
-                ${activeIdx === idx
-                  ? "bg-gradient-to-r from-[#437CFF] to-[#437CFF] text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                ${
+                  activeIdx === idx
+                    ? "bg-gradient-to-r from-[#437CFF] to-[#437CFF] text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
             >
-              {"\u00A0" + "\u00A0" + cat.name + "\u00A0" + "\u00A0"} {/* Переводим название категории */}
+              {"\u00A0" + "\u00A0" + cat.name + "\u00A0" + "\u00A0"}{" "}
+              {/* Переводим название категории */}
             </button>
           ))}
         </div>

@@ -16,7 +16,7 @@ export default function Subscribe() {
 
   return (
     <SubscribeProvider>
-      <main className="bg-[#F2F2F2] min-h-screen flex flex-col py-10 items-center text-black">
+      <main className="bg-[#F2F2F2] min-h-screen flex flex-col  items-center text-black">
         <SubscribeHeader />
         <DurationSelector />
         <PromoInput />
