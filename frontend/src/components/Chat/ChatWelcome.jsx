@@ -41,8 +41,13 @@ export default function ChatWelcome() {
   return (
     <div
       className="flex flex-col items-center w-full bg-transparent overflow-hidden"
-      style={{ height: "100dvh" }}
-      position="flex"
+      style={{
+        height: "100dvh",
+        position:
+          typeof window !== "undefined" && window.innerWidth <= 640
+            ? "fixed"
+            : "static",
+      }}
     >
       <div
         ref={historyRef}
