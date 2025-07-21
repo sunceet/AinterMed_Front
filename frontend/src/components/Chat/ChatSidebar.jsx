@@ -171,7 +171,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           ${isOpen ? "w-[338px] min-w-[260px] opacity-100" : "w-0 min-w-0 opacity-0 pointer-events-none"}
           flex md:static top-0 left-0 z-[200] md:z-20`}
         style={{
-          height: "calc(var(--vh, 1vh) * 100)",
+          height: "100dvh",
           overflow: isOpen ? "visible" : "hidden",
           position:
             typeof window !== "undefined" && window.innerWidth <= 640 && isOpen

@@ -39,10 +39,7 @@ export default function ChatWelcome() {
   };
 
   return (
-    <div
-      className="relative flex w-full flex-col font-[Manrope] bg-transparent overflow-hidden"
-      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-    >
+    <div className="relative flex h-dvh w-full flex-col font-[Manrope] bg-transparent overflow-hidden">
       {/* Контейнер для мобильного отступа под fixed header */}
       <div
         className="flex-1 flex flex-col w-full items-center"
@@ -172,11 +169,11 @@ export default function ChatWelcome() {
           </div>
         </div>
       </div>
-      {/* <footer className="w-full flex justify-center shrink-0 pointer-events-none select-none xl:py-3">
+      <footer className="w-full flex justify-center shrink-0 pointer-events-none select-none xl:py-3">
         <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
           Уточняйте информацию в официальных источниках
         </div>
-      </footer> */}
+      </footer>
       <style jsx>{`
         .animate-slide-in {
           animation: slideIn 0.25s ease-out;
