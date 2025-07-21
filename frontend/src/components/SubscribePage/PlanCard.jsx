@@ -91,11 +91,11 @@ export default function PlanCard({
   return (
     <div
       ref={cardRef}
-      className="relative snap-center flex-shrink-0 w-[92%] sm:w-[392px] bg-white rounded-[34px] border border-white px-[24px] py-[24px] flex flex-col"
+      className="relative snap-center  flex-shrink-0 w-[92%] sm:w-[392px] bg-white rounded-[34px] border border-white px-[24px] py-[24px] flex flex-col"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
     >
-      <div className="text-center mb-4">
+      <div className="text-center  mb-4">
         <div className="min-h-[100px] flex flex-col justify-start items-center">
           <h3 className="text-[28px] font-[600] leading-[36px] font-[Involve]">
             {plan.title}

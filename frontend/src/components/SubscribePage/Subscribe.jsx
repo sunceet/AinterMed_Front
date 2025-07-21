@@ -21,6 +21,7 @@ export default function Subscribe() {
         <DurationSelector />
         <PromoInput />
         <PlanCards openModal={handleOpenModal} />
+        <div className="mb-16" />
         {showAuthModal && <AuthModal onClose={handleCloseModal} />}
       </main>
     </SubscribeProvider>
