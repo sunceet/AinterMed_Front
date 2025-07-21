@@ -138,7 +138,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           />
         </button>
       )}
-      <div className="md:hidden bg-white dark:bg-[#282A2C] flex items-center w-full h-18 px-4 border-[#C6C6C6] z-[210] fixed top-0 left-0 justify-between">
+      <div className="flex md:hidden bg-white dark:bg-[#282A2C] items-center w-full h-18 px-4 border-[#C6C6C6] z-[210] fixed top-0 left-0 justify-between">
         <div className="flex items-center gap-2">
           <BurgerMenuButton
             className="dark:invert dark:brightness-0"
