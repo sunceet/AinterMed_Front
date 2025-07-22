@@ -9,7 +9,7 @@ import AboutCTA from "@/components/About/AboutCTA";
 
 export default function About() {
   return (
-    <main className="bg-white pt-25 px-4 sm:px-6 lg:px-0 overflow-hidden">
+    <main className="bg-white pt-35 sm:pt-25 px-4 sm:px-6 lg:px-0 overflow-hidden">
       <AboutIntro />
       <AboutEarthSection />
       <AboutFeatures />

@@ -46,7 +46,7 @@ export default function ChatWelcome() {
         position:
           typeof window !== "undefined" && window.innerWidth <= 640
             ? "fixed"
-            : "static",
+            : "fixed",
       }}
     >
       <div
