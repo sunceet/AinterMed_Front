@@ -256,48 +256,57 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               alt="Аватар"
               className="h-[51px] w-[51px] mr-1 opacity-80 flex-shrink-0"
             />
-            <div className="flex flex-col pt-1 justify-center">
+            <div className="flex flex-col pt-1 justify-center relative">
               <span className="text-[16px] text-black dark:text-white font-[Manrope] font-semibold leading-tight">
                 Иван Иванов Иванович
               </span>
               <span className="text-[14px] text-black dark:text-gray-300 mt-0.5 font-[Manrope] font-normal">
                 Тариф: Бесплатный
               </span>
+              <span className="absolute right-[-40px] top-[25px] -translate-y-1/2 flex items-center">
+                <img
+                  src="/assets/svg/arrow_down.svg"
+                  alt="Стрелка"
+                  className={`w-5 h-5 dark:invert transition-transform duration-300 ${profileMenuOpen ? "rotate-180" : "rotate-0"}`}
+                />
+              </span>
             </div>
           </div>
-          {profileMenuOpen && (
-            <div className="absolute left-0 bottom-[80px] w-[220px] bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333]">
-              <div className="px-4 pb-2 flex justify-start">
-                <ThemeToggle />
-              </div>
-              <button
-                className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
-                onClick={() => {
-                  setProfileMenuOpen(false);
-                  window.location.href = "/articles";
-                }}
-              >
-                База-Знаний
-              </button>
-              <button
-                className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
-                onClick={() => {
-                  setProfileMenuOpen(false);
-                }}
-              >
-                Обратная связь
-              </button>
-              <button
-                className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-red-100 dark:hover:bg-red-900 text-red-600 dark:text-red-400 transition"
-                onClick={() => {
-                  setProfileMenuOpen(false);
-                  alert("Выйти");
-                }}
-              >
-                Выйти
-              </button>
+          <div
+            className={`absolute left-0 bottom-[80px] w-full bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333] transition-all duration-300
+              ${profileMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}
+            style={{ willChange: "opacity, transform" }}
+          >
+            <div className="px-4 pb-2 flex justify-start">
+              <ThemeToggle />
             </div>
-          )}
+            <button
+              className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+              onClick={() => {
+                setProfileMenuOpen(false);
+                window.location.href = "/articles";
+              }}
+            >
+              База-Знаний
+            </button>
+            <button
+              className="w-full cursor-pointer text-black dark:text-white text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-[#e6edfa] dark:hover:bg-[#2c384b] transition"
+              onClick={() => {
+                setProfileMenuOpen(false);
+              }}
+            >
+              Обратная связь
+            </button>
+            <button
+              className="w-full cursor-pointer text-left px-4 py-2 rounded-lg font-[Manrope] text-[15px] hover:bg-red-100 dark:hover:bg-red-900 text-red-600 dark:text-red-400 transition"
+              onClick={() => {
+                setProfileMenuOpen(false);
+                alert("Выйти");
+              }}
+            >
+              Выйти
+            </button>
+          </div>
         </div>
       </aside>
 
