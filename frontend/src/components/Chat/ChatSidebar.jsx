@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import BurgerMenuButton from "../Header/BurgerMenuButton";
 import Link from "next/link";
 import ThemeToggle from "../ThemeToggle";
+import Image from "next/image";
 
 function useIsDarkTheme() {
   const [isDark, setIsDark] = useState(false);
@@ -90,7 +91,7 @@ function groupChats(chats) {
 
 export default function ChatSidebar({ chats, activeId, setActiveId }) {
   const [isOpen, setIsOpen] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth > 640 : true
+    typeof window !== "undefined" ? window.innerWidth > 768 : true
   );
 
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
@@ -113,7 +114,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
   // Запрет скролла body при открытом сайдбаре (на мобильных)
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (isOpen && window.innerWidth <= 640) {
+    if (isOpen && window.innerWidth <= 768) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -131,10 +132,12 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           onClick={() => setIsOpen(true)}
           title="Открыть боковую панель"
         >
-          <img
+          <Image
             src="/assets/svg/open-close.svg"
             alt="Открыть"
             className="h-full w-full cursor-pointer rotate-180 dark:invert dark:brightness-0"
+            width={24}
+            height={24}
           />
         </button>
       )}
@@ -146,7 +149,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             setMenuOpen={setIsOpen}
           />
           <Link href="/">
-            <img
+            <Image
               src={
                 isDark
                   ? "/assets/svg/logo_for_dark_theme.svg"
@@ -154,14 +157,18 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               }
               alt="Logo"
               className="h-6 w-auto pl-2 object-contain"
+              width={100}
+              height={24}
             />
           </Link>
         </div>
         <button className="p-2 ml-2" title="Новый чат">
-          <img
+          <Image
             src="/assets/svg/plus.svg"
             alt="plus"
             className="h-6 w-6 dark:invert"
+            width={24}
+            height={24}
           />
         </button>
       </div>
@@ -174,14 +181,14 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           height: "100dvh",
           overflow: isOpen ? "visible" : "hidden",
           position:
-            typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
+            typeof window !== "undefined" && window.innerWidth <= 768 && isOpen
               ? "fixed"
               : "static",
         }}
       >
         <div className="flex items-center gap-3 px-6 pt-6 pb-2 relative">
           <Link href="/">
-            <img
+            <Image
               src={
                 isDark
                   ? "/assets/svg/logo_for_dark_theme.svg"
@@ -189,6 +196,8 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               }
               alt="Logo"
               className="h-10 w-40 transition-all"
+              width={160}
+              height={40}
             />
           </Link>
           <div className="flex-1" />
@@ -197,20 +206,24 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             onClick={() => setIsOpen(false)}
             title="Закрыть боковую панель"
           >
-            <img
+            <Image
               src="/assets/svg/open-close.svg"
               alt="Скрыть"
               className="h-full w-full dark:invert dark:brightness-0"
+              width={24}
+              height={24}
             />
           </button>
         </div>
 
         <div className="pb-2 flex justify-center">
           <button className="w-full mx-6 cursor-pointer mt-3 flex items-center justify-center tracking-wide gap-3 text-white h-[54px] rounded-full text-[16px] font-[Involve] transition mb-2 bg-gradient-to-r from-[#437CFF] to-[#65EDFF] dark:from-[#2F67EA] dark:to-[#00BFFF] hover:from-[#3566c7] hover:to-[#437CFF] dark:hover:from-[#2652ba] dark:hover:to-[#00a7e6]">
-            <img
+            <Image
               src="/assets/svg/plus.svg"
               alt="plus"
               className="h-5 w-5 brightness-0 invert"
+              width={20}
+              height={20}
             />
             Новый чат
           </button>
@@ -247,7 +260,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             className="p-4 text-xs text-[#888] border-[#E0E0E0] flex items-start gap-3 cursor-pointer select-none"
             onClick={() => setProfileMenuOpen((v) => !v)}
           >
-            <img
+            <Image
               src={
                 isDark
                   ? "/assets/svg/anonym_for_dark_theme.svg"
@@ -255,6 +268,8 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
               }
               alt="Аватар"
               className="h-[51px] w-[51px] mr-1 opacity-80 flex-shrink-0"
+              width={51}
+              height={51}
             />
             <div className="flex flex-col pt-1 justify-center relative">
               <span className="text-[16px] text-black dark:text-white font-[Manrope] font-semibold leading-tight">
@@ -264,10 +279,12 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
                 Тариф: Бесплатный
               </span>
               <span className="absolute right-[-40px] top-[25px] -translate-y-1/2 flex items-center">
-                <img
+                <Image
                   src="/assets/svg/arrow_down.svg"
                   alt="Стрелка"
                   className={`w-5 h-5 dark:invert transition-transform duration-300 ${profileMenuOpen ? "rotate-180" : "rotate-0"}`}
+                  width={20}
+                  height={20}
                 />
               </span>
             </div>

@@ -16,9 +16,6 @@ export default function MobileMenu({
   const router = useRouter();
   const { t, i18n } = useTranslation();
 
-  const isTariffsLinkActive = pathname === "/subscribe";
-  const isArticlesLinkActive = pathname === "/articles";
-
   const getLinkClass = (active) =>
     `transition ${active ? "text-[#438EFF]" : "text-black"}`;
 

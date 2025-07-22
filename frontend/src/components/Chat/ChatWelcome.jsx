@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 export default function ChatWelcome() {
   const [input, setInput] = useState("");
@@ -45,7 +46,7 @@ export default function ChatWelcome() {
       style={{
         height: "100dvh",
         position:
-          typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
+          typeof window !== "undefined" && window.innerWidth <= 768 && isOpen
             ? "fixed"
             : "static",
       }}
@@ -69,10 +70,11 @@ export default function ChatWelcome() {
               >
                 {msg.role === "assistant" && (
                   <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#438EFF1A]">
-                    <img
+                    <Image
                       src="/assets/svg/LogoForChat.svg"
                       alt="Assistant Avatar"
-                      className="w-7 h-7"
+                      width={28}
+                      height={28}
                     />
                   </div>
                 )}
@@ -144,9 +146,11 @@ export default function ChatWelcome() {
                 className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white dark:bg-[#282a2c] border border-[#C6C6C6] dark:border-[#373737] rounded-full text-xs sm:text-sm font-medium"
                 disabled
               >
-                <img
+                <Image
                   src="/assets/svg/fi-rr-globe.svg"
                   alt="Globe"
+                  width={20}
+                  height={20}
                   className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 dark:invert dark:brightness-0"
                 />
                 <span className="text-black dark:text-white">Поиск</span>
@@ -156,17 +160,21 @@ export default function ChatWelcome() {
               onClick={handleSend}
               className="flex flex-row items-center justify-center gap-2 sm:gap-3"
             >
-              <img
+              <Image
                 src="/assets/svg/lightning.svg"
                 alt="Lightning"
+                width={15}
+                height={20}
                 className="w-[15px] h-[20px] sm:w-[17px] sm:h-[22px] dark:invert"
               />
               <span className="text-[13px] sm:text-[14px] text-black dark:text-white font-[Manrope] font-medium h-[20px] sm:h-[22px] flex items-center">
                 Попыток: 4
               </span>
-              <img
+              <Image
                 src="/assets/svg/bigarrow.svg"
                 alt="Arrow"
+                width={40}
+                height={40}
                 className="h-[40px] w-[40px] sm:h-[48px] sm:w-[48px] dark:invert"
               />
             </button>

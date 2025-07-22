@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ChatSidebar from "../../components/Chat/ChatSidebar";
 import ChatWelcome from "../../components/Chat/ChatWelcome";
 
@@ -63,16 +63,36 @@ const mockChats = [
 
 export default function ChatPage() {
   const [activeId, setActiveId] = useState(mockChats[0].id);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="flex h-screen overflow-hidden font-[Manrope]">
-      <ChatSidebar
-        chats={mockChats}
-        activeId={activeId}
-        setActiveId={setActiveId}
-      />
+      <div className="hidden md:block">
+        <ChatSidebar
+          chats={mockChats}
+          activeId={activeId}
+          setActiveId={setActiveId}
+        />
+      </div>
       <main className="flex-1 bg-white dark:bg-[#1b1c1d] flex flex-col">
         <ChatWelcome />
       </main>
+      {isMobile && (
+        <div className="md:hidden fixed inset-0 z-[200]">
+          <ChatSidebar
+            chats={mockChats}
+            activeId={activeId}
+            setActiveId={setActiveId}
+          />
+        </div>
+      )}
     </div>
   );
 }
