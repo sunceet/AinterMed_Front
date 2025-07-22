@@ -7,6 +7,7 @@ export default function ChatWelcome() {
   const bottomRef = useRef(null);
   const historyRef = useRef(null);
   const textareaRef = useRef(null);
+  const [isOpen] = useState(false);
 
   const hasMessages = messages.length > 0;
 
@@ -44,9 +45,9 @@ export default function ChatWelcome() {
       style={{
         height: "100dvh",
         position:
-          typeof window !== "undefined" && window.innerWidth <= 640
+          typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
             ? "fixed"
-            : "fixed",
+            : "static",
       }}
     >
       <div

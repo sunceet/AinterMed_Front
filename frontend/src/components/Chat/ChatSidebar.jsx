@@ -176,7 +176,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
           position:
             typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
               ? "fixed"
-              : "fixed",
+              : "static",
         }}
       >
         <div className="flex items-center gap-3 px-6 pt-6 pb-2 relative">
