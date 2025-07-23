@@ -3,6 +3,8 @@
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useSubscribeContext } from "./SubscribeContext";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function PlanCard({
   plan,
@@ -187,22 +189,22 @@ export default function PlanCard({
             >
               <span className="select-none">
                 {t("pricing.terms1")}&nbsp;
-                <a
+                <Link
                   href="/legal/terms"
                   target="_blank"
                   className="underline hover:text-blue-600 transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {t("pricing.terms_link1")}
-                </a>{" "}
+                </Link>{" "}
                 {t("pricing.and")}&nbsp;
-                <a
+                <Link
                   href="/legal/privacy"
                   className="underline hover:text-blue-600 transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {t("pricing.terms_link2")}
-                </a>
+                </Link>
               </span>
             </label>
           </div>
@@ -235,14 +237,14 @@ export default function PlanCard({
             >
               <span className="select-none">
                 {t("pricing.terms2")}&nbsp;
-                <a
+                <Link
                   href="/legal/oferta"
                   target="_blank"
                   className="underline hover:text-blue-600 transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {t("pricing.terms_link3")}
-                </a>
+                </Link>
               </span>
             </label>
           </div>
@@ -251,11 +253,13 @@ export default function PlanCard({
 
       {showHint && plan.id === "advanced" && (
         <div className="absolute right-[-10px] top-1/2 transform -translate-y-1/2 z-50 pointer-events-none select-none">
-          <img
+          <Image
             src="/assets/svg/cursor_finger.svg"
             alt="Swipe right hint"
+            width={36}
+            height={36}
             className="w-[36px] h-[36px] animate-swipe-right opacity-80 touch-none"
-            draggable="false"
+            draggable={false}
           />
         </div>
       )}

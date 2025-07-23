@@ -28,14 +28,18 @@ const AboutUsBlock = () => {
         </div>
 
         {/* Vector изображения */}
-        <img
+        <Image
           src="/assets/svg/Vector1.svg"
           alt=""
+          width={400}
+          height={400}
           className="hidden sm:block absolute top-1/2  -translate-x-1/2 -translate-y-1/2 xl:left-170 lg:left-140 md:left-87 sm:left-100 h-[101%] w-auto object-cover object-center max-w-none pointer-events-none -z-[1]"
         />
-        <img
+        <Image
           src="/assets/svg/VectorPhone1.svg"
           alt=""
+          width={400}
+          height={400}
           className="block sm:hidden absolute top-1/2 left-[50%] -translate-x-[50%] -translate-y-1/2 h-[101%] w-auto object-cover object-center max-w-none pointer-events-none -z-[1]"
         />
 
@@ -92,14 +96,18 @@ const AboutUsBlock = () => {
         </div>
 
         {/* Vector изображения */}
-        <img
+        <Image
           src="/assets/svg/Vector2.svg"
           alt=""
+          width={400}
+          height={400}
           className="hidden sm:block absolute top-1/2 -translate-x-1/2 -translate-y-1/2 xl:left-170 lg:left-140 md:left-87 sm:left-100 h-[101%] w-auto object-cover object-center max-w-none pointer-events-none -z-[1]"
         />
-        <img
+        <Image
           src="/assets/svg/VectorPhone2.svg"
           alt=""
+          width={400}
+          height={400}
           className="block sm:hidden absolute top-1/2 left-[36%] -translate-x-[50%] -translate-y-1/2 h-[101%] w-auto object-cover object-center max-w-none pointer-events-none -z-[1]"
         />
 

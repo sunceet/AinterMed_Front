@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import chatSamples from "./chatSamples";
 import { useTranslation } from "react-i18next";
 import CardContent from "./CardContent";
+import Image from "next/image";
 
 const ChatPreviewCarousel = () => {
   const { t } = useTranslation();
@@ -122,9 +123,11 @@ const ChatPreviewCarousel = () => {
             onClick={handlePrev}
             className="absolute xl:-left-75 md:left-5 lg:-left-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
           >
-            <img
+            <Image
               src="/assets/svg/arrow_left.svg"
               alt="Left"
+              width={24}
+              height={24}
               className="w-6 h-6 cursor-pointer hover:scale-110 transition z-20"
             />
           </button>
@@ -186,9 +189,11 @@ const ChatPreviewCarousel = () => {
             onClick={handleNext}
             className="absolute xl:-right-75 md:right-5 lg:-right-10 top-1/2 transform -translate-y-1/2 z-50 hover:opacity-80"
           >
-            <img
+            <Image
               src="/assets/svg/arrow_right.svg"
               alt="Right"
+              width={24}
+              height={24}
               className="w-6 h-6 cursor-pointer hover:scale-110 transition z-20"
             />
           </button>

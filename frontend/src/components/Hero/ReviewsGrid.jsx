@@ -29,6 +29,7 @@ const ReviewCard = ({ review }) => {
             width={48}
             height={48}
             className="w-full h-full object-cover"
+            priority
           />
         </div>
         <div>
@@ -182,10 +183,13 @@ const ReviewsGrid = () => {
           onClick={goToPrev}
           className="absolute left-4 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition z-20"
         >
-          <img
+          <Image
             src="/assets/svg/arrow_reviews.svg"
             alt="Left"
+            width={28}
+            height={28}
             className="w-7 h-7 cursor-pointer select-none"
+            priority
           />
         </button>
 
@@ -199,10 +203,13 @@ const ReviewsGrid = () => {
           onClick={goToNext}
           className="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition z-20"
         >
-          <img
+          <Image
             src="/assets/svg/arrow_reviews.svg"
             alt="Right"
+            width={28}
+            height={28}
             className="w-7 h-7 select-none cursor-pointer rotate-180"
+            priority
           />
         </button>
       </div>

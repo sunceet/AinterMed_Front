@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
+import Image from "next/image";
 
 const models = [
   {
@@ -130,20 +131,26 @@ export default function ModelFeaturesBlock() {
               onClick={prev}
               className="absolute left-[-5px] top-1/2 -translate-y-1/2 z-30"
             >
-              <img
+              <Image
                 src="/assets/svg/arrow_for_model.svg"
                 alt="Назад"
+                width={28}
+                height={28}
                 className="w-[28px] h-[28px] rotate-180 cursor-pointer hover:scale-110 duration-100"
+                priority
               />
             </button>
             <button
               onClick={next}
               className="absolute right-[-10px] top-1/2 -translate-y-1/2 z-30"
             >
-              <img
+              <Image
                 src="/assets/svg/arrow_for_model.svg"
                 alt="Вперёд"
+                width={28}
+                height={28}
                 className="w-[28px] h-[28px] cursor-pointer hover:scale-110 duration-100"
+                priority
               />
             </button>
           </div>
@@ -197,20 +204,26 @@ export default function ModelFeaturesBlock() {
             onClick={prev}
             className="absolute left-[-30px] top-1/2 -translate-y-1/2"
           >
-            <img
+            <Image
               src="/assets/svg/arrow_for_model.svg"
               alt="Назад"
+              width={24}
+              height={24}
               className="w-[24px] h-[24px] rotate-180"
+              priority
             />
           </button>
           <button
             onClick={next}
             className="absolute right-[-30px] top-1/2 -translate-y-1/2"
           >
-            <img
+            <Image
               src="/assets/svg/arrow_for_model.svg"
               alt="Вперёд"
+              width={24}
+              height={24}
               className="w-[24px] h-[24px]"
+              priority
             />
           </button>
         </div>

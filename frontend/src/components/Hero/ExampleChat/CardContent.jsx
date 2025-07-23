@@ -1,5 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 const CardContent = ({ chat, position = 0 }) => {
   const { t } = useTranslation();
@@ -8,9 +9,11 @@ const CardContent = ({ chat, position = 0 }) => {
     <>
       <div className="flex items-start gap-2">
         <div className="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center shrink-0 mt-[2px]">
-          <img
+          <Image
             src="/assets/svg/mini_logo.svg"
             alt="Logo"
+            width={14}
+            height={14}
             className="w-3.5 h-3.5 object-contain"
           />
         </div>
@@ -34,9 +37,11 @@ const CardContent = ({ chat, position = 0 }) => {
               AInterMed&nbsp;<span className="text-[#437CFF]">PRO</span>
             </a>
             <a className="flex select-none items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-white border border-gray-200 rounded-full text-[11px] sm:text-[12px] text-gray-800">
-              <img
+              <Image
                 src="/assets/svg/fi-rr-globe.svg"
                 alt="Globe"
+                width={16}
+                height={16}
                 className="w-4 h-4"
               />
               {t("promt.search")}
@@ -47,9 +52,11 @@ const CardContent = ({ chat, position = 0 }) => {
             className={position !== 0 ? "pointer-events-none opacity-50" : ""}
           >
             <button className="w-8 h-8 flex items-center justify-center">
-              <img
+              <Image
                 src="/assets/svg/bigarrow.svg"
                 alt="Arrow"
+                width={28}
+                height={28}
                 className="w-7 h-7 select-none"
               />
             </button>

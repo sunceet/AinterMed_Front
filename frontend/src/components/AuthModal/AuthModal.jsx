@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 export default function AuthModal({ onClose, mode = "register" }) {
   const { t } = useTranslation();
@@ -82,13 +83,12 @@ export default function AuthModal({ onClose, mode = "register" }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="hidden md:block w-full md:w-[630px] h-full rounded-l-[32px] overflow-hidden">
-          <img
+          <Image
             src={imageSrc}
             alt="Login"
             width={630}
             height={800}
-            loading="eager"
-            decoding="async"
+            priority
             className="w-full h-full object-cover"
           />
         </div>
@@ -165,7 +165,7 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2"
                 >
-                  <img
+                  <Image
                     src={
                       showPassword
                         ? "/assets/svg/eye-open.svg"
@@ -188,9 +188,11 @@ export default function AuthModal({ onClose, mode = "register" }) {
                   onClick={() => setAgreed(!agreed)}
                 >
                   {agreed && (
-                    <img
+                    <Image
                       src="/assets/svg/checkbox.svg"
                       alt="Checkbox"
+                      width={24}
+                      height={24}
                       className="w-[24px] h-[24px] select-none"
                       loading="eager"
                       decoding="async"

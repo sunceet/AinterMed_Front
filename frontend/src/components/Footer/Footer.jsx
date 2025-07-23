@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -12,10 +13,13 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between max-w-[1255px] mx-auto text-[#00000070] gap-[-30px]">
           {/* Логотип и инфо (слева) */}
           <div className="flex flex-col justify-between h-full">
-            <img
+            <Image
               src="/assets/svg/Logo_AInterMed.svg"
               alt="Логотип"
+              width={210}
+              height={33}
               className="w-[144px] h-[22px] xl:w-[210.35px] xl:h-[32.72px]"
+              priority
             />
 
             <div className="mt-5 text-left text-[14px] xl:text-[16px] leading-[26px] font-normal hidden md:block text-black">

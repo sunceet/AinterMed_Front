@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 const AiBlock = () => {
   const { t } = useTranslation();
@@ -42,35 +43,37 @@ const AiBlock = () => {
 
             {/* Кнопка >1280 */}
             <div className="mt-6 hidden xl:block">
-              <a
-                href="https://aintermed.com/ai"
+              <Link
+                href="/chat"
                 target="_blank"
                 className="inline-block font-[Involve] text-[16px]  font-medium px-8 py-4 bg-gradient-to-r from-[#437CFF] to-[#65b5ff]
                          text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase hover:brightness-110 z-[2] duration-100 hover:scale-105"
               >
                 {t("aiblock.block1button")}
-              </a>
+              </Link>
             </div>
           </div>
           <div className="w-full xl:w-auto flex justify-center">
-            <img
+            <Image
               src="/assets/svg/Chat_bot1.png"
               alt="ИИ"
-              className="object-contain
-                       max-h-[200px] sm:max-h-[220px] md:max-h-[240px] lg:max-h-[270px] xl:max-h-[300px]"
+              width={500}
+              height={500}
+              className="object-contain max-h-[200px] sm:max-h-[220px] md:max-h-[240px] lg:max-h-[270px] xl:max-h-[300px]"
+              priority
             />
           </div>
 
           {/* Кнопка <1279 */}
           <div className="xl:hidden">
-            <a
-              href="https://aintermed.com/ai"
+            <Link
+              href="/chat"
               target="_blank"
               className="inline-block font-[Involve] text-[14px] font-medium px-8 py-4 bg-gradient-to-r from-[#437CFF] to-[#65b5ff]
                        text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
             >
               {t("aiblock.block1button")}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -120,23 +123,25 @@ const AiBlock = () => {
           </div>
 
           <div className="w-full xl:w-auto flex justify-center">
-            <img
+            <Image
               src="/assets/svg/Chat_bot2.png"
               alt="База знаний"
-              className="object-contain
-                       max-h-[200px] sm:max-h-[220px] md:max-h-[240px] lg:max-h-[270px] xl:max-h-[300px]"
+              width={500}
+              height={500}
+              className="object-contain max-h-[200px] sm:max-h-[220px] md:max-h-[240px] lg:max-h-[270px] xl:max-h-[300px]"
+              priority
             />
           </div>
 
           <div className=" xl:hidden">
-            <a
-              href="https://aintermed.com/ai"
+            <Link
+              href="/chat"
               target="_blank"
               className="inline-block font-[Involve] text-[14px] font-medium px-8 py-4 bg-gradient-to-r from-[#65b5ff] to-[#437CFF]
                        text-white  tracking-wide rounded-full transition hover:bg-[#2f6de0] uppercase"
             >
               {t("aiblock.block2button")}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

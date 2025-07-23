@@ -7,6 +7,8 @@ import DesktopNav from "./DesktopNav";
 import LangSwitcher from "./LangSwitcher";
 import AuthButtons from "./AuthButtons";
 import AuthModal from "../AuthModal/AuthModal";
+import Image from "next/image";
+import Link from "next/link";
 
 const BurgerMenuButton = dynamic(() => import("./BurgerMenuButton"), {
   ssr: false,
@@ -32,13 +34,16 @@ export default function Header() {
           <div className="flex w-full max-w-[1255px] items-center justify-between gap-6 relative xl:left-[20px]">
             {/* Desktop: Лого + навигация */}
             <div className="items-center gap-6 relative xl:-left-[40px] hidden xl:flex">
-              <a href="/" aria-label="На главную">
-                <img
+              <Link href="/" aria-label="На главную">
+                <Image
                   src="/assets/svg/Logo.svg"
                   alt="Logo"
+                  width={165}
+                  height={28}
                   className="h-7 object-contain pb-[4px]"
+                  priority
                 />
-              </a>
+              </Link>
               <DesktopNav link={link} />
             </div>
 
@@ -47,10 +52,13 @@ export default function Header() {
               <LangSwitcher link={link} />
               <AuthButtons btn={btn} setShowAuthModal={setShowAuthModal} />
               <button className="p-1">
-                <img
+                <Image
                   src="/assets/svg/Bell.svg"
                   alt="Уведомления"
+                  width={28}
+                  height={28}
                   className="h-7 w-auto"
+                  priority
                 />
               </button>
             </div>
@@ -62,19 +70,25 @@ export default function Header() {
                   menuOpen={menuOpen}
                   setMenuOpen={setMenuOpen}
                 />
-                <a href="/" aria-label="На главную">
-                  <img
+                <Link href="/" aria-label="На главную">
+                  <Image
                     src="/assets/svg/Logo.svg"
                     alt="Logo"
+                    width={100}
+                    height={24}
                     className="h-6  w-auto pl-2 m object-contain "
+                    priority
                   />
-                </a>
+                </Link>
               </div>
               <button>
-                <img
+                <Image
                   src="/assets/svg/Bell.svg"
                   alt="Уведомления"
+                  width={28}
+                  height={28}
                   className="h-7 w-auto"
+                  priority
                 />
               </button>
             </div>

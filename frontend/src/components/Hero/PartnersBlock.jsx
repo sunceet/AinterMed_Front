@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const partners = [
   {
@@ -21,10 +22,13 @@ const PartnersBlock = () => (
       {partners.map((partner, idx) => (
         <div key={idx} className="flex justify-center items-center w-full">
           <a target="_blank" rel="noopener noreferrer">
-            <img
+            <Image
               src={partner.src}
+              alt="Партнёр"
+              width={140}
+              height={140}
               className="w-[70px] h-[70px] sm:w-[120px] sm:h-[120px] object-contain"
-              draggable="false"
+              draggable={false}
               onContextMenu={(e) => e.preventDefault()}
               style={{ pointerEvents: "auto" }}
             />

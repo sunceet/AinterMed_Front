@@ -5,6 +5,8 @@ import IconButton from "../../components/ui/IconButton";
 import GradientBorderBox from "../../components/ui/GradientBorderBox";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const PromptInput = () => {
   const { t } = useTranslation();
@@ -34,8 +36,8 @@ const PromptInput = () => {
 
         <div className="flex flex-wrap xl:flex-nowrap items-end justify-between mt-2 gap-12 xl:gap-50">
           <div className="flex gap-2 flex-wrap">
-            <a
-              href="https://aintermed.com/ai"
+            <Link
+              href="/chat"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center pl-4 px-5 py-2 bg-white rounded-full
@@ -43,31 +45,35 @@ const PromptInput = () => {
             >
               <span className="text-black">AInterMed&nbsp;</span>
               <span className="text-[#437CFF] font-semibold">PRO</span>
-            </a>
+            </Link>
 
-            <a
-              href="https://aintermed.com/ai"
+            <Link
+              href="/chat"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-white rounded-full
                          text-sm font-medium text-gray-800 hover:bg-gray-100"
             >
-              <img
+              <Image
                 src="/assets/svg/fi-rr-globe.svg"
                 alt="Globe"
+                width={20}
+                height={20}
                 className="w-5 h-5 xl:w-6 xl:h-6"
+                priority
               />
               <span> {t("promt.search")}</span>
-            </a>
+            </Link>
           </div>
 
-          <IconButton
-            onClick={() => window.open("https://aintermed.com/ai", "_blank")}
-          >
-            <img
+          <IconButton onClick={() => window.open("/chat", "_blank")}>
+            <Image
               src="/assets/svg/bigarrow.svg"
               alt="Arrow"
+              width={40}
+              height={40}
               className="w-10 h-10 xl:w-12 xl:h-12"
+              priority
             />
           </IconButton>
         </div>

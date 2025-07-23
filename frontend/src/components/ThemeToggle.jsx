@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -46,16 +47,20 @@ export default function ThemeToggle() {
       />
 
       <div className="flex justify-between items-center w-full h-full px-[6px] relative z-10">
-        <img
+        <Image
           src="/assets/svg/light_theme.svg"
           alt="light"
+          width={18}
+          height={18}
           className={`w-[18px] h-[18px] transition duration-200 ${
             theme === "dark" ? "brightness-0 invert" : ""
           }`}
         />
-        <img
+        <Image
           src="/assets/svg/dark_theme.svg"
           alt="dark"
+          width={18}
+          height={18}
           className={`w-[18px] h-[18px] transition duration-200 ${
             theme === "dark" ? "brightness-0 invert" : ""
           }`}
