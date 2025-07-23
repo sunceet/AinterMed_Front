@@ -44,7 +44,7 @@ export default function ChatWelcome() {
     <div
       className="flex flex-col w-full bg-transparent overflow-hidden"
       style={{
-        height: "100dvh",
+        height: "calc(var(--vh, 1vh) * 100)",
         overflow: isOpen ? "visible" : "hidden",
         position:
           typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
@@ -55,14 +55,14 @@ export default function ChatWelcome() {
       {/* Скроллируемая история сообщений */}
       <div
         ref={historyRef}
-        className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
-          hasMessages ? "pt-15" : "hidden"
+        className={`flex flex-col w-full z-100 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
+          hasMessages ? "" : "hidden"
         }`}
         style={{ overflowY: "overlay" }}
       >
         {messages.map((msg, index) => (
           <article key={msg.id} data-testid={`conversation-turn-${index}`}>
-            <div className="text-base mx-auto py-4 max-w-[864px]">
+            <div className="text-base mx-auto py-4 max-w-[864px] px-4">
               <div
                 className={`flex ${
                   msg.role === "assistant"

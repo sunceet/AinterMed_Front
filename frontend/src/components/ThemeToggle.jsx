@@ -34,13 +34,13 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className={`cursor-pointer relative w-[60px] h-[30px] rounded-full transition-colors duration-300 ${
-        theme === "dark" ? "bg-[#141516]" : "bg-[#E9E9E9]"
+        theme === "dark" ? "bg-[#14151650]" : "bg-[#E9E9E9]"
       }`}
     >
       <div
         className={`absolute top-[1px] left-[1px] w-[28px] h-[28px] rounded-full shadow-md transform transition-transform duration-300 ${
           theme === "dark"
-            ? "translate-x-[30px] bg-[#282A2C]"
+            ? "translate-x-[30px] bg-[#434649]"
             : "translate-x-0 bg-white"
         }`}
       />

@@ -290,7 +290,7 @@ export default function ChatSidebar({ chats, activeId, setActiveId }) {
             </div>
           </div>
           <div
-            className={`absolute left-0 bottom-[80px] w-full bg-white dark:bg-[#232323] shadow-lg rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333] transition-all duration-300
+            className={`absolute left-0 bottom-[80px] w-full bg-white  dark:bg-[#23252740]  backdrop-blur-2xl shadow-xl rounded-xl py-2 z-50 flex flex-col gap-1 border border-[#e0e0e0] dark:border-[#333] transition-all duration-300
               ${profileMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}
             style={{ willChange: "opacity, transform" }}
           >
