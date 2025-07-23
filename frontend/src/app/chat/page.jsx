@@ -78,7 +78,7 @@ export default function ChatPage() {
   const closeSidebar = () => setSidebarOpen(false);
 
   return (
-    <div className="flex h-screen overflow-hidden font-[Manrope]">
+    <div className="flex h-dvh overflow-hidden font-[Manrope]">
       <div className="hidden md:block">
         <ChatSidebar
           chats={mockChats}
