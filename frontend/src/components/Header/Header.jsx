@@ -35,13 +35,14 @@ export default function Header() {
             {/* Desktop: Лого + навигация */}
             <div className="items-center gap-6 relative xl:-left-[40px] hidden xl:flex">
               <Link href="/" aria-label="На главную">
-                <Image
+                <img
                   src="/assets/svg/Logo.svg"
                   alt="Logo"
                   width={165}
                   height={28}
                   className="h-7 object-contain pb-[4px]"
-                  priority
+                  loading="eager"
+                  draggable={false}
                 />
               </Link>
               <DesktopNav link={link} />
@@ -71,13 +72,14 @@ export default function Header() {
                   setMenuOpen={setMenuOpen}
                 />
                 <Link href="/" aria-label="На главную">
-                  <Image
+                  <img
                     src="/assets/svg/Logo.svg"
                     alt="Logo"
                     width={100}
                     height={24}
-                    className="h-6  w-auto pl-2 m object-contain "
-                    priority
+                    className="h-6 w-auto pl-2 m object-contain"
+                    loading="eager"
+                    draggable={false}
                   />
                 </Link>
               </div>
