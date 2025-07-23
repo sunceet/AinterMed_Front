@@ -45,8 +45,9 @@ export default function ChatWelcome() {
       className="flex flex-col items-center w-full bg-transparent overflow-hidden"
       style={{
         height: "100dvh",
+        overflow: isOpen ? "visible" : "hidden",
         position:
-          typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
+          typeof window !== "undefined" && window.innerWidth <= 768 && isOpen
             ? "fixed"
             : "static",
       }}
