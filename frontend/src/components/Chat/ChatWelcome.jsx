@@ -42,7 +42,7 @@ export default function ChatWelcome() {
 
   return (
     <div
-      className="flex flex-col items-center w-full bg-transparent overflow-hidden"
+      className="flex flex-col w-full bg-transparent overflow-hidden"
       style={{
         height: "100dvh",
         overflow: isOpen ? "visible" : "hidden",
@@ -52,6 +52,7 @@ export default function ChatWelcome() {
             : "static",
       }}
     >
+      {/* Скроллируемая история сообщений */}
       <div
         ref={historyRef}
         className={`flex flex-col w-full z-100 px-1 flex-1 overflow-y-auto min-h-0 transition-all duration-500 scrollbar-stable ${
@@ -97,6 +98,7 @@ export default function ChatWelcome() {
         <div ref={bottomRef} />
       </div>
 
+      {/* Ввод и welcome */}
       <div
         className={`w-full max-w-[910px] px-2 xl:px-3 transition-all duration-500 flex flex-col items-center ${
           hasMessages ? "" : "justify-center gap-6 flex-grow"
@@ -183,6 +185,7 @@ export default function ChatWelcome() {
         </div>
       </div>
 
+      {/* Футер/предупреждение — всегда внизу, не скроллится */}
       <div className="w-full xl:py-3 flex justify-center shrink-0 pointer-events-none select-none">
         <div className="text-[10px] sm:text-[12px] text-[#888] dark:text-[#FFFFFFB2] text-center w-full max-w-2xl mx-auto">
           Уточняйте информацию в официальных источниках
