@@ -30,7 +30,7 @@ const PromptInput = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleEnter}
-          className="pt-[6px] pl-3 bg-transparent text-gray-700 placeholder-gray-500
+          className="pt-[6px] pl-3 pr-3 bg-transparent text-gray-700 placeholder-gray-500
                      focus:outline-none text-[16px] sm:text-[18px] leading-[22px] w-full "
         />
 
