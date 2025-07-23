@@ -47,7 +47,7 @@ export default function ChatWelcome() {
         height: "100dvh",
         overflow: isOpen ? "visible" : "hidden",
         position:
-          typeof window !== "undefined" && window.innerWidth <= 768 && isOpen
+          typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
             ? "fixed"
             : "static",
       }}
