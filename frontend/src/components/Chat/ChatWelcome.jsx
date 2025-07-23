@@ -46,7 +46,7 @@ export default function ChatWelcome() {
       style={{
         height: "100dvh",
         position:
-          typeof window !== "undefined" && window.innerWidth <= 768 && isOpen
+          typeof window !== "undefined" && window.innerWidth <= 640 && isOpen
             ? "fixed"
             : "static",
       }}

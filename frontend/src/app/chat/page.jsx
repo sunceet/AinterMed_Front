@@ -64,6 +64,7 @@ const mockChats = [
 export default function ChatPage() {
   const [activeId, setActiveId] = useState(mockChats[0].id);
   const [isMobile, setIsMobile] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -71,6 +72,10 @@ export default function ChatPage() {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  // Функция для открытия/закрытия сайдбара (можно пробросить в BurgerMenuButton)
+  const openSidebar = () => setSidebarOpen(true);
+  const closeSidebar = () => setSidebarOpen(false);
 
   return (
     <div className="flex h-screen overflow-hidden font-[Manrope]">
@@ -82,16 +87,27 @@ export default function ChatPage() {
         />
       </div>
       <main className="flex-1 bg-white dark:bg-[#1b1c1d] flex flex-col">
-        <ChatWelcome />
+        <ChatWelcome openSidebar={openSidebar} />
       </main>
       {isMobile && (
-        <div className="md:hidden fixed inset-0 z-[200]">
-          <ChatSidebar
-            chats={mockChats}
-            activeId={activeId}
-            setActiveId={setActiveId}
-          />
-        </div>
+        <>
+          {sidebarOpen && (
+            <div
+              className="md:hidden fixed inset-0 z-[100] bg-black/40"
+              style={{ pointerEvents: "auto" }}
+              onClick={closeSidebar}
+            />
+          )}
+          <div className="md:hidden fixed top-0 left-0 z-[110]">
+            <ChatSidebar
+              chats={mockChats}
+              activeId={activeId}
+              setActiveId={setActiveId}
+              isOpen={sidebarOpen}
+              setIsOpen={setSidebarOpen}
+            />
+          </div>
+        </>
       )}
     </div>
   );
