@@ -25,10 +25,10 @@
   },
   "aiblock": {
     "title1": "Artificial intelligence",
-    "block1": "Personal clinical assistant for medical students and doctors. Helps structure knowledge, analyze clinical cases, prepare for exams and accreditation. Trained on a million verified medical data in accordance with the principles of medicine.",
+    "block1": "A personal clinical assistant for medical students and doctors. Helps structure knowledge, analyze clinical cases, and prepare for exams and accreditation. Trained on a million verified medical data points in accordance with the principles of evidence-based medicine.",
     "block1button": "GO TO AI",
     "title2": "Knowledge base",
-    "block2": "A repository of structured information for quick access. The knowledge base contains articles about AI and everything you need for modern medical education. The data is organized by topic, making it easy to find the information you need and use it in your studies and practice.",
+    "block2": "A repository of structured information for quick access. The knowledge base contains articles on artificial intelligence and everything related to modern medical education. The data is organized by topic, making it easy to find the information you need and use it in your studies and practice.",
     "block2button": "GO TO THE DATABASE"
   },
   "carousel": {
